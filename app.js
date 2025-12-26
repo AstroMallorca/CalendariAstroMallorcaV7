@@ -58,7 +58,7 @@ let efemerides = {};           // local data/efemerides_2026.json (per dia ISO)
 let efemeridesEspecials = {};  // del sheet per dia ISO -> array
 let activitats = {};           // del calendari ICS per dia ISO -> array
 let fotosMes = {};             // "MM-YYYY" -> info foto
-let festius = new Set();       // "YYYY-MM-DD" (qualsevol any)
+let festius = new Map(); // "YYYY-MM-DD" → "Nom del festiu"
 
 // === Utils dates ===
 function ddmmyyyyToISO(s) {
@@ -320,6 +320,7 @@ function obreDia(iso) {
   const info = efemerides[iso] || {};
   const esp = efemeridesEspecials[iso] || [];
   const act = activitats[iso] || [];
+  const nomFestiu = festius.get(iso);
 
   const llunaTxt = info.lluna ? `${info.lluna.fase || ""} (${info.lluna.il_luminacio_percent ?? ""}%)` : "—";
   const astrofoto = info.lluna_foscor?.apte_astrofotografia ? "🌑 Dia favorable per astrofotografia" : "";
@@ -332,13 +333,17 @@ function obreDia(iso) {
     ? `<h3>Activitats AstroMallorca</h3><ul>${act.map(a => `<li><b>${a.titol}</b>${a.lloc ? " — " + a.lloc : ""}${a.url ? ` — <a href="${a.url}" target="_blank">Enllaç</a>` : ""}</li>`).join("")}</ul>`
     : `<h3>Activitats AstroMallorca</h3><p>Cap activitat.</p>`;
 
-  contingutDia.innerHTML = `
-    <h2>${iso}</h2>
-    <p><b>Lluna:</b> ${llunaTxt}</p>
-    <p>${astrofoto}</p>
-    ${espHtml}
-    ${actHtml}
-  `;
+contingutDia.innerHTML = `
+  <h2>${iso}</h2>
+
+  ${nomFestiu ? `<p>🎉 <b>${nomFestiu}</b></p>` : ""}
+
+  <p><b>Lluna:</b> ${llunaTxt}</p>
+  <p>${astrofoto}</p>
+  ${espHtml}
+  ${actHtml}
+`;
+
   modal.classList.remove("ocult");
 }
 
@@ -431,11 +436,13 @@ async function inicia() {
     efemeridesEspecials = buildEfemeridesEspecials(esp);
 
     // Festius: el Sheet només té columna "nom" amb DD-MM-YYYY
-    festius = new Set(
-      fest
-        .map(r => ddmmyyyyToISO(r.nom))
-        .filter(Boolean)
-    );
+   festius = new Map();
+
+fest.forEach(r => {
+  const iso = ddmmyyyyToISO(r.data);
+  if (!iso) return;
+  festius.set(iso, r.nom || "Festiu");
+});
 
     // calendari
     try {
