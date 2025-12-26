@@ -1,12 +1,13 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="ca">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calendari AstroMallorca 2026</title>
+  <link rel="stylesheet" href="style.css" />
   <link rel="manifest" href="manifest.webmanifest">
   <meta name="theme-color" content="#000000">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta charset="UTF-8">
-  <title>Calendari AstroMallorca 2026</title>
-  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -26,35 +27,36 @@
   </div>
 </header>
 
-<section id="fotoMes">
-  <img src="assets/months/2026/2026-08.png" alt="Foto del mes">
-  <p id="titolFoto">Via Làctia d’estiu</p>
-</section>
+<div id="swipeArea" class="swipe-area">
+  <div id="swipeInner" class="swipe-inner">
 
-<!-- TÍTOL DEL MES -->
-<section class="mes-bar">
-  <div id="titolMes" class="titol-mes">AGOST 2026</div>
-</section>
+    <!-- FOTO DEL MES -->
+    <section id="fotoMes">
+      <img id="imgFotoMes" src="assets/months/2026/2026-08.png" alt="Foto del mes">
+      <p id="titolFoto">—</p>
+    </section>
 
-<!-- DIES DE LA SETMANA -->
-<section class="dies-setmana" id="diesSetmana">
-  <div>Dl</div>
-  <div>Dt</div>
-  <div>Dc</div>
-  <div>Dj</div>
-  <div>Dv</div>
-  <div>Ds</div>
-  <div>Dg</div>
-</section>
+    <!-- TÍTOL DEL MES -->
+    <section class="mes-bar">
+      <div id="titolMes" class="titol-mes">AGOST 2026</div>
+    </section>
 
-<!-- CALENDARI -->
-<section id="calendari">
-  <div class="graella" id="graellaDies"></div>
-</section>
+    <!-- DIES DE LA SETMANA -->
+    <section class="dies-setmana" id="diesSetmana">
+      <div>Dl</div><div>Dt</div><div>Dc</div><div>Dj</div><div>Dv</div><div>Ds</div><div>Dg</div>
+    </section>
 
-<!-- MODAL DIA -->
+    <!-- CALENDARI -->
+    <section id="calendari">
+      <div class="graella" id="graellaDies"></div>
+    </section>
+
+  </div>
+</div>
+
+<!-- MODAL DIA / DETALL -->
 <div id="modalDia" class="modal ocult">
-  <button class="tancar">←</button>
+  <button class="tancar" aria-label="Tornar">←</button>
   <div id="contingutDia"></div>
 </div>
 
