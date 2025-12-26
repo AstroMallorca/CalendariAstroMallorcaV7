@@ -240,26 +240,47 @@ function obreModalDetallFoto(f) {
 function dibuixaMes(isoYM) {
   graella.innerHTML = "";
 
-  // llista dies del mes isoYM: "2026-08"
-  const days = Object.keys(efemerides).filter(d => d.startsWith(isoYM + "-")).sort();
+  const [Y, M] = isoYM.split("-").map(Number); // M: 1-12
+  const daysInMonth = new Date(Y, M, 0).getDate(); // truc: dia 0 del mes següent
+  const firstDow = new Date(Y, M - 1, 1).getDay(); // 0=dg ... 6=ds
 
-  for (const iso of days) {
-    const info = efemerides[iso];
+  // Volem setmana començant dilluns (dl=0 ... dg=6)
+  const offset = (firstDow + 6) % 7;
+
+  // Caselles buides abans del dia 1
+  for (let i = 0; i < offset; i++) {
+    const empty = document.createElement("div");
+    empty.className = "dia buit";
+    graella.appendChild(empty);
+  }
+
+  for (let d = 1; d <= daysInMonth; d++) {
+    const dd = String(d).padStart(2, "0");
+    const mm = String(M).padStart(2, "0");
+    const iso = `${Y}-${mm}-${dd}`;
+
+    const info = efemerides[iso] || null;
+
     const cel = document.createElement("div");
     cel.className = "dia";
 
     // fons lluna fosca (si existeix)
-    if (info.lluna_foscor?.color) {
+    if (info?.lluna_foscor?.color) {
       cel.style.background = info.lluna_foscor.color;
-      cel.style.color = (info.lluna_foscor.color === "#000000" || info.lluna_foscor.color === "#333333") ? "#fff" : "#000";
+      cel.style.color =
+        (info.lluna_foscor.color === "#000000" || info.lluna_foscor.color === "#333333")
+          ? "#fff"
+          : "#000";
     }
 
-    // número dia
+    const esp = (efemeridesEspecials[iso] || []);
+    const act = (activitats[iso] || []);
+
     cel.innerHTML = `
-      <div class="num">${isoToDay(iso)}</div>
+      <div class="num">${d}</div>
       <div class="badges">
-        ${(efemeridesEspecials[iso] || []).slice(0,3).map(x => `<span class="badge">${x.codi}</span>`).join("")}
-        ${(activitats[iso] || []).length ? `<span class="badge am">AM</span>` : ""}
+        ${esp.slice(0,2).map(x => `<span class="badge">${x.codi}</span>`).join("")}
+        ${act.length ? `<span class="badge am">AM</span>` : ""}
       </div>
     `;
 
