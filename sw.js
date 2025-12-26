@@ -1,4 +1,4 @@
-const CACHE_NAME = "calendari-astromallorca-v4";
+const CACHE_NAME = "calendariastromallorca";
 
 const CORE_ASSETS = [
   "./",
