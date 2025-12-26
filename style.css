@@ -109,6 +109,11 @@ body{
   line-height: 1;
 }
 
+/* Diumenges i festius: número verd */
+.dia.festiu .num{
+  color: #0a8f3c;
+}
+
 /* BADGES */
 .badges{
   display:flex;
@@ -158,6 +163,10 @@ body.nocturn .dia{
   border-color: rgba(255,68,68,0.10);
   color:#ff4444;
 }
+/* Mantén els festius verds també en nocturn (si vols canviar-ho a vermell, m'ho dius) */
+body.nocturn .dia.festiu .num{
+  color: #0a8f3c;
+}
 body.nocturn .badge{
   background: rgba(255,68,68,0.18);
 }
@@ -181,4 +190,3 @@ body.nocturn .dies-setmana div{
 .swipe-in-left{ transform: translateX(14%); opacity: 0; }
 .swipe-in-right{ transform: translateX(-14%); opacity: 0; }
 .swipe-reset{ transform: translateX(0); opacity: 1; }
-
