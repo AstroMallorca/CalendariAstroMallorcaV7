@@ -434,7 +434,7 @@ if (esp.length) {
     iconsWrap.appendChild(img);
   });
 
-  diaEl.appendChild(iconsWrap);
+  cel.appendChild(iconsWrap);
 }
     const act = activitats[iso] || [];
 
