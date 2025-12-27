@@ -624,3 +624,5 @@ async function inicia() {
 }
 
 inicia();
+iniciaCompteEnrereEclipsi();
+
