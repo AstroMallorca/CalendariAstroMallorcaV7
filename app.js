@@ -420,6 +420,22 @@ function dibuixaMes(isoYM) {
 
     const info = efemerides[iso] || null;
     const esp = efemeridesEspecials[iso] || [];
+    // --- ICONES D'EFEMÈRIDES ESPECIALS ---
+if (esp.length) {
+  const iconsWrap = document.createElement('div');
+  iconsWrap.className = 'efemerides-icons';
+
+  esp.forEach(e => {
+    const img = document.createElement('img');
+    img.src = `assets/icons/special/${e.codi}.png`;
+    img.alt = e.titol || e.codi;
+    img.title = e.titol || '';
+    img.className = 'efemeride-icon';
+    iconsWrap.appendChild(img);
+  });
+
+  diaEl.appendChild(iconsWrap);
+}
     const act = activitats[iso] || [];
 
     const cel = document.createElement("div");
