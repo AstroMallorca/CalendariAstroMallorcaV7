@@ -207,7 +207,7 @@ function setFotoMes(isoYM){
 
 // === Compte enrere eclipse ===
 function iniciaCompteEnrereEclipsi(){
-  const el = document.getElementById("compteEclipsi");
+  const el = document.getElementById("eclipsiCountdown");
   if (!el) return;
 
   const target = new Date(ECLIPSE_LOCAL_ISO);
