@@ -149,7 +149,7 @@ function formatCountdownDDHHMM(ms) {
   const D = String(days).padStart(2, "0");
   const H = String(hours).padStart(2, "0");
   const M = String(minutes).padStart(2, "0");
-  return `${D}D:${H}H:${M}M`;
+  return `${D}d:${H}h:${M}min`;
 }
 
 let countdownTimer = null;
