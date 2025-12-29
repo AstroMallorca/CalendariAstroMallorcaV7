@@ -12,8 +12,8 @@ const SHEET_CONFIG = `${BASE_SHEETS}?gid=1324899531&single=true&output=csv`;
 const SHEET_FESTIUS = `${BASE_SHEETS}?gid=1058273430&single=true&output=csv`;
 
 // ICS públic
-const CALENDAR_ICS =
-  "https://r.jina.ai/https://calendar.google.com/calendar/ical/astromca%40gmail.com/public/basic.ics";
+const CALENDAR_ICS_RAW = "https://calendar.google.com/calendar/ical/astromca%40gmail.com/public/basic.ics";
+const CALENDAR_ICS = "https://r.jina.ai/" + CALENDAR_ICS_RAW;
 
 // Mesos en català
 const MESOS_CA = [
@@ -302,15 +302,40 @@ async function loadCSV(url) {
   return rowsToObjects(parseCSV(t));
 }
 async function loadICS(url) {
-  const r = await fetch(url, { cache: "no-store" });
-  if (!r.ok) throw new Error(`No puc carregar ICS (${r.status})`);
-  let t = await r.text();
+  // ⚠️ Google Calendar ICS sovint bloqueja CORS; per això usam proxys.
+  // Feim intents en cadena (mínim canvi) per evitar que no surti mai cap activitat.
+  const candidates = [
+    url,
+    // fallback 1: allorigins (raw)
+    "https://api.allorigins.win/raw?url=" + encodeURIComponent(CALENDAR_ICS_RAW),
+    // fallback 2: corsproxy.io
+    "https://corsproxy.io/?" + encodeURIComponent(CALENDAR_ICS_RAW),
+  ];
 
-  // Amb r.jina.ai a vegades ve text extra; retallam al calendari real
-  const idx = t.indexOf("BEGIN:VCALENDAR");
-  if (idx !== -1) t = t.slice(idx);
+  let lastErr = null;
 
-  return t;
+  for (const u of candidates) {
+    try {
+      const r = await fetch(u, { cache: "no-store" });
+      if (!r.ok) throw new Error(`HTTP ${r.status}`);
+      let t = await r.text();
+
+      // Amb alguns proxys a vegades ve text extra; retallam al calendari real
+      const idx = t.indexOf("BEGIN:VCALENDAR");
+      if (idx !== -1) t = t.slice(idx);
+
+      // Validació mínima
+      if (t.includes("BEGIN:VEVENT")) return t;
+      // si no té events, igualment el retornam (pot ser buit però vàlid)
+      if (t.includes("BEGIN:VCALENDAR")) return t;
+
+      throw new Error("Resposta sense VCALENDAR");
+    } catch (e) {
+      lastErr = e;
+    }
+  }
+
+  throw lastErr || new Error("No puc carregar ICS");
 }
 
 // === Transformacions ===
@@ -448,10 +473,9 @@ function dibuixaMes(isoYM) {
 
     cel.innerHTML = `
       <div class="num">${d}</div>
-      ${act.length ? `<img class="am-activity-center" src="assets/icons/astromallorca.png" alt="AstroMallorca">` : ""}
       <div class="badges">
         ${esp.slice(0,6).map(x => `<img class="esp-icon" src="${x.codi}" alt="${(x.titol||x.clau||"").replace(/"/g,"&quot;")}" title="${(x.titol||"").replace(/"/g,"&quot;")}" loading="lazy">`).join("")}
-        
+        ${act.length ? `<img class="am-mini" src="assets/icons/astromallorca.png" alt="AstroMallorca">` : ""}
       </div>
     `;
 
