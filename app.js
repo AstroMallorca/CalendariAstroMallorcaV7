@@ -302,42 +302,51 @@ async function loadCSV(url) {
   return rowsToObjects(parseCSV(t));
 }
 async function loadICS(url) {
-  // Intentam diverses rutes (canvi mínim) perquè el Google Calendar sovint dona problemes de CORS.
-  const candidates = [url];
+  // Intentam diverses passarel·les per evitar CORS / bloquejos.
+  // Si el que ens passen ja és r.jina.ai, també provam l'URL original de Google.
+  const rawUrl = url.startsWith("https://r.jina.ai/") ? url.replace(/^https:\/\/r\.jina\.ai\/https?:\/\//, "https://") : url;
 
-  const prefix = "https://r.jina.ai/";
-  const orig = url.startsWith(prefix) ? url.slice(prefix.length) : url;
-
-  // Variant r.jina.ai amb http:// (a vegades funciona millor)
-  if (orig.startsWith("https://")) {
-    candidates.push(prefix + "http://" + orig.slice("https://".length));
-  }
-
-  // Fallback genèric CORS proxy
-  if (orig.startsWith("http")) {
-    candidates.push("https://api.allorigins.win/raw?url=" + encodeURIComponent(orig));
-  }
+  const targets = [
+    url,
+    rawUrl,
+    // AllOrigins (raw)
+    "https://api.allorigins.win/raw?url=" + encodeURIComponent(rawUrl),
+    // corsproxy.io
+    "https://corsproxy.io/?" + encodeURIComponent(rawUrl),
+    // isomorphic-git cors proxy
+    "https://cors.isomorphic-git.org/" + rawUrl,
+    // thingproxy
+    "https://thingproxy.freeboard.io/fetch/" + rawUrl
+  ];
 
   let lastErr = null;
-  for (const u of candidates) {
+
+  for (const u of targets) {
     try {
       const r = await fetch(u, { cache: "no-store" });
-      if (!r.ok) throw new Error(`No puc carregar ICS (${r.status})`);
+      if (!r.ok) throw new Error(`HTTP ${r.status}`);
       let t = await r.text();
 
-      // A vegades ve text extra; retallam al calendari real
       const idx = t.indexOf("BEGIN:VCALENDAR");
       if (idx !== -1) t = t.slice(idx);
 
-      // Validació mínima
-      if (t.includes("BEGIN:VEVENT")) return t;
-      throw new Error("Resposta ICS no conté VEVENT");
-    } catch (e) {
-      lastErr = e;
+      // Guardam per depurar des del navegador
+      window.__AM_LAST_ICS_URL__ = u;
+      window.__AM_LAST_ICS_HEAD__ = t.slice(0, 200);
+
+      if (!t.includes("BEGIN:VEVENT")) throw new Error("Resposta sense VEVENT");
+
+      console.info("[ICS] OK via:", u, "len:", t.length);
+      return t;
+    } catch (err) {
+      lastErr = err;
+      console.warn("[ICS] falla via:", u, err);
     }
   }
-  throw lastErr || new Error("No puc carregar ICS");
+
+  throw (lastErr || new Error("No puc carregar ICS"));
 }
+
 
 // === Transformacions ===
 function buildEfemeridesEspecials(objs) {
@@ -474,10 +483,10 @@ function dibuixaMes(isoYM) {
 
     cel.innerHTML = `
       <div class="num">${d}</div>
-      ${act.length ? `<div class="am-act-center">A</div>` : ""}
       <div class="badges">
         ${esp.slice(0,6).map(x => `<img class="esp-icon" src="${x.codi}" alt="${(x.titol||x.clau||"").replace(/"/g,"&quot;")}" title="${(x.titol||"").replace(/"/g,"&quot;")}" loading="lazy">`).join("")}
-              </div>
+        ${act.length ? `<img class="am-mini" src="assets/icons/astromallorca.png" alt="AstroMallorca">` : ""}
+      </div>
     `;
 
     cel.onclick = () => obreDia(iso);
@@ -616,8 +625,6 @@ async function inicia() {
     try {
       const icsText = await loadICS(CALENDAR_ICS);
       activitats = buildActivitatsFromICS(parseICS(icsText));
-      window.__AM_ACTIVITATS__ = activitats;
-      console.info("ICS carregat. Dies amb activitats:", Object.keys(activitats).length);
     } catch (err) {
       console.warn("No he pogut carregar el calendari ICS:", err);
       activitats = {};
