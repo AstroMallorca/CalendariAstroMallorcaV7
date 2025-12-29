@@ -346,15 +346,15 @@ async function loadJSON(path) {
   return r.json();
 }
 async function loadCSV(url) {
-  const r = await fetch(url, { cache: "no-store" });
-  if (!r.ok) throw new Error(`No puc carregar CSV (${r.status})`);
-  const t = await r.text();
-  return rowsToObjects(parseCSV(t));
+  const { text } = await fetchTextWithFallback(csvFallbacks(url));
+  return rowsToObjects(parseCSV(text));
 }
+
 async function loadICS(url) {
-  const r = await fetch(url, { cache: "no-store" });
-  if (!r.ok) throw new Error(`No puc carregar ICS (${r.status})`);
-  let t = await r.text();
+  // IMPORTANT: Google Calendar ICS no envia capçalera CORS.
+  // Per això usam proxys amb fallback (i deixam l'URL directa com a últim intent).
+  const { text } = await fetchTextWithFallback(icsFallbacks(url));
+  let t = text;
 
   // Amb r.jina.ai a vegades ve text extra; retallam al calendari real
   const idx = t.indexOf("BEGIN:VCALENDAR");
@@ -362,6 +362,7 @@ async function loadICS(url) {
 
   return t;
 }
+
 
 // === Transformacions ===
 function buildEfemeridesEspecials(objs) {
