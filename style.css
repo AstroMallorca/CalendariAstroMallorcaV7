@@ -271,3 +271,36 @@ body.nocturn .comptador-eclipsi__text{
 
 .dia .num{ position:relative; z-index:2; }
 
+
+/* FLETXES CANVI DE MES (desktop + mòbil) */
+.nav-mes{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 10px;
+  padding: 0 12px;
+  margin: 2px 0 4px 0;
+}
+.nav-mes .comptador-eclipsi{
+  margin: 0;
+  flex: 1;
+  justify-content: center;
+}
+.btn-nav-mes{
+  background: transparent;
+  border: 0;
+  padding: 0 8px;
+  font-size: 44px;
+  line-height: 1;
+  color: #111;
+  cursor: pointer;
+  border-radius: 12px;
+}
+.btn-nav-mes:active{ transform: translateY(1px); }
+.btn-nav-mes:focus-visible{
+  outline: 2px solid rgba(0,0,0,0.25);
+  outline-offset: 2px;
+}
+body.nocturn .btn-nav-mes{
+  color: #c62828;
+}
