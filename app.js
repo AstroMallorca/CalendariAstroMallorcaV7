@@ -559,6 +559,7 @@ function dibuixaMes(isoYM) {
     if (esDiumenge || esFestiu) cel.classList.add("festiu");
 
     // fons lluna fosca (si existeix)
+    for (let d = 1; d <= daysInMonth; d++) {
     if (info?.lluna_foscor?.color) {
       cel.style.background = info.lluna_foscor.color;
       cel.style.color =
@@ -589,6 +590,14 @@ const moonHtml = moonQuarters.length
 
 function obreDia(iso) {
   const info = efemerides[iso] || {};
+  // 🌙 Fase lunar (sempre definida)
+const moonQuarters = moonByDay.get(d) || [];
+const moonHtml = moonQuarters.length
+  ? `<div class="moon-phases">${moonQuarters
+      .map(q => `<img class="moon-icon" src="${MOON_ICON_BY_QUARTER[q]}" alt="Fase lluna">`)
+      .join("")}</div>`
+  : "";
+
   const esp = efemeridesEspecials[iso] || [];
   const act = activitats[iso] || [];
 
