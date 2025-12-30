@@ -558,39 +558,7 @@ function dibuixaMes(isoYM) {
     const esFestiu = festius.has(iso);
     if (esDiumenge || esFestiu) cel.classList.add("festiu");
 
-    // fons lluna fosca (si existeix)
-    for (let d = 1; d <= daysInMonth; d++) {
-    if (info?.lluna_foscor?.color) {
-      cel.style.background = info.lluna_foscor.color;
-      cel.style.color =
-        (info.lluna_foscor.color === "#000000" || info.lluna_foscor.color === "#333333")
-          ? "#fff"
-          : "#000";
-      // icona fase lunar (quarts) a dalt-dreta
-const moonQuarters = moonByDay.get(d) || [];
-const moonHtml = moonQuarters.length
-  ? `<div class="moon-phases">${moonQuarters.map(q => `<img class="moon-icon" src="${MOON_ICON_BY_QUARTER[q]}" alt="Fase lluna">`).join("")}</div>`
-  : "";
-
-    }
-    
-   cel.innerHTML = `
-  <div class="num">${d}</div>
-  ${moonHtml}
-  ${act.length ? `<img class="am-mini am-act-center" src="assets/icons/astromallorca.png" alt="AstroMallorca">` : ""}
-  <div class="badges">
-    ${esp.slice(0,6).map(x => `<img class="esp-icon" src="${x.codi}" alt="${(x.titol || x.clau || "").replace(/"/g,"&quot;")}" loading="lazy">`).join("")}
-  </div>
-`;
-
-    cel.onclick = () => obreDia(iso);
-    graella.appendChild(cel);
-  }
-}
-
-function obreDia(iso) {
-  const info = efemerides[iso] || {};
-  // 🌙 Fase lunar (sempre definida)
+   // 🌙 icona fase lunar (quarts) a dalt-dreta (SEMPRE definida)
 const moonQuarters = moonByDay.get(d) || [];
 const moonHtml = moonQuarters.length
   ? `<div class="moon-phases">${moonQuarters
@@ -598,6 +566,30 @@ const moonHtml = moonQuarters.length
       .join("")}</div>`
   : "";
 
+// fons lluna fosca (si existeix)
+if (info?.lluna_foscor?.color) {
+  cel.style.background = info.lluna_foscor.color;
+  cel.style.color =
+    (info.lluna_foscor.color === "#000000" || info.lluna_foscor.color === "#333333")
+      ? "#fff"
+      : "#000";
+}
+
+cel.innerHTML = `
+  <div class="num">${d}</div>
+  ${moonHtml}
+  ${act.length ? `<img class="am-mini am-act-center" src="assets/icons/astromallorca.png" alt="AstroMallorca">` : ""}
+  <div class="badges">
+    ${esp.slice(0,6).map(x => `<img class="esp-icon" src="${x.codi}" alt="${(x.titol || x.clau || "").replace(/"/g,"&quot;")}" loading="lazy">`).join("")}
+  </div>
+`;
+    cel.onclick = () => obreDia(iso);
+    graella.appendChild(cel);
+  }
+}
+
+function obreDia(iso) {
+  const info = efemerides[iso] || {};
   const esp = efemeridesEspecials[iso] || [];
   const act = activitats[iso] || [];
 
