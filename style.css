@@ -355,3 +355,99 @@ body.nocturn .btn-nav-mes{
   height:16px;
   display:block;
 }
+/* === DIA (modal) - Estètica nova === */
+.dia-header{
+  text-align:center;
+  margin-bottom: 10px;
+}
+.dia-date{
+  font-size: 34px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+.dia-festiu{
+  margin-top: 6px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.dia-section-title{
+  text-align:center;
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  margin: 14px 0;
+}
+.dia-section-title.small{
+  font-size: 22px;
+  margin: 0 0 10px 0;
+}
+
+.dia-card{
+  border: 3px solid #000;
+  border-radius: 18px;
+  padding: 12px 14px;
+  margin: 12px 0;
+  background: #fff;
+}
+
+.dia-card-title{
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.dia-muted{
+  opacity: .7;
+  font-size: 16px;
+}
+
+.dia-list{
+  margin: 0;
+  padding-left: 18px;
+}
+.dia-list li{
+  margin: 6px 0;
+}
+
+.dia-row{
+  display:flex;
+  gap: 12px;
+  align-items:center;
+  padding: 10px 8px;
+  border-radius: 14px;
+}
+.dia-row + .dia-row{
+  margin-top: 6px;
+}
+.dia-link{
+  cursor: pointer;
+}
+.dia-link:active{
+  transform: scale(0.99);
+}
+
+.dia-row-icon{
+  font-size: 28px;
+  width: 40px;
+  text-align:center;
+}
+.dia-row-title{
+  font-size: 18px;
+  font-weight: 800;
+}
+.dia-row-sub{
+  font-size: 14px;
+  opacity: .8;
+  margin-top: 2px;
+}
+
+.dia-historic{
+  line-height: 1.35;
+}
+.dia-hitem{
+  margin: 8px 0;
+}
+.dia-hyear{
+  font-weight: 900;
+}
