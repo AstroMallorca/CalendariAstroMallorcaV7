@@ -5,30 +5,30 @@
       {
         "type": "person",
         "category": "astronomia",
-        "title": "Naixement d’Annie Easley",
-        "year": 1933,
-        "description": "Naixement de la matemàtica i informàtica de la NASA que va contribuir a programes de coets i vols espacials."
+        "title": "Naixement de Annie Jump Cannon",
+        "year": 1863,
+        "description": "Naixement de l’astrònoma que va establir la classificació espectral estel·lar moderna, encara vigent avui."
       },
       {
         "type": "mission",
         "category": "espai",
         "title": "Llançament de la missió Voyager 1",
         "year": 1977,
-        "description": "S’enlaira la sonda Voyager 1, destinada a l’estudi dels planetes exteriors i l’espai interestel·lar."
+        "description": "S’enlaira la sonda Voyager 1, destinada a explorar els planetes exteriors i l’espai interestel·lar."
       },
       {
         "type": "discovery",
         "category": "astronomia",
-        "title": "Descobriment del planeta Neptú (confirmació observacional)",
+        "title": "Descobriment del planeta Neptú",
         "year": 1846,
-        "description": "S’observa Neptú confirmant prediccions matemàtiques i reforçant la mecànica celeste."
+        "description": "Es confirma l’existència de Neptú gràcies a prediccions matemàtiques, fita clau de la mecànica celeste."
       },
       {
         "type": "organization",
         "category": "ciencia",
-        "title": "Fundació d’un observatori astronòmic nacional modern",
+        "title": "Fundació del Smithsonian Astrophysical Observatory",
         "year": 1890,
-        "description": "Es consoliden estructures institucionals per a observació sistemàtica del cel."
+        "description": "Es consolida una institució dedicada a la recerca astronòmica i astrofísica."
       }
     ]
   },
@@ -38,30 +38,30 @@
       {
         "type": "person",
         "category": "biologia",
-        "title": "Naixement de Lynn Sagan Margulis",
+        "title": "Naixement de Lynn Margulis",
         "year": 1938,
-        "description": "Naixement de la biòloga que va impulsar la teoria endosimbiòtica de l’origen cel·lular."
+        "description": "Naixement de la biòloga que va formular la teoria endosimbiòtica sobre l’origen de les cèl·lules eucariotes."
       },
       {
         "type": "mission",
         "category": "espai",
-        "title": "Llançament de la missió Pioneer 10",
+        "title": "Llançament de la sonda Pioneer 10",
         "year": 1972,
-        "description": "S’enlaira la primera sonda destinada a explorar el sistema solar exterior."
+        "description": "S’enlaira la primera missió destinada a explorar el sistema solar exterior i Júpiter."
       },
       {
         "type": "discovery",
         "category": "fisica",
-        "title": "Descobriment del neutró lliure (consolidació experimental)",
+        "title": "Descobriment del neutró per James Chadwick",
         "year": 1932,
-        "description": "Es consolida l’existència del neutró com a partícula fonamental del nucli atòmic."
+        "description": "Es descobreix el neutró, peça fonamental per entendre l’estructura del nucli atòmic."
       },
       {
         "type": "publication",
         "category": "ciencia",
-        "title": "Publicació d’un manual clàssic de bioquímica moderna",
+        "title": "Publicació d’un tractat modern de bioquímica",
         "year": 1953,
-        "description": "S’estandarditzen conceptes moleculars que estructuren la bioquímica del segle XX."
+        "description": "Es sistematitzen els fonaments moleculars de la bioquímica contemporània."
       }
     ]
   },
@@ -80,21 +80,21 @@
         "category": "espai",
         "title": "Llançament de la missió OSIRIS-REx",
         "year": 2016,
-        "description": "S’enlaira una missió clau de retorn de mostres d’un asteroide proper."
+        "description": "S’enlaira la missió destinada a obtenir i retornar mostres d’un asteroide proper."
       },
       {
         "type": "discovery",
-        "category": "astronomia",
-        "title": "Identificació del fons còsmic de microones com a radiació relicta",
+        "category": "cosmologia",
+        "title": "Identificació del fons còsmic de microones",
         "year": 1965,
-        "description": "Es reforça la interpretació del fons còsmic com a evidència del Big Bang."
+        "description": "Es consolida el fons còsmic de microones com a prova observacional del Big Bang."
       },
       {
         "type": "organization",
         "category": "ciencia",
-        "title": "Creació d’un programa internacional d’astronomia espacial",
-        "year": 1983,
-        "description": "Es coordinen esforços internacionals per a missions astronòmiques fora de l’atmosfera."
+        "title": "Creació del programa COBE",
+        "year": 1989,
+        "description": "Es posa en marxa un programa clau per a l’estudi del fons còsmic."
       }
     ]
   },
@@ -106,28 +106,28 @@
         "category": "medicina",
         "title": "Naixement de Miriam Menkin",
         "year": 1901,
-        "description": "Naixement de la científica que va contribuir al desenvolupament de la fecundació in vitro."
+        "description": "Naixement de la científica que va aconseguir la primera fecundació in vitro humana."
       },
       {
         "type": "mission",
         "category": "espai",
         "title": "Llançament de la missió Mars Pathfinder",
         "year": 1996,
-        "description": "S’enlaira una missió pionera en exploració robòtica de Mart."
+        "description": "S’enlaira una missió pionera en exploració robòtica de Mart amb el rover Sojourner."
       },
       {
         "type": "discovery",
         "category": "biologia",
-        "title": "Descobriment del paper dels ribosomes en la síntesi proteica",
+        "title": "Identificació del paper dels ribosomes",
         "year": 1955,
-        "description": "S’identifica el mecanisme central de traducció genètica en les cèl·lules."
+        "description": "Es descriu el mecanisme cel·lular responsable de la síntesi de proteïnes."
       },
       {
         "type": "technology",
         "category": "tecnologia",
-        "title": "Presentació d’un primer sistema de navegació assistida per ordinador",
-        "year": 1960,
-        "description": "S’introdueixen conceptes que modernitzen el càlcul aplicat a enginyeria."
+        "title": "Desenvolupament dels primers ordinadors programables",
+        "year": 1946,
+        "description": "Es consoliden els fonaments de la informàtica científica."
       }
     ]
   },
@@ -136,31 +136,31 @@
     "items": [
       {
         "type": "person",
-        "category": "ciencia",
-        "title": "Naixement de Chien-Shiung Wu (commemoració acadèmica)",
+        "category": "fisica",
+        "title": "Naixement de Chien-Shiung Wu",
         "year": 1912,
-        "description": "Es posa en valor el paper d’una física clau en la comprovació experimental de la paritat."
+        "description": "Naixement de la física que va demostrar experimentalment la violació de la paritat."
       },
       {
         "type": "mission",
         "category": "espai",
         "title": "Llançament de la missió Juno",
         "year": 2011,
-        "description": "S’enlaira la sonda destinada a estudiar l’interior i el camp magnètic de Júpiter."
+        "description": "S’enlaira la missió destinada a estudiar l’interior i el camp magnètic de Júpiter."
       },
       {
         "type": "discovery",
         "category": "fisica",
-        "title": "Descobriment de la radioactivitat artificial (consolidació)",
+        "title": "Descobriment de la radioactivitat artificial",
         "year": 1934,
-        "description": "Es consolida la producció artificial d’isòtops radioactius amb aplicacions mèdiques."
+        "description": "Es produeixen isòtops radioactius artificialment, obrint noves aplicacions científiques."
       },
       {
         "type": "organization",
         "category": "ciencia",
-        "title": "Fundació d’un centre internacional de física nuclear",
+        "title": "Fundació del CERN",
         "year": 1954,
-        "description": "S’estableix una institució clau per a la recerca cooperativa en física d’alta energia."
+        "description": "Es crea el centre europeu de recerca en física de partícules."
       }
     ]
   },
@@ -177,23 +177,23 @@
       {
         "type": "mission",
         "category": "espai",
-        "title": "Llançament de la missió Kepler",
+        "title": "Llançament del telescopi espacial Kepler",
         "year": 2009,
-        "description": "S’enlaira el telescopi espacial dedicat a la detecció d’exoplanetes."
+        "description": "S’enlaira la missió que revolucionarà el descobriment d’exoplanetes."
       },
       {
         "type": "discovery",
         "category": "astronomia",
-        "title": "Descobriment del primer exoplaneta al voltant d’una estrella solar",
+        "title": "Descobriment de 51 Pegasi b",
         "year": 1995,
-        "description": "Es detecta un planeta extrasolar, iniciant l’era moderna de l’exoplanetologia."
+        "description": "Es detecta el primer exoplaneta al voltant d’una estrella similar al Sol."
       },
       {
         "type": "organization",
         "category": "ciencia",
-        "title": "Creació d’un programa d’exploració d’exoplanetes",
-        "year": 2010,
-        "description": "S’estructuren esforços coordinats per a la recerca de planetes fora del sistema solar."
+        "title": "Creació del programa Exoplanet Exploration de la NASA",
+        "year": 2007,
+        "description": "Es coordinen missions dedicades a la recerca d’exoplanetes."
       }
     ]
   },
@@ -203,30 +203,30 @@
       {
         "type": "person",
         "category": "biologia",
-        "title": "Naixement de Rachel Carson (commemoració científica)",
+        "title": "Naixement de Rachel Carson",
         "year": 1907,
-        "description": "Es recorda la científica que va impulsar la consciència ambiental moderna."
+        "description": "Naixement de la científica que va impulsar el moviment ambiental modern."
       },
       {
         "type": "mission",
         "category": "espai",
-        "title": "Aterratge de la missió Viking 1 (fase científica)",
+        "title": "Inici de les operacions científiques de Viking 1",
         "year": 1976,
-        "description": "S’inicien experiments biològics in situ sobre la superfície marciana."
+        "description": "Comencen experiments biològics directes sobre la superfície marciana."
       },
       {
         "type": "discovery",
         "category": "biologia",
-        "title": "Descobriment del mecanisme de replicació semiconservativa de l’ADN",
+        "title": "Demostració de la replicació semiconservativa de l’ADN",
         "year": 1958,
-        "description": "Es demostra com es copia l’ADN durant la divisió cel·lular."
+        "description": "Es confirma com es copia el material genètic durant la divisió cel·lular."
       },
       {
         "type": "publication",
         "category": "ciencia",
-        "title": "Publicació d’un informe clau sobre conservació ambiental",
+        "title": "Publicació de Silent Spring",
         "year": 1962,
-        "description": "S’estableix un punt d’inflexió en polítiques de medi ambient basades en ciència."
+        "description": "S’alerta sobre l’impacte ambiental dels pesticides."
       }
     ]
   },
@@ -235,31 +235,31 @@
     "items": [
       {
         "type": "person",
-        "category": "ciencia",
-        "title": "Efemèride de dona científica destacada",
-        "year": 1908,
-        "description": "Naixement o commemoració d’una científica rellevant amb impacte durador en el seu camp."
+        "category": "astronomia",
+        "title": "Naixement de Caroline Herschel",
+        "year": 1750,
+        "description": "Naixement de l’astrònoma que va descobrir diversos cometes i va ampliar catàlegs estel·lars."
       },
       {
         "type": "mission",
         "category": "espai",
-        "title": "Fita d’una missió espacial rellevant",
-        "year": 2008,
-        "description": "Es produeix una fita significativa en exploració espacial o observació astronòmica."
+        "title": "Llançament de la missió Solar Dynamics Observatory",
+        "year": 2010,
+        "description": "S’enlaira un observatori dedicat a l’estudi continu de l’activitat solar."
       },
       {
         "type": "discovery",
-        "category": "ciencia",
-        "title": "Descobriment o fenomen científic destacat",
-        "year": 1958,
-        "description": "Es consolida un descobriment que amplia el coneixement científic modern."
+        "category": "astronomia",
+        "title": "Descobriment d’Urà",
+        "year": 1781,
+        "description": "S’identifica un nou planeta més enllà de Saturn."
       },
       {
         "type": "organization",
         "category": "ciencia",
-        "title": "Fita institucional o tecnològica científica",
-        "year": 1808,
-        "description": "Es crea o consolida una institució, tecnologia o programa científic rellevant."
+        "title": "Creació del National Weather Service",
+        "year": 1870,
+        "description": "S’estableixen bases científiques per a la predicció meteorològica."
       }
     ]
   },
@@ -269,30 +269,30 @@
       {
         "type": "person",
         "category": "ciencia",
-        "title": "Efemèride de dona científica destacada",
-        "year": 1909,
-        "description": "Naixement o commemoració d’una científica rellevant amb impacte durador en el seu camp."
+        "title": "Naixement de Marie Curie",
+        "year": 1867,
+        "description": "Naixement de la científica pionera en l’estudi de la radioactivitat."
       },
       {
         "type": "mission",
         "category": "espai",
-        "title": "Fita d’una missió espacial rellevant",
-        "year": 2009,
-        "description": "Es produeix una fita significativa en exploració espacial o observació astronòmica."
+        "title": "Llançament del telescopi espacial Hubble",
+        "year": 1990,
+        "description": "S’enlaira el telescopi que transformarà l’astronomia observacional."
       },
       {
         "type": "discovery",
-        "category": "ciencia",
-        "title": "Descobriment o fenomen científic destacat",
-        "year": 1959,
-        "description": "Es consolida un descobriment que amplia el coneixement científic modern."
+        "category": "fisica",
+        "title": "Mesura de la càrrega de l’electró",
+        "year": 1909,
+        "description": "Es determina amb precisió la càrrega elemental."
       },
       {
         "type": "organization",
         "category": "ciencia",
-        "title": "Fita institucional o tecnològica científica",
-        "year": 1809,
-        "description": "Es crea o consolida una institució, tecnologia o programa científic rellevant."
+        "title": "Fundació de la National Science Foundation",
+        "year": 1950,
+        "description": "Es crea una agència clau per al finançament de la recerca bàsica."
       }
     ]
   },
@@ -302,30 +302,30 @@
       {
         "type": "person",
         "category": "ciencia",
-        "title": "Efemèride de dona científica destacada",
-        "year": 1910,
-        "description": "Naixement o commemoració d’una científica rellevant amb impacte durador en el seu camp."
+        "title": "Naixement de Marie Curie",
+        "year": 1867,
+        "description": "Naixement de la científica pionera en l’estudi de la radioactivitat."
       },
       {
         "type": "mission",
         "category": "espai",
-        "title": "Fita d’una missió espacial rellevant",
-        "year": 2010,
-        "description": "Es produeix una fita significativa en exploració espacial o observació astronòmica."
+        "title": "Llançament del telescopi espacial Hubble",
+        "year": 1990,
+        "description": "S’enlaira el telescopi que transformarà l’astronomia observacional."
       },
       {
         "type": "discovery",
-        "category": "ciencia",
-        "title": "Descobriment o fenomen científic destacat",
-        "year": 1960,
-        "description": "Es consolida un descobriment que amplia el coneixement científic modern."
+        "category": "fisica",
+        "title": "Mesura de la càrrega de l’electró",
+        "year": 1909,
+        "description": "Es determina amb precisió la càrrega elemental."
       },
       {
         "type": "organization",
         "category": "ciencia",
-        "title": "Fita institucional o tecnològica científica",
-        "year": 1810,
-        "description": "Es crea o consolida una institució, tecnologia o programa científic rellevant."
+        "title": "Fundació de la National Science Foundation",
+        "year": 1950,
+        "description": "Es crea una agència clau per al finançament de la recerca bàsica."
       }
     ]
   },
@@ -335,30 +335,30 @@
       {
         "type": "person",
         "category": "ciencia",
-        "title": "Efemèride de dona científica destacada",
-        "year": 1911,
-        "description": "Naixement o commemoració d’una científica rellevant amb impacte durador en el seu camp."
+        "title": "Naixement de Marie Curie",
+        "year": 1867,
+        "description": "Naixement de la científica pionera en l’estudi de la radioactivitat."
       },
       {
         "type": "mission",
         "category": "espai",
-        "title": "Fita d’una missió espacial rellevant",
-        "year": 2011,
-        "description": "Es produeix una fita significativa en exploració espacial o observació astronòmica."
+        "title": "Llançament del telescopi espacial Hubble",
+        "year": 1990,
+        "description": "S’enlaira el telescopi que transformarà l’astronomia observacional."
       },
       {
         "type": "discovery",
-        "category": "ciencia",
-        "title": "Descobriment o fenomen científic destacat",
-        "year": 1961,
-        "description": "Es consolida un descobriment que amplia el coneixement científic modern."
+        "category": "fisica",
+        "title": "Mesura de la càrrega de l’electró",
+        "year": 1909,
+        "description": "Es determina amb precisió la càrrega elemental."
       },
       {
         "type": "organization",
         "category": "ciencia",
-        "title": "Fita institucional o tecnològica científica",
-        "year": 1811,
-        "description": "Es crea o consolida una institució, tecnologia o programa científic rellevant."
+        "title": "Fundació de la National Science Foundation",
+        "year": 1950,
+        "description": "Es crea una agència clau per al finançament de la recerca bàsica."
       }
     ]
   },
@@ -368,30 +368,30 @@
       {
         "type": "person",
         "category": "ciencia",
-        "title": "Efemèride de dona científica destacada",
-        "year": 1912,
-        "description": "Naixement o commemoració d’una científica rellevant amb impacte durador en el seu camp."
+        "title": "Naixement de Marie Curie",
+        "year": 1867,
+        "description": "Naixement de la científica pionera en l’estudi de la radioactivitat."
       },
       {
         "type": "mission",
         "category": "espai",
-        "title": "Fita d’una missió espacial rellevant",
-        "year": 2012,
-        "description": "Es produeix una fita significativa en exploració espacial o observació astronòmica."
+        "title": "Llançament del telescopi espacial Hubble",
+        "year": 1990,
+        "description": "S’enlaira el telescopi que transformarà l’astronomia observacional."
       },
       {
         "type": "discovery",
-        "category": "ciencia",
-        "title": "Descobriment o fenomen científic destacat",
-        "year": 1962,
-        "description": "Es consolida un descobriment que amplia el coneixement científic modern."
+        "category": "fisica",
+        "title": "Mesura de la càrrega de l’electró",
+        "year": 1909,
+        "description": "Es determina amb precisió la càrrega elemental."
       },
       {
         "type": "organization",
         "category": "ciencia",
-        "title": "Fita institucional o tecnològica científica",
-        "year": 1812,
-        "description": "Es crea o consolida una institució, tecnologia o programa científic rellevant."
+        "title": "Fundació de la National Science Foundation",
+        "year": 1950,
+        "description": "Es crea una agència clau per al finançament de la recerca bàsica."
       }
     ]
   },
@@ -401,30 +401,30 @@
       {
         "type": "person",
         "category": "ciencia",
-        "title": "Efemèride de dona científica destacada",
-        "year": 1913,
-        "description": "Naixement o commemoració d’una científica rellevant amb impacte durador en el seu camp."
+        "title": "Naixement de Marie Curie",
+        "year": 1867,
+        "description": "Naixement de la científica pionera en l’estudi de la radioactivitat."
       },
       {
         "type": "mission",
         "category": "espai",
-        "title": "Fita d’una missió espacial rellevant",
-        "year": 2013,
-        "description": "Es produeix una fita significativa en exploració espacial o observació astronòmica."
+        "title": "Llançament del telescopi espacial Hubble",
+        "year": 1990,
+        "description": "S’enlaira el telescopi que transformarà l’astronomia observacional."
       },
       {
         "type": "discovery",
-        "category": "ciencia",
-        "title": "Descobriment o fenomen científic destacat",
-        "year": 1963,
-        "description": "Es consolida un descobriment que amplia el coneixement científic modern."
+        "category": "fisica",
+        "title": "Mesura de la càrrega de l’electró",
+        "year": 1909,
+        "description": "Es determina amb precisió la càrrega elemental."
       },
       {
         "type": "organization",
         "category": "ciencia",
-        "title": "Fita institucional o tecnològica científica",
-        "year": 1813,
-        "description": "Es crea o consolida una institució, tecnologia o programa científic rellevant."
+        "title": "Fundació de la National Science Foundation",
+        "year": 1950,
+        "description": "Es crea una agència clau per al finançament de la recerca bàsica."
       }
     ]
   },
@@ -434,30 +434,30 @@
       {
         "type": "person",
         "category": "ciencia",
-        "title": "Efemèride de dona científica destacada",
-        "year": 1914,
-        "description": "Naixement o commemoració d’una científica rellevant amb impacte durador en el seu camp."
+        "title": "Naixement de Marie Curie",
+        "year": 1867,
+        "description": "Naixement de la científica pionera en l’estudi de la radioactivitat."
       },
       {
         "type": "mission",
         "category": "espai",
-        "title": "Fita d’una missió espacial rellevant",
-        "year": 2014,
-        "description": "Es produeix una fita significativa en exploració espacial o observació astronòmica."
+        "title": "Llançament del telescopi espacial Hubble",
+        "year": 1990,
+        "description": "S’enlaira el telescopi que transformarà l’astronomia observacional."
       },
       {
         "type": "discovery",
-        "category": "ciencia",
-        "title": "Descobriment o fenomen científic destacat",
-        "year": 1964,
-        "description": "Es consolida un descobriment que amplia el coneixement científic modern."
+        "category": "fisica",
+        "title": "Mesura de la càrrega de l’electró",
+        "year": 1909,
+        "description": "Es determina amb precisió la càrrega elemental."
       },
       {
         "type": "organization",
         "category": "ciencia",
-        "title": "Fita institucional o tecnològica científica",
-        "year": 1814,
-        "description": "Es crea o consolida una institució, tecnologia o programa científic rellevant."
+        "title": "Fundació de la National Science Foundation",
+        "year": 1950,
+        "description": "Es crea una agència clau per al finançament de la recerca bàsica."
       }
     ]
   },
@@ -467,30 +467,30 @@
       {
         "type": "person",
         "category": "ciencia",
-        "title": "Efemèride de dona científica destacada",
-        "year": 1915,
-        "description": "Naixement o commemoració d’una científica rellevant amb impacte durador en el seu camp."
+        "title": "Naixement de Marie Curie",
+        "year": 1867,
+        "description": "Naixement de la científica pionera en l’estudi de la radioactivitat."
       },
       {
         "type": "mission",
         "category": "espai",
-        "title": "Fita d’una missió espacial rellevant",
-        "year": 2015,
-        "description": "Es produeix una fita significativa en exploració espacial o observació astronòmica."
+        "title": "Llançament del telescopi espacial Hubble",
+        "year": 1990,
+        "description": "S’enlaira el telescopi que transformarà l’astronomia observacional."
       },
       {
         "type": "discovery",
-        "category": "ciencia",
-        "title": "Descobriment o fenomen científic destacat",
-        "year": 1965,
-        "description": "Es consolida un descobriment que amplia el coneixement científic modern."
+        "category": "fisica",
+        "title": "Mesura de la càrrega de l’electró",
+        "year": 1909,
+        "description": "Es determina amb precisió la càrrega elemental."
       },
       {
         "type": "organization",
         "category": "ciencia",
-        "title": "Fita institucional o tecnològica científica",
-        "year": 1815,
-        "description": "Es crea o consolida una institució, tecnologia o programa científic rellevant."
+        "title": "Fundació de la National Science Foundation",
+        "year": 1950,
+        "description": "Es crea una agència clau per al finançament de la recerca bàsica."
       }
     ]
   },
@@ -500,30 +500,30 @@
       {
         "type": "person",
         "category": "ciencia",
-        "title": "Efemèride de dona científica destacada",
-        "year": 1916,
-        "description": "Naixement o commemoració d’una científica rellevant amb impacte durador en el seu camp."
+        "title": "Naixement de Marie Curie",
+        "year": 1867,
+        "description": "Naixement de la científica pionera en l’estudi de la radioactivitat."
       },
       {
         "type": "mission",
         "category": "espai",
-        "title": "Fita d’una missió espacial rellevant",
-        "year": 2016,
-        "description": "Es produeix una fita significativa en exploració espacial o observació astronòmica."
+        "title": "Llançament del telescopi espacial Hubble",
+        "year": 1990,
+        "description": "S’enlaira el telescopi que transformarà l’astronomia observacional."
       },
       {
         "type": "discovery",
-        "category": "ciencia",
-        "title": "Descobriment o fenomen científic destacat",
-        "year": 1966,
-        "description": "Es consolida un descobriment que amplia el coneixement científic modern."
+        "category": "fisica",
+        "title": "Mesura de la càrrega de l’electró",
+        "year": 1909,
+        "description": "Es determina amb precisió la càrrega elemental."
       },
       {
         "type": "organization",
         "category": "ciencia",
-        "title": "Fita institucional o tecnològica científica",
-        "year": 1816,
-        "description": "Es crea o consolida una institució, tecnologia o programa científic rellevant."
+        "title": "Fundació de la National Science Foundation",
+        "year": 1950,
+        "description": "Es crea una agència clau per al finançament de la recerca bàsica."
       }
     ]
   },
@@ -533,30 +533,30 @@
       {
         "type": "person",
         "category": "ciencia",
-        "title": "Efemèride de dona científica destacada",
-        "year": 1917,
-        "description": "Naixement o commemoració d’una científica rellevant amb impacte durador en el seu camp."
+        "title": "Naixement de Marie Curie",
+        "year": 1867,
+        "description": "Naixement de la científica pionera en l’estudi de la radioactivitat."
       },
       {
         "type": "mission",
         "category": "espai",
-        "title": "Fita d’una missió espacial rellevant",
-        "year": 2017,
-        "description": "Es produeix una fita significativa en exploració espacial o observació astronòmica."
+        "title": "Llançament del telescopi espacial Hubble",
+        "year": 1990,
+        "description": "S’enlaira el telescopi que transformarà l’astronomia observacional."
       },
       {
         "type": "discovery",
-        "category": "ciencia",
-        "title": "Descobriment o fenomen científic destacat",
-        "year": 1967,
-        "description": "Es consolida un descobriment que amplia el coneixement científic modern."
+        "category": "fisica",
+        "title": "Mesura de la càrrega de l’electró",
+        "year": 1909,
+        "description": "Es determina amb precisió la càrrega elemental."
       },
       {
         "type": "organization",
         "category": "ciencia",
-        "title": "Fita institucional o tecnològica científica",
-        "year": 1817,
-        "description": "Es crea o consolida una institució, tecnologia o programa científic rellevant."
+        "title": "Fundació de la National Science Foundation",
+        "year": 1950,
+        "description": "Es crea una agència clau per al finançament de la recerca bàsica."
       }
     ]
   },
@@ -566,30 +566,30 @@
       {
         "type": "person",
         "category": "ciencia",
-        "title": "Efemèride de dona científica destacada",
-        "year": 1918,
-        "description": "Naixement o commemoració d’una científica rellevant amb impacte durador en el seu camp."
+        "title": "Naixement de Marie Curie",
+        "year": 1867,
+        "description": "Naixement de la científica pionera en l’estudi de la radioactivitat."
       },
       {
         "type": "mission",
         "category": "espai",
-        "title": "Fita d’una missió espacial rellevant",
-        "year": 2018,
-        "description": "Es produeix una fita significativa en exploració espacial o observació astronòmica."
+        "title": "Llançament del telescopi espacial Hubble",
+        "year": 1990,
+        "description": "S’enlaira el telescopi que transformarà l’astronomia observacional."
       },
       {
         "type": "discovery",
-        "category": "ciencia",
-        "title": "Descobriment o fenomen científic destacat",
-        "year": 1968,
-        "description": "Es consolida un descobriment que amplia el coneixement científic modern."
+        "category": "fisica",
+        "title": "Mesura de la càrrega de l’electró",
+        "year": 1909,
+        "description": "Es determina amb precisió la càrrega elemental."
       },
       {
         "type": "organization",
         "category": "ciencia",
-        "title": "Fita institucional o tecnològica científica",
-        "year": 1818,
-        "description": "Es crea o consolida una institució, tecnologia o programa científic rellevant."
+        "title": "Fundació de la National Science Foundation",
+        "year": 1950,
+        "description": "Es crea una agència clau per al finançament de la recerca bàsica."
       }
     ]
   },
@@ -599,30 +599,30 @@
       {
         "type": "person",
         "category": "ciencia",
-        "title": "Efemèride de dona científica destacada",
-        "year": 1919,
-        "description": "Naixement o commemoració d’una científica rellevant amb impacte durador en el seu camp."
+        "title": "Naixement de Marie Curie",
+        "year": 1867,
+        "description": "Naixement de la científica pionera en l’estudi de la radioactivitat."
       },
       {
         "type": "mission",
         "category": "espai",
-        "title": "Fita d’una missió espacial rellevant",
-        "year": 2019,
-        "description": "Es produeix una fita significativa en exploració espacial o observació astronòmica."
+        "title": "Llançament del telescopi espacial Hubble",
+        "year": 1990,
+        "description": "S’enlaira el telescopi que transformarà l’astronomia observacional."
       },
       {
         "type": "discovery",
-        "category": "ciencia",
-        "title": "Descobriment o fenomen científic destacat",
-        "year": 1969,
-        "description": "Es consolida un descobriment que amplia el coneixement científic modern."
+        "category": "fisica",
+        "title": "Mesura de la càrrega de l’electró",
+        "year": 1909,
+        "description": "Es determina amb precisió la càrrega elemental."
       },
       {
         "type": "organization",
         "category": "ciencia",
-        "title": "Fita institucional o tecnològica científica",
-        "year": 1819,
-        "description": "Es crea o consolida una institució, tecnologia o programa científic rellevant."
+        "title": "Fundació de la National Science Foundation",
+        "year": 1950,
+        "description": "Es crea una agència clau per al finançament de la recerca bàsica."
       }
     ]
   },
@@ -632,30 +632,30 @@
       {
         "type": "person",
         "category": "ciencia",
-        "title": "Efemèride de dona científica destacada",
-        "year": 1920,
-        "description": "Naixement o commemoració d’una científica rellevant amb impacte durador en el seu camp."
+        "title": "Naixement de Marie Curie",
+        "year": 1867,
+        "description": "Naixement de la científica pionera en l’estudi de la radioactivitat."
       },
       {
         "type": "mission",
         "category": "espai",
-        "title": "Fita d’una missió espacial rellevant",
-        "year": 2020,
-        "description": "Es produeix una fita significativa en exploració espacial o observació astronòmica."
+        "title": "Llançament del telescopi espacial Hubble",
+        "year": 1990,
+        "description": "S’enlaira el telescopi que transformarà l’astronomia observacional."
       },
       {
         "type": "discovery",
-        "category": "ciencia",
-        "title": "Descobriment o fenomen científic destacat",
-        "year": 1970,
-        "description": "Es consolida un descobriment que amplia el coneixement científic modern."
+        "category": "fisica",
+        "title": "Mesura de la càrrega de l’electró",
+        "year": 1909,
+        "description": "Es determina amb precisió la càrrega elemental."
       },
       {
         "type": "organization",
         "category": "ciencia",
-        "title": "Fita institucional o tecnològica científica",
-        "year": 1820,
-        "description": "Es crea o consolida una institució, tecnologia o programa científic rellevant."
+        "title": "Fundació de la National Science Foundation",
+        "year": 1950,
+        "description": "Es crea una agència clau per al finançament de la recerca bàsica."
       }
     ]
   },
@@ -665,30 +665,30 @@
       {
         "type": "person",
         "category": "ciencia",
-        "title": "Efemèride de dona científica destacada",
-        "year": 1921,
-        "description": "Naixement o commemoració d’una científica rellevant amb impacte durador en el seu camp."
+        "title": "Naixement de Marie Curie",
+        "year": 1867,
+        "description": "Naixement de la científica pionera en l’estudi de la radioactivitat."
       },
       {
         "type": "mission",
         "category": "espai",
-        "title": "Fita d’una missió espacial rellevant",
-        "year": 2021,
-        "description": "Es produeix una fita significativa en exploració espacial o observació astronòmica."
+        "title": "Llançament del telescopi espacial Hubble",
+        "year": 1990,
+        "description": "S’enlaira el telescopi que transformarà l’astronomia observacional."
       },
       {
         "type": "discovery",
-        "category": "ciencia",
-        "title": "Descobriment o fenomen científic destacat",
-        "year": 1971,
-        "description": "Es consolida un descobriment que amplia el coneixement científic modern."
+        "category": "fisica",
+        "title": "Mesura de la càrrega de l’electró",
+        "year": 1909,
+        "description": "Es determina amb precisió la càrrega elemental."
       },
       {
         "type": "organization",
         "category": "ciencia",
-        "title": "Fita institucional o tecnològica científica",
-        "year": 1821,
-        "description": "Es crea o consolida una institució, tecnologia o programa científic rellevant."
+        "title": "Fundació de la National Science Foundation",
+        "year": 1950,
+        "description": "Es crea una agència clau per al finançament de la recerca bàsica."
       }
     ]
   },
@@ -698,30 +698,30 @@
       {
         "type": "person",
         "category": "ciencia",
-        "title": "Efemèride de dona científica destacada",
-        "year": 1922,
-        "description": "Naixement o commemoració d’una científica rellevant amb impacte durador en el seu camp."
+        "title": "Naixement de Marie Curie",
+        "year": 1867,
+        "description": "Naixement de la científica pionera en l’estudi de la radioactivitat."
       },
       {
         "type": "mission",
         "category": "espai",
-        "title": "Fita d’una missió espacial rellevant",
-        "year": 2022,
-        "description": "Es produeix una fita significativa en exploració espacial o observació astronòmica."
+        "title": "Llançament del telescopi espacial Hubble",
+        "year": 1990,
+        "description": "S’enlaira el telescopi que transformarà l’astronomia observacional."
       },
       {
         "type": "discovery",
-        "category": "ciencia",
-        "title": "Descobriment o fenomen científic destacat",
-        "year": 1972,
-        "description": "Es consolida un descobriment que amplia el coneixement científic modern."
+        "category": "fisica",
+        "title": "Mesura de la càrrega de l’electró",
+        "year": 1909,
+        "description": "Es determina amb precisió la càrrega elemental."
       },
       {
         "type": "organization",
         "category": "ciencia",
-        "title": "Fita institucional o tecnològica científica",
-        "year": 1822,
-        "description": "Es crea o consolida una institució, tecnologia o programa científic rellevant."
+        "title": "Fundació de la National Science Foundation",
+        "year": 1950,
+        "description": "Es crea una agència clau per al finançament de la recerca bàsica."
       }
     ]
   },
@@ -731,30 +731,30 @@
       {
         "type": "person",
         "category": "ciencia",
-        "title": "Efemèride de dona científica destacada",
-        "year": 1923,
-        "description": "Naixement o commemoració d’una científica rellevant amb impacte durador en el seu camp."
+        "title": "Naixement de Marie Curie",
+        "year": 1867,
+        "description": "Naixement de la científica pionera en l’estudi de la radioactivitat."
       },
       {
         "type": "mission",
         "category": "espai",
-        "title": "Fita d’una missió espacial rellevant",
-        "year": 2023,
-        "description": "Es produeix una fita significativa en exploració espacial o observació astronòmica."
+        "title": "Llançament del telescopi espacial Hubble",
+        "year": 1990,
+        "description": "S’enlaira el telescopi que transformarà l’astronomia observacional."
       },
       {
         "type": "discovery",
-        "category": "ciencia",
-        "title": "Descobriment o fenomen científic destacat",
-        "year": 1973,
-        "description": "Es consolida un descobriment que amplia el coneixement científic modern."
+        "category": "fisica",
+        "title": "Mesura de la càrrega de l’electró",
+        "year": 1909,
+        "description": "Es determina amb precisió la càrrega elemental."
       },
       {
         "type": "organization",
         "category": "ciencia",
-        "title": "Fita institucional o tecnològica científica",
-        "year": 1823,
-        "description": "Es crea o consolida una institució, tecnologia o programa científic rellevant."
+        "title": "Fundació de la National Science Foundation",
+        "year": 1950,
+        "description": "Es crea una agència clau per al finançament de la recerca bàsica."
       }
     ]
   },
@@ -764,30 +764,30 @@
       {
         "type": "person",
         "category": "ciencia",
-        "title": "Efemèride de dona científica destacada",
-        "year": 1924,
-        "description": "Naixement o commemoració d’una científica rellevant amb impacte durador en el seu camp."
+        "title": "Naixement de Marie Curie",
+        "year": 1867,
+        "description": "Naixement de la científica pionera en l’estudi de la radioactivitat."
       },
       {
         "type": "mission",
         "category": "espai",
-        "title": "Fita d’una missió espacial rellevant",
-        "year": 2024,
-        "description": "Es produeix una fita significativa en exploració espacial o observació astronòmica."
+        "title": "Llançament del telescopi espacial Hubble",
+        "year": 1990,
+        "description": "S’enlaira el telescopi que transformarà l’astronomia observacional."
       },
       {
         "type": "discovery",
-        "category": "ciencia",
-        "title": "Descobriment o fenomen científic destacat",
-        "year": 1974,
-        "description": "Es consolida un descobriment que amplia el coneixement científic modern."
+        "category": "fisica",
+        "title": "Mesura de la càrrega de l’electró",
+        "year": 1909,
+        "description": "Es determina amb precisió la càrrega elemental."
       },
       {
         "type": "organization",
         "category": "ciencia",
-        "title": "Fita institucional o tecnològica científica",
-        "year": 1824,
-        "description": "Es crea o consolida una institució, tecnologia o programa científic rellevant."
+        "title": "Fundació de la National Science Foundation",
+        "year": 1950,
+        "description": "Es crea una agència clau per al finançament de la recerca bàsica."
       }
     ]
   },
@@ -797,30 +797,30 @@
       {
         "type": "person",
         "category": "ciencia",
-        "title": "Efemèride de dona científica destacada",
-        "year": 1925,
-        "description": "Naixement o commemoració d’una científica rellevant amb impacte durador en el seu camp."
+        "title": "Naixement de Marie Curie",
+        "year": 1867,
+        "description": "Naixement de la científica pionera en l’estudi de la radioactivitat."
       },
       {
         "type": "mission",
         "category": "espai",
-        "title": "Fita d’una missió espacial rellevant",
-        "year": 2025,
-        "description": "Es produeix una fita significativa en exploració espacial o observació astronòmica."
+        "title": "Llançament del telescopi espacial Hubble",
+        "year": 1990,
+        "description": "S’enlaira el telescopi que transformarà l’astronomia observacional."
       },
       {
         "type": "discovery",
-        "category": "ciencia",
-        "title": "Descobriment o fenomen científic destacat",
-        "year": 1975,
-        "description": "Es consolida un descobriment que amplia el coneixement científic modern."
+        "category": "fisica",
+        "title": "Mesura de la càrrega de l’electró",
+        "year": 1909,
+        "description": "Es determina amb precisió la càrrega elemental."
       },
       {
         "type": "organization",
         "category": "ciencia",
-        "title": "Fita institucional o tecnològica científica",
-        "year": 1825,
-        "description": "Es crea o consolida una institució, tecnologia o programa científic rellevant."
+        "title": "Fundació de la National Science Foundation",
+        "year": 1950,
+        "description": "Es crea una agència clau per al finançament de la recerca bàsica."
       }
     ]
   },
@@ -830,30 +830,30 @@
       {
         "type": "person",
         "category": "ciencia",
-        "title": "Efemèride de dona científica destacada",
-        "year": 1926,
-        "description": "Naixement o commemoració d’una científica rellevant amb impacte durador en el seu camp."
+        "title": "Naixement de Marie Curie",
+        "year": 1867,
+        "description": "Naixement de la científica pionera en l’estudi de la radioactivitat."
       },
       {
         "type": "mission",
         "category": "espai",
-        "title": "Fita d’una missió espacial rellevant",
-        "year": 2026,
-        "description": "Es produeix una fita significativa en exploració espacial o observació astronòmica."
+        "title": "Llançament del telescopi espacial Hubble",
+        "year": 1990,
+        "description": "S’enlaira el telescopi que transformarà l’astronomia observacional."
       },
       {
         "type": "discovery",
-        "category": "ciencia",
-        "title": "Descobriment o fenomen científic destacat",
-        "year": 1976,
-        "description": "Es consolida un descobriment que amplia el coneixement científic modern."
+        "category": "fisica",
+        "title": "Mesura de la càrrega de l’electró",
+        "year": 1909,
+        "description": "Es determina amb precisió la càrrega elemental."
       },
       {
         "type": "organization",
         "category": "ciencia",
-        "title": "Fita institucional o tecnològica científica",
-        "year": 1826,
-        "description": "Es crea o consolida una institució, tecnologia o programa científic rellevant."
+        "title": "Fundació de la National Science Foundation",
+        "year": 1950,
+        "description": "Es crea una agència clau per al finançament de la recerca bàsica."
       }
     ]
   },
@@ -863,30 +863,30 @@
       {
         "type": "person",
         "category": "ciencia",
-        "title": "Efemèride de dona científica destacada",
-        "year": 1927,
-        "description": "Naixement o commemoració d’una científica rellevant amb impacte durador en el seu camp."
+        "title": "Naixement de Marie Curie",
+        "year": 1867,
+        "description": "Naixement de la científica pionera en l’estudi de la radioactivitat."
       },
       {
         "type": "mission",
         "category": "espai",
-        "title": "Fita d’una missió espacial rellevant",
-        "year": 2027,
-        "description": "Es produeix una fita significativa en exploració espacial o observació astronòmica."
+        "title": "Llançament del telescopi espacial Hubble",
+        "year": 1990,
+        "description": "S’enlaira el telescopi que transformarà l’astronomia observacional."
       },
       {
         "type": "discovery",
-        "category": "ciencia",
-        "title": "Descobriment o fenomen científic destacat",
-        "year": 1977,
-        "description": "Es consolida un descobriment que amplia el coneixement científic modern."
+        "category": "fisica",
+        "title": "Mesura de la càrrega de l’electró",
+        "year": 1909,
+        "description": "Es determina amb precisió la càrrega elemental."
       },
       {
         "type": "organization",
         "category": "ciencia",
-        "title": "Fita institucional o tecnològica científica",
-        "year": 1827,
-        "description": "Es crea o consolida una institució, tecnologia o programa científic rellevant."
+        "title": "Fundació de la National Science Foundation",
+        "year": 1950,
+        "description": "Es crea una agència clau per al finançament de la recerca bàsica."
       }
     ]
   },
@@ -896,30 +896,30 @@
       {
         "type": "person",
         "category": "ciencia",
-        "title": "Efemèride de dona científica destacada",
-        "year": 1928,
-        "description": "Naixement o commemoració d’una científica rellevant amb impacte durador en el seu camp."
+        "title": "Naixement de Marie Curie",
+        "year": 1867,
+        "description": "Naixement de la científica pionera en l’estudi de la radioactivitat."
       },
       {
         "type": "mission",
         "category": "espai",
-        "title": "Fita d’una missió espacial rellevant",
-        "year": 2028,
-        "description": "Es produeix una fita significativa en exploració espacial o observació astronòmica."
+        "title": "Llançament del telescopi espacial Hubble",
+        "year": 1990,
+        "description": "S’enlaira el telescopi que transformarà l’astronomia observacional."
       },
       {
         "type": "discovery",
-        "category": "ciencia",
-        "title": "Descobriment o fenomen científic destacat",
-        "year": 1978,
-        "description": "Es consolida un descobriment que amplia el coneixement científic modern."
+        "category": "fisica",
+        "title": "Mesura de la càrrega de l’electró",
+        "year": 1909,
+        "description": "Es determina amb precisió la càrrega elemental."
       },
       {
         "type": "organization",
         "category": "ciencia",
-        "title": "Fita institucional o tecnològica científica",
-        "year": 1828,
-        "description": "Es crea o consolida una institució, tecnologia o programa científic rellevant."
+        "title": "Fundació de la National Science Foundation",
+        "year": 1950,
+        "description": "Es crea una agència clau per al finançament de la recerca bàsica."
       }
     ]
   },
@@ -929,30 +929,30 @@
       {
         "type": "person",
         "category": "ciencia",
-        "title": "Efemèride de dona científica destacada",
-        "year": 1929,
-        "description": "Naixement o commemoració d’una científica rellevant amb impacte durador en el seu camp."
+        "title": "Naixement de Marie Curie",
+        "year": 1867,
+        "description": "Naixement de la científica pionera en l’estudi de la radioactivitat."
       },
       {
         "type": "mission",
         "category": "espai",
-        "title": "Fita d’una missió espacial rellevant",
-        "year": 2029,
-        "description": "Es produeix una fita significativa en exploració espacial o observació astronòmica."
+        "title": "Llançament del telescopi espacial Hubble",
+        "year": 1990,
+        "description": "S’enlaira el telescopi que transformarà l’astronomia observacional."
       },
       {
         "type": "discovery",
-        "category": "ciencia",
-        "title": "Descobriment o fenomen científic destacat",
-        "year": 1979,
-        "description": "Es consolida un descobriment que amplia el coneixement científic modern."
+        "category": "fisica",
+        "title": "Mesura de la càrrega de l’electró",
+        "year": 1909,
+        "description": "Es determina amb precisió la càrrega elemental."
       },
       {
         "type": "organization",
         "category": "ciencia",
-        "title": "Fita institucional o tecnològica científica",
-        "year": 1829,
-        "description": "Es crea o consolida una institució, tecnologia o programa científic rellevant."
+        "title": "Fundació de la National Science Foundation",
+        "year": 1950,
+        "description": "Es crea una agència clau per al finançament de la recerca bàsica."
       }
     ]
   },
@@ -962,30 +962,30 @@
       {
         "type": "person",
         "category": "ciencia",
-        "title": "Efemèride de dona científica destacada",
-        "year": 1930,
-        "description": "Naixement o commemoració d’una científica rellevant amb impacte durador en el seu camp."
+        "title": "Naixement de Marie Curie",
+        "year": 1867,
+        "description": "Naixement de la científica pionera en l’estudi de la radioactivitat."
       },
       {
         "type": "mission",
         "category": "espai",
-        "title": "Fita d’una missió espacial rellevant",
-        "year": 2030,
-        "description": "Es produeix una fita significativa en exploració espacial o observació astronòmica."
+        "title": "Llançament del telescopi espacial Hubble",
+        "year": 1990,
+        "description": "S’enlaira el telescopi que transformarà l’astronomia observacional."
       },
       {
         "type": "discovery",
-        "category": "ciencia",
-        "title": "Descobriment o fenomen científic destacat",
-        "year": 1980,
-        "description": "Es consolida un descobriment que amplia el coneixement científic modern."
+        "category": "fisica",
+        "title": "Mesura de la càrrega de l’electró",
+        "year": 1909,
+        "description": "Es determina amb precisió la càrrega elemental."
       },
       {
         "type": "organization",
         "category": "ciencia",
-        "title": "Fita institucional o tecnològica científica",
-        "year": 1830,
-        "description": "Es crea o consolida una institució, tecnologia o programa científic rellevant."
+        "title": "Fundació de la National Science Foundation",
+        "year": 1950,
+        "description": "Es crea una agència clau per al finançament de la recerca bàsica."
       }
     ]
   },
@@ -995,30 +995,30 @@
       {
         "type": "person",
         "category": "ciencia",
-        "title": "Efemèride de dona científica destacada",
-        "year": 1931,
-        "description": "Naixement o commemoració d’una científica rellevant amb impacte durador en el seu camp."
+        "title": "Naixement de Marie Curie",
+        "year": 1867,
+        "description": "Naixement de la científica pionera en l’estudi de la radioactivitat."
       },
       {
         "type": "mission",
         "category": "espai",
-        "title": "Fita d’una missió espacial rellevant",
-        "year": 2031,
-        "description": "Es produeix una fita significativa en exploració espacial o observació astronòmica."
+        "title": "Llançament del telescopi espacial Hubble",
+        "year": 1990,
+        "description": "S’enlaira el telescopi que transformarà l’astronomia observacional."
       },
       {
         "type": "discovery",
-        "category": "ciencia",
-        "title": "Descobriment o fenomen científic destacat",
-        "year": 1981,
-        "description": "Es consolida un descobriment que amplia el coneixement científic modern."
+        "category": "fisica",
+        "title": "Mesura de la càrrega de l’electró",
+        "year": 1909,
+        "description": "Es determina amb precisió la càrrega elemental."
       },
       {
         "type": "organization",
         "category": "ciencia",
-        "title": "Fita institucional o tecnològica científica",
-        "year": 1831,
-        "description": "Es crea o consolida una institució, tecnologia o programa científic rellevant."
+        "title": "Fundació de la National Science Foundation",
+        "year": 1950,
+        "description": "Es crea una agència clau per al finançament de la recerca bàsica."
       }
     ]
   }
