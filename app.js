@@ -916,10 +916,16 @@ const histItems = renderHistoricItems(rawHist);
 
   contingutDia.innerHTML = `
     <!-- 1) Data -->
-    <div class="dia-header">
-      <div class="dia-date">${isoToDDMMYYYY(iso)}</div>
-      ${nomFestiu ? `<div class="dia-festiu">🎉 ${nomFestiu}</div>` : ""}
-    </div>
+    <div class="dia-header dia-header-nav">
+  <button class="dia-nav dia-prev" data-dir="-1" aria-label="Dia anterior">◀</button>
+
+  <div class="dia-date">${isoToDDMMYYYY(iso)}</div>
+
+  <button class="dia-nav dia-next" data-dir="1" aria-label="Dia següent">▶</button>
+</div>
+
+${nomFestiu ? `<div class="dia-festiu">🎉 ${nomFestiu}</div>` : ""}
+
 
     <!-- 2) Activitat (només si n'hi ha) -->
     ${activitatHtml}
