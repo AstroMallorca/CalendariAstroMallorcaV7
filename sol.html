@@ -88,29 +88,31 @@
   <script src="https://cdn.jsdelivr.net/npm/astronomy-engine@2.1.19/astronomy.browser.min.js"></script>
 
   <script>
-    const p = new URLSearchParams(location.search);
+   const p = new URLSearchParams(location.search);
 
-    const dateStr = p.get("date"); // "YYYY-MM-DD"
-    const lat  = Number(p.get("lat"));
-    const lon  = Number(p.get("lon"));
-    const elev = Number(p.get("elev"));
+const dateStr = p.get("date"); // "YYYY-MM-DD"
+const lat  = Number(p.get("lat"));
+const lon  = Number(p.get("lon"));
+const elev = Number(p.get("elev"));
 
-    // Fallback (Palma aprox) si no arriba res
-    const observer = {
-      latitude:  Number.isFinite(lat) ? lat : 39.5696,
-      longitude: Number.isFinite(lon) ? lon : 2.6502,
-      elevation: Number.isFinite(elev) ? elev : 
-    };
-    const obs = new Astronomy.Observer(observer.latitude, observer.longitude, observer.elevation);
+// Fallback (Palma aprox) si no arriba res
+const observer = {
+  latitude:  Number.isFinite(lat) ? lat : 39.5696,
+  longitude: Number.isFinite(lon) ? lon : 2.6502,
+  elevation: Number.isFinite(elev) ? elev : 0
+};
 
-    // Data base en hora local del dispositiu
-    function parseISODateLocal(iso){
-      if (!iso || !/^\d{4}-\d{2}-\d{2}$/.test(iso)) return new Date();
-      const [y,m,d] = iso.split("-").map(Number);
-      return new Date(y, m-1, d, 0, 0, 0);
-    }
+// ✅ IMPORTANT: Astronomy Engine necessita un Observer real
+const obs = new Astronomy.Observer(observer.latitude, observer.longitude, observer.elevation);
 
-    const day0 = parseISODateLocal(dateStr);
+// Data base en hora local del dispositiu
+function parseISODateLocal(iso){
+  if (!iso || !/^\d{4}-\d{2}-\d{2}$/.test(iso)) return new Date();
+  const [y,m,d] = iso.split("-").map(Number);
+  return new Date(y, m-1, d, 0, 0, 0);
+}
+
+const day0 = parseISODateLocal(dateStr);
 
     document.getElementById("back").addEventListener("click", (e) => {
       e.preventDefault();
