@@ -982,6 +982,7 @@ ${nomFestiu ? `<div class="dia-festiu">🎉 ${nomFestiu}</div>` : ""}
     <!-- 6) Efemèrides històriques (al final) -->
     ${historicHtml}
   `;
+    const obsQ = `&lat=${encodeURIComponent(APP_OBSERVER.latitude)}&lon=${encodeURIComponent(APP_OBSERVER.longitude)}&elev=${encodeURIComponent(APP_OBSERVER.elevation ?? 0)}`;
 
   // Clickables
   contingutDia.querySelectorAll(".dia-link").forEach(el => {
