@@ -203,13 +203,13 @@ function tryAltitudeCrossing(altDeg, direction, startDate){
 
   const sunrise     = tryRiseSet(+1, startMorning);
 
-  let solarNoon = null;
+  llet solarNoon = null;
 let maxAlt = NaN;
 
 try{
-  const t0 = Astronomy.MakeTime(startMorning);
-  const t  = Astronomy.SearchTransit(Astronomy.Body.Sun, obs, t0, 2); // ✅ retorna AstroTime
-  solarNoon = (t && t.date) ? new Date(t.date.getTime()) : null;
+  const tr = Astronomy.SearchTransit(Astronomy.Body.Sun, obs, startMorning, 2); // ✅ startMorning és Date
+  // tr és un AstroTime (no un objecte amb .time)
+  solarNoon = (tr && tr.date) ? new Date(tr.date.getTime()) : null;
 
   if (solarNoon) {
     maxAlt = sunAltitudeAt(solarNoon);
