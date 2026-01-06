@@ -804,13 +804,15 @@ function dibuixaMes(isoYM) {
       : "";
 
     // fons lluna fosca (si existeix en efemèrides)
-    if (info?.lluna_foscor?.color) {
-      cel.style.background = info.lluna_foscor.color;
-      cel.style.color =
-        (info.lluna_foscor.color === "#000000" || info.lluna_foscor.color === "#333333")
-          ? "#fff"
-          : "#000";
-    }
+// IMPORTANT: no ho apliquis en diumenge/festiu perquè taparia el verd
+if (info?.lluna_foscor?.color && !(esDiumenge || esFestiu)) {
+  cel.style.background = info.lluna_foscor.color;
+  cel.style.color =
+    (info.lluna_foscor.color === "#000000" || info.lluna_foscor.color === "#333333")
+      ? "#fff"
+      : "#000";
+}
+
 
     cel.innerHTML = `
       <div class="num">${d}</div>
@@ -953,38 +955,37 @@ ${nomFestiu ? `<div class="dia-festiu">🎉 ${nomFestiu}</div>` : ""}
     ${especialsHtml}
 
     <!-- 5) Bloc Sol/Lluna/Planetes/Messiers -->
-    <div class="dia-row dia-link" data-href="sol.html?date=${iso}${obsQ}">
+<div class="dia-row dia-link" data-href="sol.html?date=${iso}${obsQ}">
   <div class="dia-row-icon">🌞</div>
   <div class="dia-row-text">
     <div class="dia-row-title">Sortida i posta de Sol</div>
     <div class="dia-row-sub">${solTxt}</div>
-      </div>
+  </div>
 </div>
 
-      <div class="dia-row dia-link" data-href="lluna.html?date=${iso}${obsQ}">
-        <div class="dia-row-icon">🌙</div>
-        <div class="dia-row-text">
-          <div class="dia-row-title">Sortida i posta de Lluna</div>
-          <div class="dia-row-sub">${llunaTxt}</div>
-        </div>
-      </div>
+<div class="dia-row dia-link" data-href="lluna.html?date=${iso}${obsQ}">
+  <div class="dia-row-icon">🌙</div>
+  <div class="dia-row-text">
+    <div class="dia-row-title">Sortida i posta de Lluna</div>
+    <div class="dia-row-sub">${llunaTxt}</div>
+  </div>
+</div>
 
-      <div class="dia-row dia-link" data-href="planetes.html?date=${iso}${obsQ}">
-        <div class="dia-row-icon">🪐</div>
-        <div class="dia-row-text">
-          <div class="dia-row-title">Planetes visibles</div>
-          <div class="dia-row-sub">Obre per veure detalls</div>
-        </div>
-      </div>
+<div class="dia-row dia-link" data-href="planetes.html?date=${iso}${obsQ}">
+  <div class="dia-row-icon">🪐</div>
+  <div class="dia-row-text">
+    <div class="dia-row-title">Planetes visibles</div>
+    <div class="dia-row-sub">Obre per veure detalls</div>
+  </div>
+</div>
 
-      <div class="dia-row dia-link" data-href="messiers.html?date=${iso}${obsQ}">
-        <div class="dia-row-icon">🌌</div>
-        <div class="dia-row-text">
-          <div class="dia-row-title">Messiers visibles</div>
-          <div class="dia-row-sub">Obre per veure detalls</div>
-        </div>
-      </div>
-    </div>
+<div class="dia-row dia-link" data-href="messiers.html?date=${iso}${obsQ}">
+  <div class="dia-row-icon">🌌</div>
+  <div class="dia-row-text">
+    <div class="dia-row-title">Messiers visibles</div>
+    <div class="dia-row-sub">Obre per veure detalls</div>
+  </div>
+</div>
 
     <!-- 6) Efemèrides històriques (al final) -->
     ${historicHtml}
