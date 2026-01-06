@@ -84,236 +84,213 @@
     <div class="err" id="err" style="display:none"></div>
   </div>
 
-  <!-- astronomy-engine (mateixa llibreria que ja tens a index.html) -->
- <script src="assets/js/astronomy.browser.min.js"></script>
+  <!-- astronomy-engine (local) -->
+  <script src="assets/js/astronomy.browser.min.js"></script>
+
   <script>
-  console.log("Astronomy loaded?", typeof Astronomy, Astronomy?.SearchRiseSet);
-</script>
- <script>
-  const p = new URLSearchParams(location.search);
+    // Debug curt (el pots llevar després)
+    console.log("Astronomy loaded?", typeof Astronomy, Astronomy?.SearchRiseSet);
 
-  const dateStr = p.get("date"); // "YYYY-MM-DD"
-  const lat  = Number(p.get("lat"));
-  const lon  = Number(p.get("lon"));
-  const elev = Number(p.get("elev"));
+    const p = new URLSearchParams(location.search);
 
-  // Fallback (Palma aprox) si no arriba res
-  const observer = {
-    latitude:  Number.isFinite(lat) ? lat : 39.5696,
-    longitude: Number.isFinite(lon) ? lon : 2.6502,
-    elevation: Number.isFinite(elev) ? elev : 0
-  };
+    const dateStr = p.get("date"); // "YYYY-MM-DD"
+    const lat  = Number(p.get("lat"));
+    const lon  = Number(p.get("lon"));
+    const elev = Number(p.get("elev"));
 
-  // ✅ Astronomy Engine necessita un Observer real
-  const obs = new Astronomy.Observer(observer.latitude, observer.longitude, observer.elevation);
+    // Fallback (Palma aprox) si no arriba res
+    const observer = {
+      latitude:  Number.isFinite(lat) ? lat : 39.5696,
+      longitude: Number.isFinite(lon) ? lon : 2.6502,
+      elevation: Number.isFinite(elev) ? elev : 0
+    };
 
-  function parseISODateLocal(iso){
-    if (!iso || !/^\d{4}-\d{2}-\d{2}$/.test(iso)) return new Date();
-    const [y,m,d] = iso.split("-").map(Number);
-    return new Date(y, m-1, d, 0, 0, 0);
-  }
+    // ✅ Astronomy Engine necessita un Observer real
+    const obs = new Astronomy.Observer(observer.latitude, observer.longitude, observer.elevation);
 
-  const day0 = parseISODateLocal(dateStr);
-  try {
-
-  document.getElementById("back").addEventListener("click", (e) => {
-    e.preventDefault();
-    window.history.back();
-  });
-
-  function fmtHM(date){
-    if (!date) return "--:--";
-    return date.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", hour12: false });
-  }
-
-  function fmtDur(ms){
-    if (!Number.isFinite(ms) || ms < 0) return "—";
-    const totalMin = Math.round(ms / 60000);
-    const h = Math.floor(totalMin / 60);
-    const m = totalMin % 60;
-    return `${h}h ${String(m).padStart(2,"0")}m`;
-  }
-
- function tryRiseSet(direction, startDate){
-  try{
-    const t0 = Astronomy.MakeTime(startDate);
-    const t  = Astronomy.SearchRiseSet(Astronomy.Body.Sun, obs, direction, t0, 2, 0);
-    // ✅ t és AstroTime, no {time: ...}
-    return (t && t.date) ? new Date(t.date.getTime()) : null;
-  }catch(e){
-    console.warn("SearchRiseSet error:", e);
-    return null;
-  }
-}
-
-function tryAltitudeCrossing(altDeg, direction, startDate){
-  try{
-    const t0 = Astronomy.MakeTime(startDate);
-    const t  = Astronomy.SearchAltitude(Astronomy.Body.Sun, obs, direction, t0, 2, altDeg);
-    // ✅ t és AstroTime, no {time: ...}
-    return (t && t.date) ? new Date(t.date.getTime()) : null;
-  }catch(e){
-    console.warn("SearchAltitude error:", e);
-    return null;
-  }
-}
-
-  function sunAltitudeAt(date){
-    try{
-      const t = Astronomy.MakeTime(date);
-      const eq = Astronomy.Equator(Astronomy.Body.Sun, t, obs, true, true);
-      const hz = Astronomy.Horizon(t, obs, eq.ra, eq.dec, "normal");
-      return hz.altitude;
-    }catch(e){
-      return NaN;
+    function parseISODateLocal(iso){
+      if (!iso || !/^\d{4}-\d{2}-\d{2}$/.test(iso)) return new Date();
+      const [y,m,d] = iso.split("-").map(Number);
+      return new Date(y, m-1, d, 0, 0, 0);
     }
-  }
 
-  function earthSunDistanceKm(date){
-    try{
-      const t = Astronomy.MakeTime(date);
-      const v = Astronomy.GeoVector(Astronomy.Body.Sun, t, true);
-      const rAU = Math.sqrt(v.x*v.x + v.y*v.y + v.z*v.z);
-      const AU_KM = (typeof Astronomy.AU_KM === "number") ? Astronomy.AU_KM : 149597870.7;
-      return rAU * AU_KM;
-    }catch(e){
-      return NaN;
-    }
-  }
+    const day0 = parseISODateLocal(dateStr);
 
-  function julianDay(date){
-    try{
-      const t = Astronomy.MakeTime(date);
-      return t.ut;
-    }catch(e){
-      return NaN;
-    }
-  }
+    try {
+      document.getElementById("back").addEventListener("click", (e) => {
+        e.preventDefault();
+        window.history.back();
+      });
 
-  // ===== CÀLCULS PER AL DIA =====
-  const startMorning = new Date(day0.getFullYear(), day0.getMonth(), day0.getDate(), 0, 0, 0);
-  const startEvening = new Date(day0.getFullYear(), day0.getMonth(), day0.getDate(), 12, 0, 0);
+      function fmtHM(date){
+        if (!date) return "--:--";
+        return date.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", hour12: false });
+      }
 
-  const astroDawn   = tryAltitudeCrossing(-18, +1, startMorning);
-  const nauticDawn  = tryAltitudeCrossing(-12, +1, startMorning);
+      function fmtDur(ms){
+        if (!Number.isFinite(ms) || ms < 0) return "—";
+        const totalMin = Math.round(ms / 60000);
+        const h = Math.floor(totalMin / 60);
+        const m = totalMin % 60;
+        return `${h}h ${String(m).padStart(2,"0")}m`;
+      }
 
-  // Hora blava = -6°, Hora daurada = -4° (com tenies)
-  const blueAM      = tryAltitudeCrossing(-6, +1, startMorning);
-  const goldenAM    = tryAltitudeCrossing(-4, +1, startMorning);
+      function tryRiseSet(direction, startDate){
+        try{
+          const t0 = Astronomy.MakeTime(startDate);
+          // SearchRiseSet retorna AstroTime
+          const t  = Astronomy.SearchRiseSet(Astronomy.Body.Sun, obs, direction, t0, 2, 0);
+          return (t && t.date) ? new Date(t.date.getTime()) : null;
+        }catch(e){
+          console.warn("SearchRiseSet error:", e);
+          return null;
+        }
+      }
 
-  const sunrise     = tryRiseSet(+1, startMorning);
+      function tryAltitudeCrossing(altDeg, direction, startDate){
+        try{
+          const t0 = Astronomy.MakeTime(startDate);
+          // SearchAltitude retorna AstroTime
+          const t  = Astronomy.SearchAltitude(Astronomy.Body.Sun, obs, direction, t0, 2, altDeg);
+          return (t && t.date) ? new Date(t.date.getTime()) : null;
+        }catch(e){
+          console.warn("SearchAltitude error:", e);
+          return null;
+        }
+      }
 
-  let solarNoon = null;
-let maxAlt = NaN;
+      function earthSunDistanceKm(date){
+        try{
+          const t = Astronomy.MakeTime(date);
+          const v = Astronomy.GeoVector(Astronomy.Body.Sun, t, true);
+          const rAU = Math.sqrt(v.x*v.x + v.y*v.y + v.z*v.z);
+          const AU_KM = (typeof Astronomy.AU_KM === "number") ? Astronomy.AU_KM : 149597870.7;
+          return rAU * AU_KM;
+        }catch(e){
+          return NaN;
+        }
+      }
 
-try{
-let solarNoon = null;
-let maxAlt = NaN;
+      function julianDay(date){
+        try{
+          const t = Astronomy.MakeTime(date);
+          return t.ut;
+        }catch(e){
+          return NaN;
+        }
+      }
 
-let solarNoon = null;
-let maxAlt = NaN;
+      // ===== CÀLCULS PER AL DIA =====
+      const startMorning = new Date(day0.getFullYear(), day0.getMonth(), day0.getDate(), 0, 0, 0);
+      const startEvening = new Date(day0.getFullYear(), day0.getMonth(), day0.getDate(), 12, 0, 0);
 
-try {
-  // Migdia solar = hora-angle 0 (pas pel meridià)
-  const evt = Astronomy.SearchHourAngle(
-    Astronomy.Body.Sun,
-    obs,
-    0,              // hora-angle 0h
-    startMorning,   // Date
-    +1              // direcció cap endavant
-  );
+      const astroDawn   = tryAltitudeCrossing(-18, +1, startMorning);
+      const nauticDawn  = tryAltitudeCrossing(-12, +1, startMorning);
 
-  // SearchHourAngle retorna AstroEvent
-  solarNoon = (evt && evt.time && evt.time.date)
-    ? new Date(evt.time.date.getTime())
-    : null;
+      // Hora blava = -6°, Hora daurada = -4°
+      const blueAM      = tryAltitudeCrossing(-6, +1, startMorning);
+      const goldenAM    = tryAltitudeCrossing(-4, +1, startMorning);
 
-  // Elevació màxima: ja ve calculada a evt.hor.altitude
-  maxAlt = (evt && evt.hor && Number.isFinite(evt.hor.altitude))
-    ? evt.hor.altitude
-    : NaN;
+      const sunrise     = tryRiseSet(+1, startMorning);
 
-} catch (e) {
-  console.warn("SearchHourAngle (migdia solar) error:", e);
-}
+      // ✅ MIGDIA SOLAR + ELEVACIÓ MÀXIMA
+      let solarNoon = null;
+      let maxAlt = NaN;
 
+      try {
+        // Migdia solar = hora-angle 0 (pas pel meridià)
+        const evt = Astronomy.SearchHourAngle(
+          Astronomy.Body.Sun,
+          obs,
+          0,            // hora-angle 0h
+          startMorning, // Date
+          +1            // endavant
+        );
 
-  const goldenPM    = tryAltitudeCrossing(-4, -1, startEvening);
-  const sunset      = tryRiseSet(-1, startEvening);
-  const bluePM      = tryAltitudeCrossing(-6, -1, startEvening);
+        // evt és AstroEvent { time: AstroTime, hor: { altitude, ... } }
+        solarNoon = (evt && evt.time && evt.time.date) ? new Date(evt.time.date.getTime()) : null;
+        maxAlt    = (evt && evt.hor && Number.isFinite(evt.hor.altitude)) ? evt.hor.altitude : NaN;
+      } catch (e) {
+        console.warn("SearchHourAngle (migdia solar) error:", e);
+      }
 
-  const nauticDusk  = tryAltitudeCrossing(-12, -1, startEvening);
-  const astroDusk   = tryAltitudeCrossing(-18, -1, startEvening);
+      const goldenPM    = tryAltitudeCrossing(-4, -1, startEvening);
+      const sunset      = tryRiseSet(-1, startEvening);
+      const bluePM      = tryAltitudeCrossing(-6, -1, startEvening);
 
-  const daylightMs = (sunrise && sunset) ? (sunset.getTime() - sunrise.getTime()) : NaN;
+      const nauticDusk  = tryAltitudeCrossing(-12, -1, startEvening);
+      const astroDusk   = tryAltitudeCrossing(-18, -1, startEvening);
 
-  const distKm = earthSunDistanceKm(solarNoon || startMorning);
-  const distMillionKm = distKm / 1e6;
+      const daylightMs = (sunrise && sunset) ? (sunset.getTime() - sunrise.getTime()) : NaN;
 
-  const jd = julianDay(startMorning);
+      const distKm = earthSunDistanceKm(solarNoon || startMorning);
+      const distMillionKm = distKm / 1e6;
 
-  // ===== PINTAR =====
-  const kpiEl = document.getElementById("kpi");
-  kpiEl.innerHTML =
-    `<b>Dia julià:</b> ${Number.isFinite(jd) ? jd.toFixed(5) : "—"}\n` +
-    `<b>Hores de llum:</b> ${fmtDur(daylightMs)}\n` +
-    `<b>Elevació màxima:</b> ${Number.isFinite(maxAlt) ? maxAlt.toFixed(1) + "°" : "—"}\n` +
-    `<b>Distància del sol:</b> ${Number.isFinite(distMillionKm) ? distMillionKm.toFixed(3) + " M km" : "—"}`;
+      const jd = julianDay(startMorning);
 
-  document.getElementById("meta").textContent =
-    `${dateStr || ""} · lat ${observer.latitude.toFixed(4)}, lon ${observer.longitude.toFixed(4)} · elev ${Math.round(observer.elevation)} m`;
+      // ===== PINTAR =====
+      const kpiEl = document.getElementById("kpi");
+      kpiEl.innerHTML =
+        `<b>Dia julià:</b> ${Number.isFinite(jd) ? jd.toFixed(5) : "—"}\n` +
+        `<b>Hores de llum:</b> ${fmtDur(daylightMs)}\n` +
+        `<b>Elevació màxima:</b> ${Number.isFinite(maxAlt) ? maxAlt.toFixed(1) + "°" : "—"}\n` +
+        `<b>Distància del sol:</b> ${Number.isFinite(distMillionKm) ? distMillionKm.toFixed(3) + " M km" : "—"}`;
 
-  const list = document.getElementById("list");
+      document.getElementById("meta").textContent =
+        `${dateStr || ""} · lat ${observer.latitude.toFixed(4)}, lon ${observer.longitude.toFixed(4)} · elev ${Math.round(observer.elevation)} m`;
 
-  const items = [
-    { label: "Crepuscul astronòmic", time: astroDawn,  color: "#0b1d63" },
-    { label: "Crepuscul nàutic",     time: nauticDawn, color: "#1533ff" },
-    { label: "Hora Blava",           time: blueAM,     color: "#00c9ff" },
-    { label: "Hora dorada",          time: goldenAM,   color: "#ffb13a" },
-    { label: "Sortida",              time: sunrise,    color: "#ffff4a" },
-    { label: "Migdia solar",         time: solarNoon,  color: "#f2ffb0" },
-    { label: "Hora dorada",          time: goldenPM,   color: "#ffb13a" },
-    { label: "Posta de sol",         time: sunset,     color: "#c67816" },
-    { label: "Hora Blava",           time: bluePM,     color: "#00c9ff" },
-    { label: "Crepuscul nàutic",     time: nauticDusk, color: "#1533ff" },
-    { label: "Crepuscul astronòmic", time: astroDusk,  color: "#0b1d63" },
-  ];
+      const list = document.getElementById("list");
 
-  items.forEach(it => {
-    const row = document.createElement("div");
-    row.className = "row";
+      const items = [
+        { label: "Crepuscul astronòmic", time: astroDawn,  color: "#0b1d63" },
+        { label: "Crepuscul nàutic",     time: nauticDawn, color: "#1533ff" },
+        { label: "Hora Blava",           time: blueAM,     color: "#00c9ff" },
+        { label: "Hora dorada",          time: goldenAM,   color: "#ffb13a" },
+        { label: "Sortida",              time: sunrise,    color: "#ffff4a" },
+        { label: "Migdia solar",         time: solarNoon,  color: "#f2ffb0" },
+        { label: "Hora dorada",          time: goldenPM,   color: "#ffb13a" },
+        { label: "Posta de sol",         time: sunset,     color: "#c67816" },
+        { label: "Hora Blava",           time: bluePM,     color: "#00c9ff" },
+        { label: "Crepuscul nàutic",     time: nauticDusk, color: "#1533ff" },
+        { label: "Crepuscul astronòmic", time: astroDusk,  color: "#0b1d63" },
+      ];
 
-    const dot = document.createElement("div");
-    dot.className = "dot";
-    dot.style.background = it.color;
+      items.forEach(it => {
+        const row = document.createElement("div");
+        row.className = "row";
 
-    const lab = document.createElement("div");
-    lab.className = "label";
-    lab.textContent = it.label + ":";
+        const dot = document.createElement("div");
+        dot.className = "dot";
+        dot.style.background = it.color;
 
-    const tm = document.createElement("div");
-    tm.className = "time";
-    tm.textContent = fmtHM(it.time);
+        const lab = document.createElement("div");
+        lab.className = "label";
+        lab.textContent = it.label + ":";
 
-    row.appendChild(dot);
-    row.appendChild(lab);
-    row.appendChild(tm);
-    list.appendChild(row);
-  });
+        const tm = document.createElement("div");
+        tm.className = "time";
+        tm.textContent = fmtHM(it.time);
 
-  const missing = items.filter(x => !x.time).map(x => x.label);
-  if (missing.length){
-    const err = document.getElementById("err");
-    err.style.display = "block";
-    err.textContent = "Algunes hores no s'han pogut calcular. Falta: " + missing.join(", ");
-  }
+        row.appendChild(dot);
+        row.appendChild(lab);
+        row.appendChild(tm);
+        list.appendChild(row);
+      });
+
+      const missing = items.filter(x => !x.time).map(x => x.label);
+      if (missing.length){
+        const err = document.getElementById("err");
+        err.style.display = "block";
+        err.textContent = "Algunes hores no s'han pogut calcular. Falta: " + missing.join(", ");
+      }
+
     } catch (e) {
-  console.error("Error calculant el Sol:", e);
-  const err = document.getElementById("err");
-  err.style.display = "block";
-  err.textContent = "Error intern calculant efemèrides. Mira la consola.";
-}
-</script>
+      console.error("Error calculant el Sol:", e);
+      const err = document.getElementById("err");
+      err.style.display = "block";
+      err.textContent = "Error intern calculant efemèrides. Mira la consola.";
+    }
+  </script>
 
 </body>
 </html>
