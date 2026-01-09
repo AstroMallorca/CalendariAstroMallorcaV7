@@ -683,6 +683,10 @@ if (typeof Astronomy.SearchTransit === "function"){
 if (!transit && rise && set){
   transit = new Date((rise.getTime() + set.getTime()) / 2);
 }
+console.log("DEBUG moon graph:");
+console.log("rise =", rise);
+console.log("set =", set);
+console.log("transit =", transit);
 
 // Altura màxima (aprox) a l’instant del transit
 const altMax = (transit) ? bodyAltitudeDeg(Astronomy.Body.Moon, observer, transit) : null;
