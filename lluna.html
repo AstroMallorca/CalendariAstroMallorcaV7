@@ -227,8 +227,6 @@ a:active{ opacity:1; }
     <!-- ===== Resum inferior ===== -->
     <div class="stats" id="stats" style="display:none;">
       <div class="k">Temps total damunt l’horitzó:</div><div class="v" id="sAbove">—</div>
-      <div class="k">Temps total de nit amb lluna:</div><div class="v" id="sNightMoon">—</div>
-      <div class="k">Temps total de nit sense lluna:</div><div class="v" id="sNightNoMoon">—</div>
     </div>
 
     <div class="err" id="err"></div>
@@ -864,44 +862,9 @@ if (rise && set && transit){
 
   // Temps total damunt horitzó
   const aboveMs = aboveHorizonTimeMs(Astronomy.Body.Moon, observer, rise, set, 2, MOON_EVENT_ALT);
-
   document.getElementById("sAbove").textContent = fmtDurationHM(aboveMs);
-
-  // === Nit: sunset(dia) -> sunrise(dia+1) (també per escaneig) ===
-  const day1 = new Date(day0.getTime() + 24*3600*1000);
-
-  // Sunset: escanejam des de les 12:00 del dia0 durant 24h i agafam el primer "set" del Sol
-  const noon0 = new Date(day0); noon0.setHours(12,0,0,0);
-  const sunRS = findRiseSetScan(Astronomy.Body.Sun, observer, noon0, 24, 2, SUN_EVENT_ALT);
-  const sunset = sunRS.set;
-
-  // Sunrise: si tenim sunset, escanejam després del sunset fins trobar rise
-  let sunrise = null;
-  if (sunset){
-    const afterSunset = new Date(sunset.getTime() + 5*60*1000);
-  const sunRS2 = findRiseSetScan(Astronomy.Body.Sun, observer, afterSunset, 24, 2, SUN_EVENT_ALT);    
-    sunrise = sunRS2.rise;
-  }
-
-if (sunset && sunrise){
-  const nightMs = Math.max(0, sunrise.getTime() - sunset.getTime());
-
-  // ✅ Temps amb lluna DURANT la nit: integració per escaneig (robusta)
-const withMoonMs = aboveHorizonTimeMs(Astronomy.Body.Moon, observer, sunset, sunrise, 2, MOON_EVENT_ALT);
-
-  // Nit sense lluna = nit total - amb lluna
-  const noMoonMs = Math.max(0, nightMs - withMoonMs);
-
-  document.getElementById("sNightMoon").textContent = fmtDurationHM(withMoonMs);
-  document.getElementById("sNightNoMoon").textContent = fmtDurationHM(noMoonMs);
-}else{
-  document.getElementById("sNightMoon").textContent = "—";
-  document.getElementById("sNightNoMoon").textContent = "—";
-}
-
   statsEl.style.display = "";
 }
-
 
       }catch(e){
         console.error(e);
