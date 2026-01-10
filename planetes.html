@@ -239,6 +239,7 @@
     const planets = [
       { name:"Mercuri", body: Astronomy.Body.Mercury, color:"#1f77b4", a:0.387 },
       { name:"Venus",   body: Astronomy.Body.Venus,   color:"#ff7f0e", a:0.723 },
+      { name:"Terra",   body: Astronomy.Body.Earth,   color:"#2ca02c" },
       { name:"Mart",    body: Astronomy.Body.Mars,    color:"#d62728", a:1.524 },
       { name:"Júpiter", body: Astronomy.Body.Jupiter, color:"#9467bd", a:5.204 },
       { name:"Saturn",  body: Astronomy.Body.Saturn,  color:"#bcbd22", a:9.582 },
@@ -267,7 +268,7 @@
       const tbody = document.getElementById("rows");
       tbody.innerHTML = "";
 
-      for (const pl of planets){
+      for (const pl of planetsTable){
         const rise = tryRiseSet(pl.body, +1, d0);
         const set  = tryRiseSet(pl.body, -1, d0);
 
@@ -319,28 +320,26 @@
         const W = canvas.width, H = canvas.height;
         const cx = W/2, cy = H/2;
 
-        // escala (AU -> píxels)
-        const maxAU = 30.1;                 // Neptú aprox
-        const pad = 40;
-        const R = Math.min(W,H)/2 - pad;
-        const scale = R / maxAU;
+       // òrbites NO a escala (separació uniforme)
+const pad = 60;
+const Rmax = Math.min(W, H)/2 - pad;
+const count = planetsDiagram.length;       // 8
+const step = Rmax / (count + 0.6);         // separació uniforme
+const r0 = step * 1.0;                     // radi inicial (Mercuri)
 
-        // temps per a posició heliocèntrica
-        // (posició en el pla eclíptic: fem servir el migdia UTC per ser estable)
-        const t = new Date(yyyy_mm_dd + "T12:00:00Z");
-        const astroT = Astronomy.MakeTime(t);
+// Orbits (anells uniformes)
+ctx.save();
+ctx.strokeStyle = stroke;
+ctx.lineWidth = 2;
 
-        // Orbits (anells)
-        ctx.save();
-        ctx.strokeStyle = stroke;
-        ctx.lineWidth = 2;
+for (let i = 0; i < count; i++){
+  const r = r0 + i * step;
+  ctx.beginPath();
+  ctx.arc(cx, cy, r, 0, Math.PI*2);
+  ctx.stroke();
+}
+ctx.restore();
 
-        for (const pl of planets){
-          const r = pl.a * scale;
-          ctx.beginPath();
-          ctx.arc(cx, cy, r, 0, Math.PI*2);
-          ctx.stroke();
-        }
         ctx.restore();
 
         // Sol al centre
@@ -355,21 +354,33 @@
         ctx.restore();
 
         // Planetes (posicions reals heliocèntriques)
-        for (const pl of planets){
-          const v = Astronomy.HelioVector(pl.body, astroT);  // AU
-          const x = cx + (v.x * scale);
-          const y = cy - (v.y * scale);
+   for (let i = 0; i < planetsDiagram.length; i++){
+  const pl = planetsDiagram[i];
 
-          ctx.save();
-          ctx.fillStyle = pl.color;
-          ctx.beginPath();
-          ctx.arc(x, y, 10, 0, Math.PI*2);
-          ctx.fill();
-          ctx.lineWidth = 2;
-          ctx.strokeStyle = stroke;
-          ctx.stroke();
-          ctx.restore();
-        }
+  // vector heliocèntric real (AU)
+  const v = Astronomy.HelioVector(pl.body, astroT);
+
+  // angle real al pla eclíptic
+  const ang = Math.atan2(v.y, v.x);
+
+  // radi "fals" (no a escala) però coherent amb l'òrbita dibuixada
+  const r = r0 + i * step;
+
+  // posició final sobre l'anell
+  const x = cx + r * Math.cos(ang);
+  const y = cy - r * Math.sin(ang);
+
+  ctx.save();
+  ctx.fillStyle = pl.color;
+  ctx.beginPath();
+  ctx.arc(x, y, 10, 0, Math.PI*2);
+  ctx.fill();
+  ctx.lineWidth = 2;
+  ctx.strokeStyle = stroke;
+  ctx.stroke();
+  ctx.restore();
+}
+
 
         // Títol petit dins canvas (opcional)
         ctx.save();
