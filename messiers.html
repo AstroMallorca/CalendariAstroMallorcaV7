@@ -43,18 +43,6 @@
     }
     a{ color:inherit; text-decoration:none; }
     .muted{ color: var(--muted); }
-
-    .controls{
-      display:flex;
-      gap:10px;
-      align-items:center;
-      flex-wrap:wrap;
-      margin: 8px 0 14px;
-      padding: 10px 12px;
-      border:1px solid var(--border);
-      border-radius:14px;
-      background: var(--card);
-    }
     .controls label{ font-size:14px; }
     .controls input{
       width:80px;
@@ -104,38 +92,54 @@
       font-variant-numeric: tabular-nums;
       min-width: 120px;
     }
-    .tag{
-      display:inline-block;
-      margin-top:6px;
-      padding:2px 8px;
-      border-radius:999px;
-      border:1px solid var(--border);
-      font-size:12px;
-      color: var(--muted);
+.tag{
+  display:inline-block;
+  margin-top:6px;
+  padding:4px 8px;
+  border-radius:10px;         /* ✅ rectangle arrodonit */
+  border:1px solid var(--border);
+  font-size:12px;
+  color: var(--muted);
+  max-width: 100%;
+}
+.tag{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
     }
     .warn{ opacity:.8; }
+    .page-title{
+  margin: 6px 0 4px;
+  text-align:center;
+}
+.page-date{
+  text-align:center;
+  margin-bottom: 12px;
+}
+
+.title{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.sub{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
   </style>
 </head>
 
 <body>
   <div class="top">
     <a href="#" id="back">← Tornar</a>
-    <div class="muted" id="meta"></div>
   </div>
 
-  <h1 style="margin: 6px 0 6px;">Messiers visibles avui</h1>
+  <h1 style="margin: 6px 0 6px;">Objectes Messier</h1>
   <div class="muted" id="subtitle"></div>
-
-  <div class="controls">
-    <label>Altura mín. (°):
-      <input id="minAlt" type="number" value="10" min="0" max="45" step="1">
-    </label>
-    <label>Pas (min):
-      <input id="stepMin" type="number" value="5" min="1" max="15" step="1">
-    </label>
-    <span class="muted">Ordena per minuts visibles el vespre (posta de Sol → 23:59)</span>
-  </div>
-
   <div class="list" id="list"></div>
 
 <script>
@@ -262,8 +266,7 @@ async function main(){
   const dateMid = parseISODateLocal(iso);
   const obs = new Astronomy.Observer(lat, lon, Number.isFinite(elev)? elev : 0);
 
-  document.getElementById("meta").textContent = `${iso} · ${lat.toFixed(3)}, ${lon.toFixed(3)}`;
-  document.getElementById("subtitle").textContent = `Ordenat per temps visible el vespre segons la teva ubicació.`;
+  document.getElementById("meta").textContent = iso;
 
   // Botó tornar
   document.getElementById("back").addEventListener("click", (e) => {
@@ -275,12 +278,10 @@ async function main(){
   const catalog = await fetch("data/messier_catalog.json").then(r => r.json());
 
   // Controls
-  const minAltEl = document.getElementById("minAlt");
-  const stepEl = document.getElementById("stepMin");
-
   const computeAndRender = () => {
-    const minAlt = Number(minAltEl.value || 10);
-    const stepMin = Math.max(1, Number(stepEl.value || 5));
+  const minAlt = 0;     // ✅ predeterminat a 0º
+  const stepMin = 5;    // ✅ pas fix
+
 
 // Sortida i posta de Sol (del mateix dia)
 let sunrise = null;
@@ -308,10 +309,6 @@ const winPreB  = sunrise ? sunrise : winPreA;
 
 const winPostA = sunset ? sunset : dayStart;
 const winPostB = dayEnd;
-
-
-    const winA = sunset ? sunset : startOfDayLocal(iso);
-    const winB = endOfDayLocal(iso); // fins 23:59
 
 const enriched = catalog.map(obj => {
   const ra = Number(obj.ra_h);
@@ -410,7 +407,7 @@ tag.textContent = `${visTxt}${Number.isFinite(o.mag) ? ` · mag ${o.mag}` : ""}`
   rs3.textContent = "Sense coordenades (catàleg incomplet)";
   rs3.classList.add("warn");
 } else if(o.state === "circumpolar"){
-  rs3.textContent = "Circumpolar (sempre per damunt del llindar)";
+  rs3.textContent = "Circumpolar";
 } else if(o.state === "never"){
   rs3.textContent = "No puja per damunt del llindar avui";
   rs3.classList.add("warn");
@@ -430,9 +427,6 @@ tag.textContent = `${visTxt}${Number.isFinite(o.mag) ? ` · mag ${o.mag}` : ""}`
       list.appendChild(card);
     }
   };
-
-  minAltEl.addEventListener("input", computeAndRender);
-  stepEl.addEventListener("input", computeAndRender);
 
   computeAndRender();
 }
