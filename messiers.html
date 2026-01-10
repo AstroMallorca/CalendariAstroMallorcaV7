@@ -337,17 +337,18 @@ const enriched = catalog.map(obj => {
       const img = document.createElement("img");
       img.className = "thumb";
       img.loading = "lazy";
-      img.alt = `${o.id} ${o.name}`;
+      const common = (o.desc || "").trim();
+      img.alt = common ? `${o.id} ${common}` : `${o.id}`;
       img.src = o.img || "";
       img.onerror = () => { img.style.display = "none"; };
 
       const mid = document.createElement("div");
       const h = document.createElement("p");
       h.className = "title";
-      h.textContent = `${o.id} · ${o.name}`;
+      h.textContent = common ? `${o.id} · ${common}` : `${o.id}`;
       const sub = document.createElement("p");
       sub.className = "sub";
-      sub.textContent = (o.desc && o.desc.trim()) ? o.desc.trim() : (o.type || "");
+      sub.textContent = o.type || "";
 
       const tag = document.createElement("div");
       tag.className = "tag";
