@@ -8,6 +8,7 @@
 
   <style>
 :root{
+  /* DIA (per defecte) */
   --bg:#ffffff;
   --text:#111111;
   --muted:rgba(0,0,0,.65);
@@ -17,6 +18,8 @@
   --perigeu:#ffd400;
   --apogeu:#19d6ff;
 }
+
+/* NOCTURN (heretat de l'app: body.nocturn) */
 body.nocturn{
   --bg:#000000;
   --text:#ff2a2a;
@@ -27,6 +30,7 @@ body.nocturn{
   --perigeu:#ffd84d;
   --apogeu:#4fe3ff;
 }
+
 body{
   margin:0;
   font-family: system-ui, -apple-system, Segoe UI, sans-serif;
@@ -34,15 +38,19 @@ body{
   color:var(--text);
   padding:16px;
 }
+
 a{ color: var(--text); text-decoration:none; opacity:.9; }
 a:active{ opacity:1; }
+
 .wrap{ max-width:520px; margin:0 auto; }
+
 .topbar{
   display:flex;
   align-items:center;
   justify-content:flex-start;
   gap:12px;
 }
+
 .err{
   margin-top:16px;
   padding:10px 12px;
@@ -52,6 +60,8 @@ a:active{ opacity:1; }
   background: var(--card);
   display:none;
 }
+
+/* Capçalera */
 .header{ margin-top: 6px; }
 .header h1{
   margin: 10px 0 6px;
@@ -60,6 +70,7 @@ a:active{ opacity:1; }
   letter-spacing: -0.5px;
   text-align: center;
 }
+
 .sub{
   text-align:center;
   margin-top: 4px;
@@ -74,6 +85,8 @@ a:active{ opacity:1; }
   font-size: 20px;
   margin: 2px 0 0;
 }
+
+/* LLUNA */
 .moonbox{
   display:flex;
   justify-content:center;
@@ -86,6 +99,8 @@ a:active{ opacity:1; }
   max-height: 60vw;
   overflow: visible;
 }
+
+/* Llegenda */
 .legend{
   text-align:center;
   color:var(--muted);
@@ -93,6 +108,8 @@ a:active{ opacity:1; }
   margin: 6px 0 10px;
   line-height: 1.2;
 }
+
+/* KPI 2 columnes */
 .kpiGrid{
   width: 100%;
   margin: 14px auto 8px;
@@ -112,12 +129,15 @@ a:active{ opacity:1; }
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
 }
+
 .subphase{
   text-align:center;
   color:var(--muted);
   font-size: 18px;
   margin: 0 0 6px;
 }
+
+/* ===== Secció gràfica ===== */
 .chartWrap{
   margin: 18px auto 0;
   max-width: 520px;
@@ -135,10 +155,12 @@ a:active{ opacity:1; }
 }
 .chartBox svg{
   width: 100%;
-  height: 160px;
+  height: 150px;
   display:block;
 }
-.statsOne{
+
+/* ===== Resum inferior ===== */
+.stats{
   margin: 12px auto 0;
   max-width: 520px;
   display:grid;
@@ -146,21 +168,23 @@ a:active{ opacity:1; }
   gap: 6px 16px;
   font-size: 26px;
 }
-.statsOne .k{
+.stats .k{
   color:var(--text);
   white-space: nowrap;
 }
-.statsOne .v{
+.stats .v{
   font-weight: 800;
   text-align:right;
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
 }
+
 #back{ color: var(--text); opacity: .9; }
+
 @media (max-width: 360px){
   .header h1{ font-size: 34px; }
   .kpiGrid{ font-size: 19px; grid-template-columns: minmax(155px,1fr) auto; }
-  .statsOne{ font-size: 22px; grid-template-columns: minmax(240px,1fr) auto; }
+  .stats{ font-size: 22px; grid-template-columns: minmax(240px,1fr) auto; }
 }
   </style>
 </head>
@@ -194,24 +218,28 @@ a:active{ opacity:1; }
       <div class="k">Distància:</div><div class="v" id="kDist">—</div>
     </div>
 
+    <!-- ===== Gràfica ===== -->
     <div class="chartWrap" id="chartWrap" style="display:none;">
       <div class="chartTitle" id="chartTitle">Altura max: —</div>
       <div class="chartBox" id="chartBox"></div>
     </div>
 
-    <div class="statsOne" id="statsOne" style="display:none;">
-      <div class="k">Temps total damunt l’horitzó:</div>
-      <div class="v" id="sAbove">—</div>
+    <!-- ===== Resum inferior ===== -->
+    <div class="stats" id="stats" style="display:none;">
+      <div class="k">Temps total damunt l’horitzó:</div><div class="v" id="sAbove">—</div>
+      <div class="k">Temps total de nit amb lluna:</div><div class="v" id="sNightMoon">—</div>
+      <div class="k">Temps total de nit sense lluna:</div><div class="v" id="sNightNoMoon">—</div>
     </div>
 
     <div class="err" id="err"></div>
   </div>
 
+  <!-- astronomy-engine (local) -->
   <script src="assets/js/astronomy.browser.min.js"></script>
 
   <script>
     const p = new URLSearchParams(location.search);
-    const dateStr = p.get("date");
+    const dateStr = p.get("date"); // "YYYY-MM-DD"
     document.getElementById("d").textContent = dateStr || "";
 
     document.getElementById("back").addEventListener("click", (e) => {
@@ -219,12 +247,14 @@ a:active{ opacity:1; }
       window.history.back();
     });
 
+    // ======= Localització =======
     function numParam(name, fallback){
       const v = p.get(name);
       const x = (v === null) ? NaN : Number(v);
       return Number.isFinite(x) ? x : fallback;
     }
 
+    // Palma per defecte si no ve res
     const LAT  = numParam("lat", 39.5696);
     const LON  = numParam("lon", 2.6502);
     const ELEV = numParam("elev", 0);
@@ -236,11 +266,17 @@ a:active{ opacity:1; }
     function parseISODateLocal(iso){
       if (!iso || !/^\d{4}-\d{2}-\d{2}$/.test(iso)) return new Date();
       const [y,m,d] = iso.split("-").map(Number);
-      return new Date(y, m-1, d, 12, 0, 0);
+      return new Date(y, m-1, d, 12, 0, 0); // migdia local
     }
 
     function clamp(x, a, b){ return Math.max(a, Math.min(b, x)); }
     function deg2rad(d){ return d * Math.PI / 180; }
+    // Altituds “estàndard” per rise/set (aprox.)
+// Sol: -0.833° (refacció + radi solar)
+// Lluna: -0.3° (refacció + radi lunar aprox.)
+const SUN_EVENT_ALT  = -0.833;
+const MOON_EVENT_ALT = -0.3;
+
 
     function fmtPct(x, decimals = 2){
       if (!Number.isFinite(x)) return "—";
@@ -269,6 +305,7 @@ a:active{ opacity:1; }
       return d >= a0 && d <= a1;
     }
 
+    // ======= FASE EXACTA =======
     function phaseExactEventForDay(day){
       const t0 = Astronomy.MakeTime(day);
       const targets = [
@@ -282,8 +319,8 @@ a:active{ opacity:1; }
         const fwd  = Astronomy.SearchMoonPhase(it.angle, t0,  3);
         const back = Astronomy.SearchMoonPhase(it.angle, t0, -3);
 
-        if (fwd  && inSameLocalDay(evToDate(fwd),  day)) return { name: it.name, date: evToDate(fwd)  };
-        if (back && inSameLocalDay(evToDate(back), day)) return { name: it.name, date: evToDate(back) };
+        if (fwd  && inSameLocalDay(fwd.date,  day)) return { name: it.name, date: fwd.date  };
+        if (back && inSameLocalDay(back.date, day)) return { name: it.name, date: back.date };
       }
       return null;
     }
@@ -303,9 +340,8 @@ a:active{ opacity:1; }
     function moonAgeDays(day){
       const t = Astronomy.MakeTime(day);
       const prevNew = Astronomy.SearchMoonPhase(0, t, -35);
-      const prevNewDate = evToDate(prevNew);
-      if (!prevNewDate) return null;
-      const ms = day.getTime() - prevNewDate.getTime();
+      if (!prevNew) return null;
+      const ms = day.getTime() - prevNew.date.getTime();
       return ms / (1000 * 60 * 60 * 24);
     }
 
@@ -315,58 +351,7 @@ a:active{ opacity:1; }
       return s.charAt(0).toUpperCase() + s.slice(1);
     }
 
-    // ===== helpers robustos (Date/AstroTime/{date:...}) =====
-    function evToDate(x){
-      if (!x) return null;
-
-      // {date: ...}
-      if (x.date) return evToDate(x.date);
-
-      // Date
-      if (x instanceof Date) return Number.isFinite(x.getTime()) ? x : null;
-
-      // AstroTime amb ToDate()
-      if (typeof x.ToDate === "function"){
-        const d = x.ToDate();
-        return (d instanceof Date && Number.isFinite(d.getTime())) ? d : null;
-      }
-
-      // AstroTime amb .ut (JD)
-      if (typeof x.ut === "number" && Number.isFinite(x.ut)){
-        const ms = (x.ut - 2440587.5) * 86400000;
-        const d = new Date(ms);
-        return Number.isFinite(d.getTime()) ? d : null;
-      }
-
-      return null;
-    }
-
-    function safeMakeTime(x){
-      // IMPORTANT: MakeTime vol Date o AstroTime real.
-      // Si ens arriba un event {date:...} el convertim primer.
-      const d = evToDate(x) || x;
-      return Astronomy.MakeTime(d);
-    }
-
-    function toAstroTime(x){
-      // AstroTime real (duck-typing NO)
-      // Si és Date -> MakeTime
-      if (x instanceof Date) return Astronomy.MakeTime(x);
-
-      // si ja és un AstroTime real, MakeTime el retorna tal qual (segons versió)
-      // però per evitar errors, passam per safeMakeTime
-      return safeMakeTime(x);
-    }
-
-    function getAltitudeDeg(body, observer, dateOrTime){
-      const t = toAstroTime(dateOrTime);
-      const eq = Astronomy.Equator(body, t, observer, true, true);
-      let hor = null;
-      try { hor = Astronomy.Horizon(t, observer, eq.ra, eq.dec, "normal"); } catch(e) {}
-      if (!hor) { hor = Astronomy.Horizon(t, observer, eq.ra, eq.dec); }
-      return hor.altitude;
-    }
-
+    // ======= DISTÀNCIA / APSIS / SUPERLLUNA =======
     function moonDistanceKmAt(date){
       const t = safeMakeTime(date);
       const v = Astronomy.GeoVector(Astronomy.Body.Moon, t, true);
@@ -414,11 +399,230 @@ a:active{ opacity:1; }
       const dtHours = Math.abs(fullMoonDate.getTime() - minT.getTime()) / (1000*3600);
       return (dtHours <= 24) && (fullKm <= 360000);
     }
+function toDate(x){
+  if (!x) return null;
 
-    function renderArcChart({ rise, transit, set, altMaxDeg }){
-      const W = 520, H = 160;
+  // ja és Date
+  if (x instanceof Date) return Number.isFinite(x.getTime()) ? x : null;
+
+  // si és un objecte retornat per Astronomy (rise/set/transit)
+  if (x.date instanceof Date) return Number.isFinite(x.date.getTime()) ? x.date : null;
+
+  // si és un AstroTime amb mètode .ToDate()
+  if (typeof x.ToDate === "function"){
+    const d = x.ToDate();
+    return (d instanceof Date && Number.isFinite(d.getTime())) ? d : null;
+  }
+
+  return null;
+}
+
+function safeMakeTime(x){
+  // evita petades si ens arriba un event en lloc d’un Date
+  const d = toDate(x) || x;   // si ja és AstroTime, el deixam passar
+  return Astronomy.MakeTime(d);
+}
+
+    // ======= ALTURA (per mostreig) =======
+    function bodyAltitudeDeg(body, observer, date){
+  const t = safeMakeTime(date);
+  const eq = Astronomy.Equator(body, t, observer, true, true);
+  if (!eq || !Number.isFinite(eq.ra) || !Number.isFinite(eq.dec)) return null;
+
+  // Prova diferents formes de "refraction" segons la versió
+  let hor = null;
+
+  try { hor = Astronomy.Horizon(t, observer, eq.ra, eq.dec, "none"); } catch(e) {}
+  if (!hor) { try { hor = Astronomy.Horizon(t, observer, eq.ra, eq.dec, 0); } catch(e) {} }
+  if (!hor) { try { hor = Astronomy.Horizon(t, observer, eq.ra, eq.dec, false); } catch(e) {} }
+  if (!hor) { try { hor = Astronomy.Horizon(t, observer, eq.ra, eq.dec); } catch(e) {} }
+
+  if (!hor || !Number.isFinite(hor.altitude)) return null;
+  return hor.altitude;
+}
+
+// Troba el moment exacte (aprox) en què l'altura creua targetAlt (normalment 0°)
+// dins l'interval [tA, tB] fent bisecció.
+function refineCrossingTime(body, observer, tA, tB, targetAlt = 0, iters = 25){
+  let a = new Date(tA), b = new Date(tB);
+
+  let fa = bodyAltitudeDeg(body, observer, a) - targetAlt;
+  let fb = bodyAltitudeDeg(body, observer, b) - targetAlt;
+
+  if (!Number.isFinite(fa) || !Number.isFinite(fb)) return null;
+  if (fa === 0) return a;
+  if (fb === 0) return b;
+
+  // han de tenir signe oposat per garantir creuament
+  if (fa * fb > 0) return null;
+
+  for (let i = 0; i < iters; i++){
+    const mid = new Date((a.getTime() + b.getTime()) / 2);
+    const fm = bodyAltitudeDeg(body, observer, mid) - targetAlt;
+    if (!Number.isFinite(fm)) return null;
+
+    if (fa * fm <= 0){
+      b = mid; fb = fm;
+    }else{
+      a = mid; fa = fm;
+    }
+  }
+  return new Date((a.getTime() + b.getTime()) / 2);
+}
+
+// Escaneja altures i detecta rise/set (creuaments de 0°).
+function findRiseSetScan(body, observer, startDate, hours = 36, stepMinutes = 5, targetAlt = 0){
+  const start = new Date(startDate);
+  const end = new Date(start.getTime() + hours*3600*1000);
+  const stepMs = stepMinutes*60*1000;
+
+  let prevT = new Date(start);
+  let prevAlt = bodyAltitudeDeg(body, observer, prevT);
+  if (!Number.isFinite(prevAlt)) return { rise: null, set: null };
+
+  let rise = null;
+  let set  = null;
+
+  for (let ms = start.getTime() + stepMs; ms <= end.getTime(); ms += stepMs){
+    const t = new Date(ms);
+    const alt = bodyAltitudeDeg(body, observer, t);
+    if (!Number.isFinite(alt)) continue;
+
+    const prevVal = prevAlt - targetAlt;
+    const curVal  = alt     - targetAlt;
+
+    // Rise: de <0 a >=0
+    if (!rise && prevVal < 0 && curVal >= 0){
+      rise = refineCrossingTime(body, observer, prevT, t, targetAlt);
+    }
+
+    // Set: de >=0 a <0
+    if (!set && prevVal >= 0 && curVal < 0){
+      set = refineCrossingTime(body, observer, prevT, t, targetAlt);
+    }
+
+    if (rise && set) break;
+
+    prevT = t;
+    prevAlt = alt;
+  }
+
+  return { rise, set };
+}
+
+// Calcula (ms) el temps que el cos està per damunt de l'horitzó (alt>0)
+// dins l'interval [start, end], integrant per passos i refinant creuaments.
+function aboveHorizonTimeMs(body, observer, start, end, stepMinutes = 2, targetAlt = 0){
+  if (!(start instanceof Date) || !(end instanceof Date)) return 0;
+  if (!(end.getTime() > start.getTime())) return 0;
+
+  const stepMs = stepMinutes * 60 * 1000;
+
+  let tPrev = new Date(start);
+  let altPrev = bodyAltitudeDeg(body, observer, tPrev);
+  if (!Number.isFinite(altPrev)) return 0;
+
+  let total = 0;
+
+  for (let ms = start.getTime() + stepMs; ms <= end.getTime(); ms += stepMs){
+    const tCur = new Date(ms);
+    const altCur = bodyAltitudeDeg(body, observer, tCur);
+    if (!Number.isFinite(altCur)) continue;
+
+    const prevAbove = altPrev > targetAlt;
+    const curAbove  = altCur  > targetAlt;
+
+    if (prevAbove && curAbove){
+      total += (tCur.getTime() - tPrev.getTime());
+    } else if (prevAbove !== curAbove){
+      const cross = refineCrossingTime(body, observer, tPrev, tCur, targetAlt);
+      if (cross){
+        if (prevAbove && !curAbove) total += (cross.getTime() - tPrev.getTime());
+        else if (!prevAbove && curAbove) total += (tCur.getTime() - cross.getTime());
+      } else {
+        total += (tCur.getTime() - tPrev.getTime()) / 2;
+      }
+    }
+
+    tPrev = tCur;
+    altPrev = altCur;
+  }
+
+  return Math.max(0, total);
+}
+
+
+// Transit: moment d'altura màxima per mostreig (aprox)
+function findTransitByScan(body, observer, startDate, endDate, stepMinutes = 5){
+  const t0 = startDate.getTime();
+  const t1 = endDate.getTime();
+  const stepMs = stepMinutes*60*1000;
+
+  let bestAlt = -1e9;
+  let bestT = null;
+
+  for (let ms = t0; ms <= t1; ms += stepMs){
+    const d = new Date(ms);
+    const alt = bodyAltitudeDeg(body, observer, d);
+    if (Number.isFinite(alt) && alt > bestAlt){
+      bestAlt = alt;
+      bestT = d;
+    }
+  }
+  return bestT ? { time: bestT, altDeg: bestAlt } : null;
+}
+
+    function maxAltitudeBetween(body, observer, tStartDate, tEndDate, stepMinutes = 5){
+      if (!tStartDate || !tEndDate) return null;
+      const t0 = tStartDate.getTime();
+      const t1 = tEndDate.getTime();
+      if (!(t1 > t0)) return null;
+
+      let bestAlt = -1e9;
+      let bestT = null;
+
+      const stepMs = stepMinutes * 60 * 1000;
+
+      for (let ms = t0; ms <= t1; ms += stepMs){
+        const d = new Date(ms);
+        const alt = bodyAltitudeDeg(body, observer, d);
+        if (Number.isFinite(alt) && alt > bestAlt){
+          bestAlt = alt;
+          bestT = d;
+        }
+      }
+      if (!bestT) return null;
+      return { time: bestT, altDeg: bestAlt };
+    }
+
+    function overlapMs(a0, a1, b0, b1){
+      const s = Math.max(a0.getTime(), b0.getTime());
+      const e = Math.min(a1.getTime(), b1.getTime());
+      return Math.max(0, e - s);
+    }
+function toAstroTime(x){
+  // ja és AstroTime?
+  if (x && typeof x === "object" && typeof x.ut === "number") return x;
+  // si és Date, ok
+  if (x instanceof Date) return Astronomy.MakeTime(x);
+  // si és número, ok
+  if (typeof x === "number" && Number.isFinite(x)) return x;
+  // si res, error clar
+  throw new Error("toAstroTime: valor invàlid: " + String(x));
+}
+
+function evToDate(ev){
+  // Astronomy Engine sol retornar { date: Date }
+  if (!ev) return null;
+  const d = ev.date;
+  return (d instanceof Date && Number.isFinite(d.getTime())) ? d : null;
+}
+
+    // ======= Gràfica minimalista (SVG) =======
+    function renderArcChart({ rise, transit, set }){
+      const W = 520, H = 150;
       const padX = 26;
-      const baseY = 105;
+      const baseY = 88;
 
       if (!rise || !set || !transit) return "";
 
@@ -427,34 +631,30 @@ a:active{ opacity:1; }
       const tc = transit.getTime();
       if (!(t1 > t0)) return "";
 
-      const x = (t) => padX + ((t - t0) / (t1 - t0)) * (W - 2*padX);
+      const x = (t) => padX + ( (t - t0) / (t1 - t0) ) * (W - 2*padX);
 
       const xR = x(t0), xT = x(tc), xS = x(t1);
-      const peakY = 28;
+      const peakY = 24;
       const d = `M ${xR} ${baseY} Q ${xT} ${peakY} ${xS} ${baseY}`;
-      const stroke = "var(--text)";
+
+      const strokeArc = (document.body.classList.contains("nocturn")) ? "var(--text)" : "var(--text)";
+      const strokeAxis = "var(--text)";
 
       return `
 <svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Trajectòria de la Lluna">
-  <line x1="${padX}" y1="${baseY}" x2="${W-padX}" y2="${baseY}" stroke="${stroke}" stroke-width="5" />
-  <path d="${d}" fill="none" stroke="${stroke}" stroke-width="8" stroke-linecap="round" />
+  <line x1="${padX}" y1="${baseY}" x2="${W-padX}" y2="${baseY}" stroke="${strokeAxis}" stroke-width="3" />
+  <path d="${d}" fill="none" stroke="${strokeArc}" stroke-width="6" stroke-linecap="round" />
+  <line x1="${xR}" y1="${baseY-55}" x2="${xR}" y2="${baseY+22}" stroke="${strokeAxis}" stroke-width="2" opacity="0.7"/>
+  <line x1="${xT}" y1="${baseY-65}" x2="${xT}" y2="${baseY+22}" stroke="${strokeAxis}" stroke-width="2" opacity="0.7"/>
+  <line x1="${xS}" y1="${baseY-55}" x2="${xS}" y2="${baseY+22}" stroke="${strokeAxis}" stroke-width="2" opacity="0.7"/>
 
-  <circle cx="${xR}" cy="${baseY}" r="18" fill="var(--bg)" stroke="${stroke}" stroke-width="6"></circle>
-  <circle cx="${xT}" cy="${peakY}" r="18" fill="var(--bg)" stroke="${stroke}" stroke-width="6"></circle>
-  <circle cx="${xS}" cy="${baseY}" r="18" fill="var(--bg)" stroke="${stroke}" stroke-width="6"></circle>
-
-  <text x="${xT}" y="${baseY-22}" text-anchor="middle" font-size="18" fill="${stroke}">
-    Altura max: ${Number.isFinite(altMaxDeg) ? Math.round(altMaxDeg) + "°" : "—"}
-  </text>
-  <text x="${xT}" y="${baseY-2}" text-anchor="middle" font-size="20" fill="${stroke}">
-    ${fmtTimeHM(transit)}
-  </text>
-
-  <text x="${xR}" y="${H-18}" text-anchor="middle" font-size="20" fill="${stroke}">${fmtTimeHM(rise)}</text>
-  <text x="${xS}" y="${H-18}" text-anchor="middle" font-size="20" fill="${stroke}">${fmtTimeHM(set)}</text>
+  <text x="${xR}" y="${H-16}" text-anchor="middle" font-size="20" fill="${strokeAxis}">${fmtTimeHM(rise)}</text>
+  <text x="${xT}" y="${H-16}" text-anchor="middle" font-size="20" fill="${strokeAxis}">${fmtTimeHM(transit)}</text>
+  <text x="${xS}" y="${H-16}" text-anchor="middle" font-size="20" fill="${strokeAxis}">${fmtTimeHM(set)}</text>
 </svg>`;
     }
 
+    // ======= SVG LLUNA (fase + mida) =======
     function renderMoonSVG(opts){
       const {
         R_perigeu = 108,
@@ -566,6 +766,7 @@ a:active{ opacity:1; }
         const u = clamp((angArcmin - APog) / (PErig - APog), 0, 1);
         const R_now = R_apogeu + u * (R_perigeu - R_apogeu);
 
+        // TÍTOL + Superlluna
         const exactEv = phaseExactEventForDay(day);
         const label = phaseLabelForDay(phaseDeg, illum, day);
 
@@ -575,11 +776,13 @@ a:active{ opacity:1; }
         }
         document.getElementById("title").textContent = title;
 
+        // Subtítol d'hora (només fase exacta)
         const sub = document.getElementById("subphase");
         if (sub){
           sub.textContent = exactEv ? `(${fmtTimeHM(exactEv.date)})` : "";
         }
 
+        // KPI
         document.getElementById("kIll").textContent      = fmtPct(illum*100, 2);
         document.getElementById("kPhaseDeg").textContent = `${phaseDeg.toFixed(1)}°`;
         document.getElementById("kSize").textContent     = `${angArcmin.toFixed(1)}′`;
@@ -589,94 +792,125 @@ a:active{ opacity:1; }
         document.getElementById("kDist").textContent =
           `${Math.round(distKm).toLocaleString("ca-ES")} km${apsisTxt}`;
 
+        // Edat
         const age = moonAgeDays(day);
         document.getElementById("age").textContent = Number.isFinite(age)
           ? `Edat de la lluna: ${age.toFixed(1)} dies`
           : "Edat de la lluna: —";
 
+        // SVG Lluna
         box.innerHTML = renderMoonSVG({ R_perigeu, R_apogeu, R_now, illum, waxing });
 
-        // ======= Gràfica + temps total (NET) =======
-        const chartWrap = document.getElementById("chartWrap");
-        const statsOne  = document.getElementById("statsOne");
-        chartWrap.style.display = "none";
-        statsOne.style.display  = "none";
+// ======= Gràfica + resum inferior =======
+const chartWrap = document.getElementById("chartWrap");
+const statsEl   = document.getElementById("stats");
 
-        const base = new Date(day);
-        base.setHours(12,0,0,0);
-        const startDate = new Date(base.getTime() - 18*3600*1000);
+chartWrap.style.display = "none";
+statsEl.style.display = "none";
 
-        const metersAboveGround = 0;
+const day0 = new Date(day);
+day0.setHours(0,0,0,0);
 
-        // IMPORTANT: AstroTime REAL (no {ut:...})
-        const startTime = Astronomy.MakeTime(startDate);
+if (!Number.isFinite(day0.getTime())){
+  throw new Error("Dia invàlid (dateStr). Revisa ?date=YYYY-MM-DD");
+}
 
-        // 1) RISE
-        const riseEv = Astronomy.SearchRiseSet(
-          Astronomy.Body.Moon,
-          observer,
-          +1,
-          startTime,
-          2,
-          metersAboveGround
-        );
-        const rise = evToDate(riseEv);
 
-        if (rise){
-          // 2) SET
-          const afterRiseDate = new Date(rise.getTime() + 60*1000);
-          const afterRiseTime = Astronomy.MakeTime(afterRiseDate);
+// Volem: rise dins el dia local (0–24h) i set després (encara que sigui l’endemà)
+const moonScanStart = new Date(day0); // 00:00 del dia
+const rs0 = findRiseSetScan(Astronomy.Body.Moon, observer, moonScanStart, 36, 5, MOON_EVENT_ALT);
 
-          const setEv = Astronomy.SearchRiseSet(
-            Astronomy.Body.Moon,
-            observer,
-            -1,
-            afterRiseTime,
-            2,
-            metersAboveGround
-          );
-          const set = evToDate(setEv);
+let rise = rs0.rise;
+let set  = null;
 
-          if (set){
-            // 3) TRANSIT
-            const riseTime = Astronomy.MakeTime(rise);
+if (rise){
+  // cerca la primera posta després del rise
+  const rs1 = findRiseSetScan(
+    Astronomy.Body.Moon,
+    observer,
+    new Date(rise.getTime() + 5*60*1000),
+    36,
+    5,
+    MOON_EVENT_ALT
+  );
+  set = rs1.set;
+} else {
+  // Si no hi ha rise en 36h, pot ser que la lluna ja sigui damunt a les 00:00
+  // -> agafam la primera posta
+  set = rs0.set;
+}
 
-            const trEv = Astronomy.SearchTransit(
-              Astronomy.Body.Moon,
-              observer,
-              riseTime,
-              2
-            );
-            const transit = evToDate(trEv);
+console.log("DEBUG moon graph", { rise, set });
 
-            if (transit){
-              let altMax = null;
-              try { altMax = getAltitudeDeg(Astronomy.Body.Moon, observer, transit); } catch(e){}
+// Transit (màxim) entre rise i set
+let transit = null;
+let altMax = null;
 
-              const aboveMs = Math.max(0, set.getTime() - rise.getTime());
+if (rise && set){
+  const tr = findTransitByScan(Astronomy.Body.Moon, observer, rise, set, 5);
+  if (tr){
+    transit = tr.time;
+    altMax = tr.altDeg;
+  }
+}
 
-              document.getElementById("chartTitle").textContent =
-                `Altura max: ${Number.isFinite(altMax) ? Math.round(altMax) + "°" : "—"}`;
+// Mostram només si tenim rise+set+transit
+if (rise && set && transit){
+  chartWrap.style.display = "";
+  document.getElementById("chartTitle").textContent =
+    `Altura max: ${Number.isFinite(altMax) ? Math.round(altMax) + "°" : "—"}`;
 
-              document.getElementById("chartBox").innerHTML =
-                renderArcChart({ rise, transit, set, altMaxDeg: altMax });
+  document.getElementById("chartBox").innerHTML = renderArcChart({ rise, transit, set });
 
-              document.getElementById("sAbove").textContent = fmtDurationHM(aboveMs);
+  // Temps total damunt horitzó
+  const aboveMs = aboveHorizonTimeMs(Astronomy.Body.Moon, observer, rise, set, 2, MOON_EVENT_ALT);
 
-              chartWrap.style.display = "";
-              statsOne.style.display  = "";
-            }
-          }
-        }
+  document.getElementById("sAbove").textContent = fmtDurationHM(aboveMs);
+
+  // === Nit: sunset(dia) -> sunrise(dia+1) (també per escaneig) ===
+  const day1 = new Date(day0.getTime() + 24*3600*1000);
+
+  // Sunset: escanejam des de les 12:00 del dia0 durant 24h i agafam el primer "set" del Sol
+  const noon0 = new Date(day0); noon0.setHours(12,0,0,0);
+  const sunRS = findRiseSetScan(Astronomy.Body.Sun, observer, noon0, 24, 2, SUN_EVENT_ALT);
+  const sunset = sunRS.set;
+
+  // Sunrise: si tenim sunset, escanejam després del sunset fins trobar rise
+  let sunrise = null;
+  if (sunset){
+    const afterSunset = new Date(sunset.getTime() + 5*60*1000);
+  const sunRS2 = findRiseSetScan(Astronomy.Body.Sun, observer, afterSunset, 24, 2, SUN_EVENT_ALT);    
+    sunrise = sunRS2.rise;
+  }
+
+if (sunset && sunrise){
+  const nightMs = Math.max(0, sunrise.getTime() - sunset.getTime());
+
+  // ✅ Temps amb lluna DURANT la nit: integració per escaneig (robusta)
+const withMoonMs = aboveHorizonTimeMs(Astronomy.Body.Moon, observer, sunset, sunrise, 2, MOON_EVENT_ALT);
+
+  // Nit sense lluna = nit total - amb lluna
+  const noMoonMs = Math.max(0, nightMs - withMoonMs);
+
+  document.getElementById("sNightMoon").textContent = fmtDurationHM(withMoonMs);
+  document.getElementById("sNightNoMoon").textContent = fmtDurationHM(noMoonMs);
+}else{
+  document.getElementById("sNightMoon").textContent = "—";
+  document.getElementById("sNightNoMoon").textContent = "—";
+}
+
+  statsEl.style.display = "";
+}
+
 
       }catch(e){
         console.error(e);
-        const errEl = document.getElementById("err");
         errEl.style.display = "block";
         errEl.textContent = "Error: " + (e?.message || e);
       }
     })();
 
+    // Hereta el mode nocturn de l'app (localStorage) i escolta canvis
     try{
       const apply = () => {
         const isNocturn = localStorage.getItem("nocturn") === "1";
@@ -690,4 +924,3 @@ a:active{ opacity:1; }
   </script>
 </body>
 </html>
-
