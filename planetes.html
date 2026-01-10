@@ -3,20 +3,388 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Plantes</title>
-</head>
-<body style="font-family:system-ui;padding:16px">
-  <a href="#" id="back">← Tornar</a>
-  <h1>Planetes Visibles</h1>
-  <p>Data: <span id="d"></span></p>
-  <script>
-  const p = new URLSearchParams(location.search);
-  document.getElementById("d").textContent = p.get("date") || "";
+  <title>Planetes</title>
 
-  document.getElementById("back").addEventListener("click", (e) => {
-    e.preventDefault();
-    window.history.back();
-  });
-</script>
+  <style>
+    :root{
+      /* DIA */
+      --bg:#ffffff;
+      --text:#111111;
+      --muted:rgba(0,0,0,.65);
+      --border:rgba(0,0,0,.18);
+      --card: rgba(0,0,0,0.03);
+    }
+
+    /* NOCTURN (heretat de l'app: body.nocturn) */
+    body.nocturn{
+      --bg:#000000;
+      --text:#ff2a2a;
+      --muted:rgba(255,42,42,.75);
+      --border:rgba(255,42,42,.35);
+      --card: rgba(255,42,42,0.06);
+    }
+
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      padding:16px;
+    }
+
+    a{ color:var(--text); text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+
+    .wrap{
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    h1{
+      margin: 8px 0 12px;
+      font-size: 34px;
+      font-weight: 800;
+      letter-spacing: .2px;
+    }
+
+    .meta{
+      color: var(--muted);
+      margin: 0 0 12px;
+      font-size: 14px;
+    }
+
+    .card{
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 14px;
+      margin: 12px 0;
+    }
+
+    .row{
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    canvas{
+      width: 100%;
+      height: auto;
+      display:block;
+      border-radius: 14px;
+      background: transparent;
+    }
+
+    table{
+      width:100%;
+      border-collapse: collapse;
+      font-size: 16px;
+    }
+    th, td{
+      padding: 10px 6px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: middle;
+    }
+    th{
+      text-align:left;
+      font-size: 14px;
+      color: var(--muted);
+      font-weight: 700;
+      letter-spacing: .3px;
+    }
+    td.time{
+      text-align:right;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+    .planet{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .dot{
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      flex: 0 0 auto;
+      outline: 1px solid var(--border);
+    }
+    .hint{
+      margin-top: 8px;
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.35;
+    }
+
+    .err{
+      display:none;
+      margin-top: 10px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--text);
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <a href="#" id="back">← Tornar</a>
+
+    <h1>Sistema solar</h1>
+    <p class="meta">
+      Data: <span id="d"></span>
+      <span id="loc"></span>
+    </p>
+
+    <div class="card">
+      <!-- Diagrama heliocèntric simple (posicions reals en el pla eclíptic) -->
+      <canvas id="sys" width="700" height="700" aria-label="Diagrama del sistema solar"></canvas>
+      <div class="hint">
+        Diagrama heliocèntric (pla eclíptic): posicions relatives del mateix dia (no és una carta del cel).
+      </div>
+    </div>
+
+    <div class="card">
+      <table>
+        <thead>
+          <tr>
+            <th>Planeta</th>
+            <th class="time">Sortida</th>
+            <th class="time">Posta</th>
+          </tr>
+        </thead>
+        <tbody id="rows"></tbody>
+      </table>
+
+      <div id="err" class="err"></div>
+    </div>
+  </div>
+
+  <!-- astronomy-engine (local) -->
+  <script src="assets/js/astronomy.browser.min.js"></script>
+
+  <script>
+    // --- back ---
+    document.getElementById("back").addEventListener("click", (e) => {
+      e.preventDefault();
+      window.history.back();
+    });
+
+    // --- mode nocturn heretat de l'app ---
+    try{
+      const apply = () => {
+        const isNocturn = localStorage.getItem("nocturn") === "1";
+        document.body.classList.toggle("nocturn", isNocturn);
+      };
+      apply();
+      window.addEventListener("storage", (e) => {
+        if (e.key === "nocturn") apply();
+      });
+    }catch(e){}
+
+    // --- params ---
+    const p = new URLSearchParams(location.search);
+    const dateStr = p.get("date") || "";     // "YYYY-MM-DD"
+    const lat  = Number(p.get("lat"));
+    const lon  = Number(p.get("lon"));
+    const elev = Number(p.get("elev"));
+
+    document.getElementById("d").textContent = dateStr || "(sense data)";
+
+    // Mostra localització si hi és
+    if (Number.isFinite(lat) && Number.isFinite(lon)){
+      document.getElementById("loc").textContent = ` · ${lat.toFixed(4)}, ${lon.toFixed(4)}`;
+    }
+
+    const errBox = document.getElementById("err");
+    const showErr = (msg) => {
+      errBox.style.display = "block";
+      errBox.textContent = msg;
+    };
+
+    // --- helpers ---
+    function fmtHHMM(dt){
+      if (!dt) return "—";
+      const h = String(dt.getHours()).padStart(2,"0");
+      const m = String(dt.getMinutes()).padStart(2,"0");
+      return `${h}:${m}`;
+    }
+
+    function parseDateLocalMidnight(yyyy_mm_dd){
+      // IMPORTANT: "new Date('YYYY-MM-DD')" pot interpretar-se com UTC en alguns navegadors.
+      // Així ho forçam a local.
+      const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(yyyy_mm_dd || "");
+      if (!m) return null;
+      const y = Number(m[1]), mo = Number(m[2]) - 1, d = Number(m[3]);
+      return new Date(y, mo, d, 0, 0, 0, 0);
+    }
+
+    function tryRiseSet(body, direction, startDate){
+      try{
+        const obs = new Astronomy.Observer(lat, lon, Number.isFinite(elev) ? elev : 0);
+        const t0 = Astronomy.MakeTime(startDate);
+        // limitDays=2, metersAboveGround=0 (com a sol.html)
+        const t  = Astronomy.SearchRiseSet(body, obs, direction, t0, 2, 0);
+        return (t && t.date) ? new Date(t.date.getTime()) : null;
+      }catch(e){
+        console.warn("SearchRiseSet error:", body, e);
+        return null;
+      }
+    }
+
+    // --- planet config ---
+    const planets = [
+      { name:"Mercuri", body: Astronomy.Body.Mercury, color:"#1f77b4", a:0.387 },
+      { name:"Venus",   body: Astronomy.Body.Venus,   color:"#ff7f0e", a:0.723 },
+      { name:"Mart",    body: Astronomy.Body.Mars,    color:"#d62728", a:1.524 },
+      { name:"Júpiter", body: Astronomy.Body.Jupiter, color:"#9467bd", a:5.204 },
+      { name:"Saturn",  body: Astronomy.Body.Saturn,  color:"#bcbd22", a:9.582 },
+      { name:"Urà",     body: Astronomy.Body.Uranus,  color:"#17becf", a:19.201 },
+      { name:"Neptú",   body: Astronomy.Body.Neptune, color:"#2a3fff", a:30.047 },
+    ];
+
+    // --- run ---
+    (function main(){
+      if (!dateStr){
+        showErr("Falta ?date=YYYY-MM-DD a l'URL.");
+        return;
+      }
+      if (!Number.isFinite(lat) || !Number.isFinite(lon)){
+        showErr("Falten ?lat=... i ?lon=... a l'URL (necessaris per calcular sortida/posta).");
+        return;
+      }
+
+      const d0 = parseDateLocalMidnight(dateStr);
+      if (!d0){
+        showErr("Format de data invàlid. Esperat YYYY-MM-DD.");
+        return;
+      }
+
+      // --- taula rise/set ---
+      const tbody = document.getElementById("rows");
+      tbody.innerHTML = "";
+
+      for (const pl of planets){
+        const rise = tryRiseSet(pl.body, +1, d0);
+        const set  = tryRiseSet(pl.body, -1, d0);
+
+        const tr = document.createElement("tr");
+
+        const tdName = document.createElement("td");
+        const box = document.createElement("div");
+        box.className = "planet";
+        const dot = document.createElement("span");
+        dot.className = "dot";
+        dot.style.background = pl.color;
+        const label = document.createElement("span");
+        label.textContent = pl.name;
+        box.appendChild(dot);
+        box.appendChild(label);
+        tdName.appendChild(box);
+
+        const tdRise = document.createElement("td");
+        tdRise.className = "time";
+        tdRise.textContent = fmtHHMM(rise);
+
+        const tdSet = document.createElement("td");
+        tdSet.className = "time";
+        tdSet.textContent = fmtHHMM(set);
+
+        tr.appendChild(tdName);
+        tr.appendChild(tdRise);
+        tr.appendChild(tdSet);
+        tbody.appendChild(tr);
+      }
+
+      // --- diagrama heliocèntric ---
+      drawHeliocentricDiagram(dateStr);
+    })();
+
+    function drawHeliocentricDiagram(yyyy_mm_dd){
+      try{
+        const canvas = document.getElementById("sys");
+        const ctx = canvas.getContext("2d");
+
+        // colors segons tema
+        const cs = getComputedStyle(document.body);
+        const stroke = cs.getPropertyValue("--border").trim() || "rgba(0,0,0,.2)";
+        const text   = cs.getPropertyValue("--text").trim()   || "#111";
+
+        // Neteja
+        ctx.clearRect(0,0,canvas.width,canvas.height);
+
+        const W = canvas.width, H = canvas.height;
+        const cx = W/2, cy = H/2;
+
+        // escala (AU -> píxels)
+        const maxAU = 30.1;                 // Neptú aprox
+        const pad = 40;
+        const R = Math.min(W,H)/2 - pad;
+        const scale = R / maxAU;
+
+        // temps per a posició heliocèntrica
+        // (posició en el pla eclíptic: fem servir el migdia UTC per ser estable)
+        const t = new Date(yyyy_mm_dd + "T12:00:00Z");
+        const astroT = Astronomy.MakeTime(t);
+
+        // Orbits (anells)
+        ctx.save();
+        ctx.strokeStyle = stroke;
+        ctx.lineWidth = 2;
+
+        for (const pl of planets){
+          const r = pl.a * scale;
+          ctx.beginPath();
+          ctx.arc(cx, cy, r, 0, Math.PI*2);
+          ctx.stroke();
+        }
+        ctx.restore();
+
+        // Sol al centre
+        ctx.save();
+        ctx.fillStyle = "#ffcc00";
+        ctx.beginPath();
+        ctx.arc(cx, cy, 18, 0, Math.PI*2);
+        ctx.fill();
+        ctx.lineWidth = 6;
+        ctx.strokeStyle = "#ff9900";
+        ctx.stroke();
+        ctx.restore();
+
+        // Planetes (posicions reals heliocèntriques)
+        for (const pl of planets){
+          const v = Astronomy.HelioVector(pl.body, astroT);  // AU
+          const x = cx + (v.x * scale);
+          const y = cy - (v.y * scale);
+
+          ctx.save();
+          ctx.fillStyle = pl.color;
+          ctx.beginPath();
+          ctx.arc(x, y, 10, 0, Math.PI*2);
+          ctx.fill();
+          ctx.lineWidth = 2;
+          ctx.strokeStyle = stroke;
+          ctx.stroke();
+          ctx.restore();
+        }
+
+        // Títol petit dins canvas (opcional)
+        ctx.save();
+        ctx.fillStyle = text;
+        ctx.globalAlpha = 0.85;
+        ctx.font = "700 22px system-ui, -apple-system, Segoe UI, sans-serif";
+        ctx.textAlign = "center";
+        ctx.fillText("Sistema solar", cx, 34);
+        ctx.restore();
+
+      }catch(e){
+        console.warn("Diagram error:", e);
+        // si falla el diagrama, no trenquem la pàgina
+      }
+    }
+  </script>
 </body>
 </html>
