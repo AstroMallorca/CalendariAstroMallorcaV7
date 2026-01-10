@@ -4,19 +4,385 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Messiers</title>
-</head>
-<body style="font-family:system-ui;padding:16px">
-  <a href="#" id="back">← Tornar</a>
-  <h1>Messiers visibles avui</h1>
-  <p>Data: <span id="d"></span></p>
-  <script>
-  const p = new URLSearchParams(location.search);
-  document.getElementById("d").textContent = p.get("date") || "";
 
+  <!-- Astronomy Engine local -->
+  <script src="assets/js/astronomy.browser.min.js"></script>
+
+  <style>
+    :root{
+      --bg:#ffffff;
+      --text:#111111;
+      --muted:rgba(0,0,0,.65);
+      --border:rgba(0,0,0,.18);
+      --card: rgba(0,0,0,0.03);
+      --ok: rgba(0,0,0,0.08);
+    }
+    body.nocturn{
+      --bg:#000000;
+      --text:#ff2a2a;
+      --muted:rgba(255,42,42,.75);
+      --border:rgba(255,42,42,.35);
+      --card: rgba(255,42,42,0.08);
+      --ok: rgba(255,42,42,0.14);
+    }
+
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      padding:16px;
+    }
+
+    .top{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:12px;
+    }
+    a{ color:inherit; text-decoration:none; }
+    .muted{ color: var(--muted); }
+
+    .controls{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      flex-wrap:wrap;
+      margin: 8px 0 14px;
+      padding: 10px 12px;
+      border:1px solid var(--border);
+      border-radius:14px;
+      background: var(--card);
+    }
+    .controls label{ font-size:14px; }
+    .controls input{
+      width:80px;
+      padding:6px 8px;
+      border-radius:10px;
+      border:1px solid var(--border);
+      background: transparent;
+      color: inherit;
+    }
+
+    .list{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+    .card{
+      display:grid;
+      grid-template-columns: 64px 1fr auto;
+      gap:12px;
+      align-items:center;
+      padding:10px 12px;
+      border-radius:16px;
+      border:1px solid var(--border);
+      background: var(--card);
+    }
+    .thumb{
+      width:64px;
+      height:64px;
+      border-radius:14px;
+      object-fit:cover;
+      border:1px solid var(--border);
+      background: var(--ok);
+    }
+    .title{
+      font-weight:800;
+      font-size:16px;
+      line-height:1.1;
+      margin:0;
+    }
+    .sub{
+      margin: 4px 0 0;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .right{
+      text-align:right;
+      font-variant-numeric: tabular-nums;
+      min-width: 120px;
+    }
+    .tag{
+      display:inline-block;
+      margin-top:6px;
+      padding:2px 8px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      font-size:12px;
+      color: var(--muted);
+    }
+    .warn{ opacity:.8; }
+  </style>
+</head>
+
+<body>
+  <div class="top">
+    <a href="#" id="back">← Tornar</a>
+    <div class="muted" id="meta"></div>
+  </div>
+
+  <h1 style="margin: 6px 0 6px;">Messiers visibles avui</h1>
+  <div class="muted" id="subtitle"></div>
+
+  <div class="controls">
+    <label>Altura mín. (°):
+      <input id="minAlt" type="number" value="10" min="0" max="45" step="1">
+    </label>
+    <label>Pas (min):
+      <input id="stepMin" type="number" value="5" min="1" max="15" step="1">
+    </label>
+    <span class="muted">Ordena per minuts visibles el vespre (posta de Sol → 23:59)</span>
+  </div>
+
+  <div class="list" id="list"></div>
+
+<script>
+/* === Hereta mode nocturn (igual que sol.html / lluna.html) === */
+try{
+  const apply = () => {
+    const isNocturn = localStorage.getItem("nocturn") === "1";
+    document.body.classList.toggle("nocturn", isNocturn);
+  };
+  apply();
+  window.addEventListener("storage", (e) => { if (e.key === "nocturn") apply(); });
+}catch(e){}
+
+/* === Helpers === */
+function pad2(n){ return String(n).padStart(2,"0"); }
+function fmtHHMM(d){
+  if(!d) return "—";
+  return `${pad2(d.getHours())}:${pad2(d.getMinutes())}`;
+}
+function parseISODateLocal(iso){
+  const [y,m,d] = (iso||"").split("-").map(Number);
+  if(!y||!m||!d) return null;
+  return new Date(y, m-1, d, 12, 0, 0); // migdia evita problemes de límit de dia
+}
+function startOfDayLocal(iso){
+  const [y,m,d] = (iso||"").split("-").map(Number);
+  if(!y||!m||!d) return null;
+  return new Date(y, m-1, d, 0, 0, 0);
+}
+function endOfDayLocal(iso){
+  const [y,m,d] = (iso||"").split("-").map(Number);
+  if(!y||!m||!d) return null;
+  return new Date(y, m-1, d, 23, 59, 59);
+}
+function minutesBetween(a,b){
+  return Math.max(0, Math.round((b - a)/60000));
+}
+function lerpTime(t1, t2, frac){
+  return new Date(t1.getTime() + frac*(t2.getTime() - t1.getTime()));
+}
+
+/* === Astronomia: alt d’un objecte fix (RA/Dec) === */
+function altDegAt(date, obs, ra_h, dec_deg){
+  const t = Astronomy.MakeTime(date);
+  // Horizon(time, observer, ra, dec, refraction)
+  const h = Astronomy.Horizon(t, obs, ra_h, dec_deg, "normal");
+  // API habitual: h.altitude en graus
+  return h.altitude;
+}
+
+/* Troba rise/set aproximats per un llindar d’altura minAlt (graus)
+   escanejant tot el dia amb pas stepMin. */
+function approxRiseSetForDay(iso, obs, ra_h, dec_deg, minAlt, stepMin){
+  const t0 = startOfDayLocal(iso);
+  const t1 = endOfDayLocal(iso);
+  if(!t0 || !t1) return {rise:null, set:null, state:"error"};
+
+  const stepMs = stepMin * 60000;
+  let prevT = t0;
+  let prevA = altDegAt(prevT, obs, ra_h, dec_deg);
+
+  let everUp = prevA >= minAlt;
+  let everDown = prevA < minAlt;
+
+  let rise = null, set = null;
+
+  for(let t = new Date(prevT.getTime() + stepMs); t <= t1; t = new Date(t.getTime() + stepMs)){
+    const a = altDegAt(t, obs, ra_h, dec_deg);
+    everUp = everUp || (a >= minAlt);
+    everDown = everDown || (a < minAlt);
+
+    // creuament pujant
+    if(!rise && prevA < minAlt && a >= minAlt){
+      const frac = (minAlt - prevA) / (a - prevA);
+      rise = lerpTime(prevT, t, frac);
+    }
+    // creuament baixant
+    if(!set && prevA >= minAlt && a < minAlt){
+      const frac = (minAlt - prevA) / (a - prevA);
+      set = lerpTime(prevT, t, frac);
+    }
+
+    prevT = t;
+    prevA = a;
+  }
+
+  if(!everUp) return {rise:null, set:null, state:"never"};
+  if(!everDown) return {rise:null, set:null, state:"circumpolar"}; // sempre per damunt
+  return {rise, set, state:"normal"};
+}
+
+/* Calcula minuts visibles dins un interval [a,b] */
+function visibleMinutesInWindow(obs, ra_h, dec_deg, minAlt, stepMin, winA, winB){
+  const stepMs = stepMin * 60000;
+  let vis = 0;
+
+  // també guardam primera i darrera vegada visible dins la finestra
+  let first = null, last = null;
+
+  for(let t = new Date(winA); t <= winB; t = new Date(t.getTime() + stepMs)){
+    const alt = altDegAt(t, obs, ra_h, dec_deg);
+    if(alt >= minAlt){
+      vis += stepMin;
+      if(!first) first = new Date(t);
+      last = new Date(t);
+    }
+  }
+  return {visMin: vis, first, last};
+}
+
+async function main(){
+  const p = new URLSearchParams(location.search);
+  const iso = p.get("date") || "";
+  const lat = Number(p.get("lat"));
+  const lon = Number(p.get("lon"));
+  const elev = Number(p.get("elev") || 0);
+
+  const dateMid = parseISODateLocal(iso);
+  const obs = new Astronomy.Observer(lat, lon, Number.isFinite(elev)? elev : 0);
+
+  document.getElementById("meta").textContent = `${iso} · ${lat.toFixed(3)}, ${lon.toFixed(3)}`;
+  document.getElementById("subtitle").textContent = `Ordenat per temps visible el vespre segons la teva ubicació.`;
+
+  // Botó tornar
   document.getElementById("back").addEventListener("click", (e) => {
     e.preventDefault();
     window.history.back();
   });
+
+  // Carrega catàleg
+  const catalog = await fetch("data/messier_catalog.json").then(r => r.json());
+
+  // Controls
+  const minAltEl = document.getElementById("minAlt");
+  const stepEl = document.getElementById("stepMin");
+
+  const computeAndRender = () => {
+    const minAlt = Number(minAltEl.value || 10);
+    const stepMin = Math.max(1, Number(stepEl.value || 5));
+
+    // Posta de Sol (finestra de vespre)
+    let sunset = null;
+    try{
+      const t0 = Astronomy.MakeTime(dateMid);
+      const rs = Astronomy.SearchRiseSet(Astronomy.Body.Sun, obs, -1, t0, 1, 0);
+      sunset = rs ? rs.date : null;
+    }catch(e){
+      sunset = null;
+    }
+
+    const winA = sunset ? sunset : startOfDayLocal(iso);
+    const winB = endOfDayLocal(iso); // fins 23:59
+
+    const enriched = catalog.map(obj => {
+      const dayRS = approxRiseSetForDay(iso, obs, obj.ra_h, obj.dec_deg, minAlt, stepMin);
+      const ev = visibleMinutesInWindow(obs, obj.ra_h, obj.dec_deg, minAlt, stepMin, winA, winB);
+
+      return {
+        ...obj,
+        riseApprox: dayRS.rise,
+        setApprox: dayRS.set,
+        state: dayRS.state,
+        visEveningMin: ev.visMin,
+        firstEvening: ev.first,
+        lastEvening: ev.last,
+        sunset
+      };
+    });
+
+    // Ordena: més minuts visibles el vespre primer
+    enriched.sort((a,b) => (b.visEveningMin - a.visEveningMin) || (String(a.id).localeCompare(String(b.id))));
+
+    // Render
+    const list = document.getElementById("list");
+    list.innerHTML = "";
+
+    for(const o of enriched){
+      const card = document.createElement("div");
+      card.className = "card";
+
+      const img = document.createElement("img");
+      img.className = "thumb";
+      img.loading = "lazy";
+      img.alt = `${o.id} ${o.name}`;
+      img.src = o.img || "";
+      img.onerror = () => { img.style.display = "none"; };
+
+      const mid = document.createElement("div");
+      const h = document.createElement("p");
+      h.className = "title";
+      h.textContent = `${o.id} · ${o.name}`;
+      const sub = document.createElement("p");
+      sub.className = "sub";
+      sub.textContent = (o.desc || "");
+
+      const tag = document.createElement("div");
+      tag.className = "tag";
+      const visTxt = o.visEveningMin > 0 ? `${Math.floor(o.visEveningMin/60)}h ${o.visEveningMin%60}m visibles el vespre` : "No visible el vespre";
+      tag.textContent = `${visTxt}${o.type ? ` · ${o.type}` : ""}${Number.isFinite(o.mag) ? ` · mag ${o.mag}` : ""}`;
+
+      mid.appendChild(h);
+      mid.appendChild(sub);
+      mid.appendChild(tag);
+
+      const right = document.createElement("div");
+      right.className = "right";
+
+      const rs1 = document.createElement("div");
+      rs1.innerHTML = `<span class="muted">↑</span> ${fmtHHMM(o.riseApprox)}`;
+      const rs2 = document.createElement("div");
+      rs2.innerHTML = `<span class="muted">↓</span> ${fmtHHMM(o.setApprox)}`;
+
+      const rs3 = document.createElement("div");
+      rs3.className = "muted";
+      rs3.style.fontSize = "12px";
+
+      if(o.state === "circumpolar"){
+        rs3.textContent = "Circumpolar (sempre per damunt del llindar)";
+      }else if(o.state === "never"){
+        rs3.textContent = "No puja per damunt del llindar avui";
+        rs3.classList.add("warn");
+      }else{
+        rs3.textContent = o.sunset ? `Posta de Sol: ${fmtHHMM(o.sunset)}` : "";
+      }
+
+      right.appendChild(rs1);
+      right.appendChild(rs2);
+      right.appendChild(rs3);
+
+      card.appendChild(img);
+      card.appendChild(mid);
+      card.appendChild(right);
+
+      list.appendChild(card);
+    }
+  };
+
+  minAltEl.addEventListener("input", computeAndRender);
+  stepEl.addEventListener("input", computeAndRender);
+
+  computeAndRender();
+}
+
+main().catch(err => {
+  const list = document.getElementById("list");
+  list.innerHTML = `<p class="muted">Error carregant dades: ${String(err)}</p>`;
+});
 </script>
 </body>
 </html>
