@@ -809,49 +809,65 @@ function obreModalDetallFoto(f) {
   const titol = clean(f.titol);
   const autor = clean(f.autor);
   const lloc  = clean(f.lloc);
-
-  // alguns fulls poden dir "credit" o "credits"
   const credits = clean(f.credits ?? f.credit);
 
-  // tècnica compacta (1–2 línies)
   const tech = [];
-  if (clean(f.camera))   tech.push(`📷 ${clean(f.camera)}`);
-  if (clean(f.objectiu)) tech.push(`🔭 ${clean(f.objectiu)}`);
-  if (clean(f.exposicio))tech.push(`⏱ ${clean(f.exposicio)}`);
-  if (clean(f.iso))      tech.push(`ISO ${clean(f.iso)}`);
-  if (clean(f.f))        tech.push(`f/${clean(f.f)}`);
+  if (clean(f.camera))    tech.push(`📷 ${clean(f.camera)}`);
+  if (clean(f.objectiu))  tech.push(`🔭 ${clean(f.objectiu)}`);
+  if (clean(f.exposicio)) tech.push(`⏱ ${clean(f.exposicio)}`);
+  if (clean(f.iso))       tech.push(`ISO ${clean(f.iso)}`);
+  if (clean(f.f))         tech.push(`f/${clean(f.f)}`);
 
-  const techHtml = tech.length ? `<div class="foto-tech">${tech.join(" · ")}</div>` : "";
+  const techHtml = tech.length
+    ? `<div class="foto-tech">${tech.join(" · ")}</div>`
+    : "";
 
-  // ✅ ara al sheet tens "descripcio" (la curta)
   const descCurta  = clean(f.descripcio ?? f.descripcio_curta ?? f.descripcion_curta);
   const descLlarga = clean(f.descripcio_llarga ?? f.descripcion_llarga);
 
   contingutDia.innerHTML = `
-    <h2 style="text-align:center;margin:0 0 12px 0;">
-      ${titol}
-    </h2>
+    <a href="#" class="back-link" id="backFoto">← Tornar</a>
+
+    <h1 class="page-title">Fotografia del mes</h1>
+    <div class="page-subtitle">${titol}</div>
 
     ${f.imatge ? `
-      <img src="${f.imatge}"
-           alt="${titol.replace(/"/g, "&quot;")}"
-           style="width:100%;border-radius:16px;display:block;margin:0 auto 10px auto;">
+      <img
+        src="${f.imatge}"
+        alt="${titol.replace(/"/g, "&quot;")}"
+        class="foto-img"
+      >
     ` : ""}
 
-    ${autor ? `<div style="text-align:center;font-weight:600;margin:6px 0 12px 0;">${autor}</div>` : ""}
+    ${autor ? `<div class="foto-autor">${autor}</div>` : ""}
 
-    <div style="line-height:1.45">
+    <!-- Quadre 1: dades tècniques + lloc + crèdits -->
+    <div class="dia-card">
       ${techHtml}
       ${lloc ? `<div style="margin-top:10px"><b>Lloc:</b> ${lloc}</div>` : ""}
       ${credits ? `<div style="margin-top:6px"><b>Crèdits:</b> ${credits}</div>` : ""}
     </div>
 
-    ${descCurta ? `<p style="margin-top:14px">${descCurta}</p>` : ""}
-    ${descLlarga ? `<p style="margin-top:10px;opacity:.9">${descLlarga}</p>` : ""}
+    <!-- Quadre 2: descripcions -->
+    <div class="dia-card">
+      ${descCurta ? `<p class="foto-desc-curta">${descCurta}</p>` : ""}
+      ${descLlarga ? `<p class="foto-desc-llarga">${descLlarga}</p>` : ""}
+      ${(!descCurta && !descLlarga) ? `<p class="dia-muted">Sense descripció.</p>` : ""}
+    </div>
   `;
 
   modal.classList.remove("ocult");
+
+  // Tornar (igual que Sistema solar: history/back; aquí tanca el modal)
+  const back = document.getElementById("backFoto");
+  if (back){
+    back.addEventListener("click", (e) => {
+      e.preventDefault();
+      modal.classList.add("ocult");
+    });
+  }
 }
+
 
 function dibuixaMes(isoYM) {
   graella.innerHTML = "";
