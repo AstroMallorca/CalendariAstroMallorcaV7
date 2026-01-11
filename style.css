@@ -516,6 +516,9 @@ body.nocturn .dia-section-title {
 body.nocturn .dia-row-sub {
   color: #ff6b6b;
 }
+body.nocturn .dia-row:not(.dia-btn){
+  border-bottom: 1px solid #ff3b3b;
+}
 
 /* Llistes d’activitats i històriques */
 body.nocturn .dia-list li,
@@ -631,4 +634,33 @@ body.nocturn .page-subtitle{ color: rgba(255,59,59,.75); }
 body.nocturn .back-btn{
   color: #ff2a2a;
 }
+/* Botons dins el dia (Sol/Lluna/Planetes/Messiers) */
+.dia-btn{
+  background: rgba(0,0,0,0.03);
+  border: 1px solid rgba(0,0,0,0.18);
+  border-radius: 16px;
+  padding: 12px 12px;
+  transition: transform 120ms ease;
+}
+
+.dia-btn:active{
+  transform: scale(0.99);
+}
+
+/* Opcional: hover suau (desktop) */
+@media (hover:hover){
+  .dia-btn:hover{
+    background: rgba(0,0,0,0.05);
+  }
+}
+body.nocturn .dia-btn{
+  background: rgba(255,59,59,0.06);
+  border: 1px solid rgba(255,59,59,0.35);
+}
+@media (hover:hover){
+  body.nocturn .dia-btn:hover{
+    background: rgba(255,59,59,0.10);
+  }
+}
+.dia-row-text{ flex: 1; }
 
