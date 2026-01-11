@@ -592,3 +592,18 @@ body.nocturn .page-subtitle{ color: rgba(255,59,59,.75); }
   text-decoration: none;
 }
 #fotoMes{ cursor: pointer; }
+.back-btn{
+  background: transparent;
+  border: 0;
+  color: #000;
+  font-size: 1rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 4px;
+  cursor: pointer;
+}
+body.nocturn .back-btn{
+  color: #ff2a2a;
+}
