@@ -1,0 +1,386 @@
+data;tipus;titol;codi;Hora;importancia
+01-01-2026;lluna;Lluna en perigeu;;;5
+02-01-2026;asteroide;Harmonia en oposició;;;8
+02-01-2026;lluna;La Lluna 0,5° al sud d’Elnath (ocultació);;;5
+03-01-2026;lluna;La Lluna 4° al nord de Júpiter;;;5
+03-01-2026;lluna;Lluna plena;;;5
+03-01-2026;meteors;Màxim de les Quadràntides;assets/icons/special/pluja_meteors.png;;9
+03-01-2026;terra;La Terra en el periheli;assets/icons/special/periheli.png;;3
+06-01-2026;lluna;La Lluna 0,4° al nord de Règul (ocultació);;;5
+06-01-2026;planeta;Mercuri en afeli;;;6
+06-01-2026;planeta;Venus en conjunció superior amb el Sol;;;6
+09-01-2026;planeta;Mart en conjunció amb el Sol;;;6
+10-01-2026;lluna;Quart minvant;;;5
+10-01-2026;planeta;Júpiter en oposició;;;6
+13-01-2026;lluna;Lluna en apogeu;;;5
+14-01-2026;lluna;La Lluna 0,5° al sud d’Antares (ocultació);;;5
+17-01-2026;lluna;La Lluna 0,7° al sud de Nunki (ocultació);;;5
+17-01-2026;lluna;La Lluna 2° al sud de Metis;;;5
+18-01-2026;asteroide;Astrea en conjunció amb el Sol;;;8
+18-01-2026;lluna;Lluna nova;;;5
+21-01-2026;planeta;Mercuri en conjunció superior amb el Sol;;;6
+22-01-2026;planeta;Venus en afeli;;;6
+23-01-2026;lluna;La Lluna 4° al nord de Saturn;;;5
+26-01-2026;lluna;Quart creixent;;;5
+27-01-2026;lluna;La Lluna 1,0° al nord d’Alcióne (ocultació);;;5
+27-01-2026;lluna;La Lluna 5° al nord d’Urà;;;5
+27-01-2026;asteroide;Laetitia en oposició;;;8
+28-01-2026;asteroide;Vesta en conjunció amb el Sol;;;8
+29-01-2026;lluna;La Lluna 0,6° al sud d’Elnath (ocultació);;;5
+29-01-2026;lluna;Lluna en perigeu;;;5
+31-01-2026;lluna;La Lluna 4° al nord de Júpiter;;;5
+01-02-2026;lluna;Lluna plena;;;5
+03-02-2026;lluna;La Lluna 0,3° al nord de Règul (ocultació);;;5
+04-02-2026;planeta;Urà estacionari en ascensió recta;;;6
+09-02-2026;lluna;Quart minvant;;;5
+10-02-2026;lluna;Lluna en apogeu;;;5
+11-02-2026;lluna;La Lluna 0,6° al sud d’Antares (ocultació);;;5
+13-02-2026;lluna;La Lluna 0,9° al sud de Nunki (ocultació);;;5
+15-02-2026;lluna;La Lluna 0,7° al sud de Metis (ocultació);;;5
+16-02-2026;lluna;La Lluna 0,7° al sud de Mart (ocultació);;;5
+16-02-2026;planeta;Saturn 0,9° al sud de Neptú;;;6
+17-02-2026;eclipsi;Eclipsi anular de Sol;;;9
+17-02-2026;lluna;Lluna nova;;;5
+18-02-2026;lluna;La Lluna 0,1° al sud de Mercuri (ocultació);;;5
+18-02-2026;lluna;La Lluna 2° al nord de Venus;;;5
+19-02-2026;planeta;Mercuri en periheli;;;6
+19-02-2026;planeta;Màxima elongació est de Mercuri (18,1°);;;6
+20-02-2026;lluna;La Lluna 4° al nord de Neptú;;;5
+24-02-2026;lluna;Quart creixent;;;5
+24-02-2026;lluna;La Lluna 1,1° al nord d’Alcióne (ocultació);;;5
+24-02-2026;lluna;La Lluna 5° al nord d’Urà;;;5
+24-02-2026;lluna;Lluna en perigeu;;;5
+25-02-2026;lluna;La Lluna 0,4° al sud d’Elnath (ocultació);;;5
+25-02-2026;planeta;Mercuri estacionari en ascensió recta;;;6
+26-02-2026;planeta;Mercuri 5° al nord de Venus;;;6
+26-02-2026;asteroide;Partènope en oposició;;;8
+27-02-2026;asteroide;Iris en oposició;;;8
+27-02-2026;lluna;La Lluna 4° al nord de Júpiter;;;5
+02-03-2026;lluna;La Lluna 0,3° al nord de Règul (ocultació);;;5
+02-03-2026;asteroide;Pal·les en conjunció amb el Sol;;;8
+03-03-2026;lluna;Lluna plena;;;5
+03-03-2026;eclipsi;Eclipsi total de Lluna;;;9
+07-03-2026;planeta;Mercuri en conjunció inferior amb el Sol;;;6
+08-03-2026;planeta;Venus 1,0° al nord de Saturn;;;6
+10-03-2026;lluna;La Lluna 0,5° al sud d’Antares (ocultació);;;5
+10-03-2026;lluna;Lluna en apogeu;;;5
+10-03-2026;planeta;Màxim acostament de Mercuri a la Terra;;;6
+11-03-2026;lluna;Quart minvant;;;5
+11-03-2026;planeta;Júpiter estacionari en ascensió recta;;;6
+13-03-2026;asteroide;Fortuna en oposició;;;8
+13-03-2026;lluna;La Lluna 0,8° al sud de Nunki (ocultació);;;5
+15-03-2026;lluna;La Lluna 0,9° al nord de Metis (ocultació);;;5
+17-03-2026;lluna;La Lluna 2° al sud de Mercuri;;;5
+19-03-2026;lluna;Lluna nova;;;5
+19-03-2026;planeta;Mercuri estacionari en ascensió recta;;;6
+20-03-2026;estacio;Inici de la primavera a l’hemisferi boreal;assets/icons/special/equinocci_primavera.png;;3
+20-03-2026;lluna;La Lluna 5° al nord de Venus;;;5
+21-03-2026;asteroide;Masàlia en oposició;;;8
+22-03-2026;lluna;Lluna en perigeu;;;5
+22-03-2026;planeta;Neptú en conjunció amb el Sol;;;6
+23-03-2026;lluna;La Lluna 0,9° al nord d’Alcióne (ocultació);;;5
+23-03-2026;lluna;La Lluna 5° al nord d’Urà;;;5
+24-03-2026;lluna;La Lluna 0,4° al sud d’Elnath (ocultació);;;5
+25-03-2026;lluna;Quart creixent;;;5
+25-03-2026;asteroide;Eunòmia en oposició;;;8
+25-03-2026;planeta;Saturn en conjunció amb el Sol;;;6
+26-03-2026;planeta;Mart en periheli;;;6
+26-03-2026;lluna;La Lluna 4° al nord de Júpiter;;;5
+29-03-2026;Hora;Canvi Horari;assets/icons/special/canvi_horari.png;2:00;9
+29-03-2026;lluna;La Lluna 0,3° al nord de Règul (ocultació);;;5
+02-04-2026;lluna;Lluna plena;;;5
+03-04-2026;planeta;Màxima elongació oest de Mercuri (27,8°);;;6
+04-04-2026;planeta;Mercuri en afeli;;;6
+06-04-2026;lluna;La Lluna 0,5° al sud d’Antares (ocultació);;;5
+07-04-2026;lluna;Lluna en apogeu;;;5
+09-04-2026;lluna;La Lluna 0,6° al sud de Nunki (ocultació);;;5
+10-04-2026;lluna;Quart minvant;;;5
+12-04-2026;lluna;La Lluna 3° al nord de Metis;;;5
+13-04-2026;lluna;La Lluna 2° al sud d’Astrea;;;5
+13-04-2026;planeta;Mart 0,3° al nord de Neptú;;;6
+15-04-2026;lluna;La Lluna 2° al sud de Pal·les;;;5
+15-04-2026;planeta;Urà 4° al sud d’Alcióne;;;6
+16-04-2026;lluna;La Lluna 5° al nord de Saturn;;;5
+16-04-2026;planeta;Mercuri 1,4° al sud de Neptú;;;6
+17-04-2026;lluna;Lluna nova;;;5
+19-04-2026;asteroide;Egèria en oposició;;;8
+19-04-2026;asteroide;Euterpe en conjunció amb el Sol;;;8
+19-04-2026;lluna;La Lluna 0,8° al nord d’Alcióne (ocultació);;;5
+19-04-2026;lluna;La Lluna 5° al nord d’Urà;;;5
+19-04-2026;lluna;La Lluna 5° al nord de Venus;;;5
+19-04-2026;lluna;Lluna en perigeu;;;5
+20-04-2026;planeta;Mart 1,3° al nord de Saturn;;;6
+20-04-2026;planeta;Mercuri 0,5° al sud de Saturn;;;6
+20-04-2026;planeta;Mercuri 2° al sud de Mart;;;6
+21-04-2026;lluna;La Lluna 0,6° al sud d’Elnath (ocultació);;;5
+22-04-2026;lluna;La Lluna 3° al nord de Júpiter;;;5
+22-04-2026;meteors;Màxim de les Lírides;;;9
+23-04-2026;planeta;Venus 4° al sud d’Alcióne;;;6
+24-04-2026;lluna;Quart creixent;;;5
+24-04-2026;planeta;Venus 0,8° al nord d’Urà;;;6
+26-04-2026;lluna;La Lluna 0,2° al nord de Règul (ocultació);;;5
+01-05-2026;lluna;Lluna plena;;;5
+03-05-2026;planeta;Venus 7° al nord d’Aldebaran;;;6
+04-05-2026;lluna;La Lluna 0,4° al sud d’Antares (ocultació);;;5
+04-05-2026;lluna;Lluna en apogeu;;;5
+06-05-2026;lluna;La Lluna 0,5° al sud de Nunki (ocultació);;;5
+06-05-2026;meteors;Màxim de les η-Aquàrids;;;9
+09-05-2026;lluna;Quart minvant;;;5
+11-05-2026;lluna;La Lluna 0,4° al sud d’Astrea (ocultació);;;5
+12-05-2026;planeta;Neptú 3° al sud de Pal·les;;;6
+12-05-2026;planeta;Venus 4° al sud d’Elnath;;;6
+14-05-2026;sol;El Sol 0,2° al sud de Mercuri (ocultació);;;9
+14-05-2026;planeta;Mercuri en conjunció superior amb el Sol;;;6
+15-05-2026;planeta;Venus en periheli;;;6
+15-05-2026;asteroide;Ceres en conjunció amb el Sol;;;8
+15-05-2026;lluna;La Lluna 5° al nord de Mart;;;5
+16-05-2026;lluna;Lluna nova;;;5
+17-05-2026;lluna;Lluna en perigeu;;;5
+18-05-2026;planeta;Mercuri en periheli;;;6
+18-05-2026;lluna;La Lluna 0,9° al sud d’Elnath (ocultació);;;5
+19-05-2026;lluna;La Lluna 3° al nord de Venus;;;5
+20-05-2026;lluna;La Lluna 3° al nord de Júpiter;;;5
+22-05-2026;sol;El Sol 0,2° al nord d’Urà (ocultació);;;9
+22-05-2026;planeta;Mercuri 7° al nord d’Aldebaran;;;6
+22-05-2026;planeta;Urà en conjunció amb el Sol;;;6
+23-05-2026;lluna;Quart creixent;;;5
+23-05-2026;lluna;La Lluna 0,1° al sud de Règul (ocultació);;;5
+28-05-2026;planeta;Mercuri 3° al sud d’Elnath;;;6
+29-05-2026;asteroide;Amfitrite en oposició;;;8
+31-05-2026;lluna;La Lluna 0,2° al sud d’Antares (ocultació);;;5
+31-05-2026;lluna;Lluna plena;;;5
+31-05-2026;planeta;Venus 3° al nord d’Higiea;;;6
+01-06-2026;lluna;Lluna en apogeu;;;5
+02-06-2026;asteroide;Juno estacionari en ascensió recta;;;8
+03-06-2026;lluna;La Lluna 0,4° al sud de Nunki (ocultació);;;5
+04-06-2026;planeta;Júpiter 6° al sud de Pòl·lux;;;6
+07-06-2026;lluna;La Lluna 0,8° al nord d’Astrea (ocultació);;;5
+08-06-2026;lluna;Quart minvant;;;5
+08-06-2026;planeta;Venus 5° al sud de Pòl·lux;;;6
+09-06-2026;planeta;Venus 2° al nord de Júpiter;;;6
+10-06-2026;lluna;La Lluna 6° al nord de Saturn;;;5
+12-06-2026;lluna;La Lluna 6° al nord de Mart;;;5
+13-06-2026;lluna;La Lluna 0,8° al nord d’Alcióne (ocultació);;;5
+13-06-2026;lluna;La Lluna 5° al nord d’Urà;;;5
+13-06-2026;planeta;Saturn 0,7° al sud de Pal·les;;;6
+14-06-2026;lluna;Lluna en perigeu;;;5
+15-06-2026;asteroide;Irene en oposició;;;8
+15-06-2026;lluna;Lluna nova;;;5
+15-06-2026;planeta;Màxima elongació est de Mercuri (24,5°);;;6
+16-06-2026;lluna;La Lluna 2° al nord de Mercuri;;;5
+16-06-2026;planeta;Mercuri 2° al nord d’Higiea;;;6
+17-06-2026;asteroide;Hebe en conjunció amb el Sol;;;8
+17-06-2026;lluna;La Lluna 0,2° al nord de Venus (ocultació);;;5
+17-06-2026;lluna;La Lluna 2° al nord de Júpiter;;;5
+19-06-2026;lluna;La Lluna 0,4° al sud de Règul (ocultació);;;5
+21-06-2026;lluna;Quart creixent;;;5
+21-06-2026;estacio;Inici de l’estiu a l’hemisferi boreal;assets/icons/special/solstici_estiu.png;;3
+23-06-2026;planeta;Mercuri 7° al sud de Pòl·lux;;;6
+27-06-2026;lluna;La Lluna 0,3° al sud d’Antares (ocultació);;;5
+27-06-2026;planeta;Mart 4° al sud d’Alcióne;;;6
+28-06-2026;lluna;Lluna en apogeu;;;5
+28-06-2026;asteroide;Victòria en conjunció amb el Sol;;;8
+29-06-2026;lluna;Lluna plena (dia 30 hora oficial);;;5
+29-06-2026;planeta;Mercuri estacionari en ascensió recta;;;6
+30-06-2026;lluna;La Lluna 0,2° al sud de Nunki (ocultació);;;5
+01-07-2026;planeta;Mercuri en afeli;;;6
+02-07-2026;planeta;Mercuri 2° al sud d’Higiea;;;6
+04-07-2026;planeta;Mart 0,1° al sud d’Urà;;;6
+05-07-2026;lluna;La Lluna 2° al nord d’Astrea;;;5
+06-07-2026;terra;La Terra en l’afeli;assets/icons/special/afeli.png;;3
+07-07-2026;lluna;Quart minvant;;;5
+07-07-2026;lluna;La Lluna 5° al nord de Neptú;;;5
+07-07-2026;lluna;La Lluna 7° al nord de Saturn;;;5
+08-07-2026;planeta;Neptú estacionari en ascensió recta;;;6
+09-07-2026;planeta;Venus 1,1° al nord de Règul;;;6
+10-07-2026;lluna;La Lluna 1,1° al nord d’Alcióne (ocultació);;;5
+10-07-2026;planeta;Màxim acostament de Mercuri a la Terra;;;6
+11-07-2026;lluna;La Lluna 5° al nord de Mart;;;5
+11-07-2026;lluna;La Lluna 5° al nord d’Urà;;;5
+12-07-2026;lluna;La Lluna 0,9° al sud d’Elnath (ocultació);;;5
+13-07-2026;lluna;Lluna en perigeu;;;5
+13-07-2026;planeta;Mercuri en conjunció inferior amb el Sol;;;6
+14-07-2026;lluna;Lluna nova;;;5
+14-07-2026;planeta;Mart 5° al nord d’Aldebaran;;;6
+15-07-2026;lluna;La Lluna 2° al nord de Júpiter;;;5
+17-07-2026;lluna;La Lluna 0,5° al sud de Règul (ocultació);;;5
+17-07-2026;lluna;La Lluna 2° al sud de Venus;;;5
+18-07-2026;lluna;La Lluna 3° al nord d’Iris;;;5
+21-07-2026;lluna;Quart creixent;;;5
+23-07-2026;planeta;Mercuri estacionari en ascensió recta;;;6
+24-07-2026;lluna;La Lluna 0,5° al sud d’Antares (ocultació);;;5
+24-07-2026;planeta;Mart en node ascendent;;;6
+25-07-2026;lluna;Lluna en apogeu;;;5
+27-07-2026;lluna;La Lluna 0,2° al sud de Nunki (ocultació);;;5
+27-07-2026;planeta;Saturn estacionari en ascensió recta;;;6
+29-07-2026;planeta;Júpiter en conjunció amb el Sol;;;6
+29-07-2026;lluna;Lluna plena;;;5
+31-07-2026;planeta;Mart 5° al sud d’Elnath;;;6
+31-07-2026;meteors;Màxim de les δ-Aquàrids;assets/icons/special/pluja_meteors.png;;9
+01-08-2026;lluna;La Lluna 3° al nord d’Astrea;;;5
+02-08-2026;planeta;Màxima elongació oest de Mercuri (19,5°);;;6
+03-08-2026;lluna;La Lluna 5° al nord de Neptú;;;5
+04-08-2026;lluna;La Lluna 7° al nord de Saturn;;;5
+06-08-2026;lluna;Quart minvant;;;5
+06-08-2026;planeta;Mercuri 8° al sud de Pòl·lux;;;6
+07-08-2026;lluna;La Lluna 1,1° al nord d’Alcióne (ocultació);;;5
+07-08-2026;lluna;La Lluna 5° al nord d’Urà;;;5
+08-08-2026;lluna;La Lluna 0,7° al sud d’Elnath (ocultació);;;5
+08-08-2026;planeta;Mart 1,4° al nord de Ceres;;;6
+09-08-2026;lluna;La Lluna 4° al nord de Mart;;;5
+10-08-2026;lluna;Lluna en perigeu;;;5
+11-08-2026;lluna;La Lluna 2° al nord de Mercuri;;;5
+12-08-2026;eclipsi;Eclipsi total de Sol (visible a Espanya);assets/icons/special/eclipsi.png;;9
+12-08-2026;lluna;Lluna nova;;;5
+13-08-2026;meteors;Màxim de les Perseïdes;assets/icons/special/pluja_meteors.png;;9
+14-08-2026;planeta;Mercuri en periheli;;;6
+15-08-2026;lluna;La Lluna 1,4° al nord d’Iris;;;5
+15-08-2026;planeta;Mercuri 0,6° al nord de Júpiter;;;6
+15-08-2026;planeta;Mercuri 2° al nord d’Higiea;;;6
+15-08-2026;planeta;Màxima elongació est de Venus;;;6
+16-08-2026;lluna;La Lluna 2° al sud de Venus;;;5
+20-08-2026;lluna;Quart creixent;;;5
+21-08-2026;lluna;La Lluna 0,5° al sud d’Antares (ocultació);;;5
+22-08-2026;lluna;Lluna en apogeu;;;5
+23-08-2026;lluna;La Lluna 0,4° al sud de Nunki (ocultació);;;5
+23-08-2026;lluna;La Lluna 2° al sud de Flora;;;5
+27-08-2026;planeta;Mercuri en conjunció superior amb el Sol;;;6
+28-08-2026;asteroide;Astrea en oposició;;;8
+28-08-2026;lluna;La Lluna 3° al nord d’Astrea;;;5
+28-08-2026;lluna;Lluna plena;;;5
+28-08-2026;eclipsi;Eclipsi parcial de Lluna (visible a Espanya);;;9
+31-08-2026;lluna;La Lluna 7° al nord de Saturn;;;5
+03-09-2026;lluna;La Lluna 1,0° al nord d’Alcióne (ocultació);;;5
+03-09-2026;lluna;La Lluna 5° al nord d’Urà;;;5
+03-09-2026;planeta;Venus 2° al sud d’Espiga;;;6
+04-09-2026;planeta;Venus en afeli;;;6
+04-09-2026;lluna;Quart minvant;;;5
+05-09-2026;lluna;La Lluna 0,6° al sud d’Elnath (ocultació);;;5
+06-09-2026;lluna;La Lluna 3° al nord de Mart;;;5
+06-09-2026;lluna;Lluna en perigeu;;;5
+08-09-2026;lluna;La Lluna 0,7° al nord de Júpiter (ocultació);;;5
+09-09-2026;lluna;La Lluna 0,6° al sud de Règul (ocultació);;;5
+09-09-2026;lluna;La Lluna 3° al nord d’Higiea;;;5
+10-09-2026;planeta;Urà estacionari en ascensió recta;;;6
+11-09-2026;asteroide;Laetitia en conjunció amb el Sol;;;8
+11-09-2026;lluna;Lluna nova;;;5
+12-09-2026;lluna;La Lluna 0,2° al nord d’Iris (ocultació);;;5
+12-09-2026;lluna;La Lluna 4° al sud de Mercuri;;;5
+13-09-2026;asteroide;Juno estacionari en ascensió recta;;;8
+14-09-2026;asteroide;Harmonia en conjunció amb el Sol;;;8
+14-09-2026;lluna;La Lluna 0,6° al nord de Venus (ocultació);;;5
+17-09-2026;lluna;La Lluna 0,4° al sud d’Antares (ocultació);;;5
+18-09-2026;lluna;Quart creixent;;;5
+19-09-2026;lluna;Lluna en apogeu;;;5
+19-09-2026;planeta;Mart 6° al sud de Pòl·lux;;;6
+20-09-2026;lluna;La Lluna 0,2° al sud de Nunki (ocultació);;;5
+20-09-2026;lluna;La Lluna 1,4° al sud de Flora;;;5
+23-09-2026;estacio;Inici de la tardor a l’hemisferi boreal;assets/icons/special/equinocci_tardor.png;;3
+24-09-2026;lluna;La Lluna 3° al nord d’Astrea;;;5
+26-09-2026;lluna;Lluna plena;;;5
+26-09-2026;planeta;Mercuri 1,0° al nord d’Espiga;;;6
+26-09-2026;planeta;Neptú en oposició;;;6
+27-09-2026;planeta;Mercuri en afeli;;;6
+27-09-2026;lluna;La Lluna 7° al nord de Saturn;;;5
+30-09-2026;lluna;La Lluna 1,0° al nord d’Alcióne (ocultació);;;5
+01-10-2026;lluna;Lluna en perigeu i 5° al nord d’Urà;;;5
+02-10-2026;lluna;La Lluna 0,9° al sud d’Elnath (ocultació);;;5
+02-10-2026;planeta;Venus estacionari en ascensió recta;;;6
+03-10-2026;lluna;Quart minvant;;;5
+03-10-2026;lluna;La Lluna 3° al nord de Ceres;;;5
+04-10-2026;planeta;Saturn en oposició;;;6
+05-10-2026;lluna;La Lluna 1,0° al nord de Mart (ocultació);;;5
+05-10-2026;planeta;Mercuri 5° al nord de Venus;;;6
+06-10-2026;lluna;La Lluna 0,0° al nord de Júpiter (ocultació);;;5
+07-10-2026;lluna;La Lluna 0,7° al sud de Règul (ocultació);;;5
+07-10-2026;lluna;La Lluna 2° al nord d’Higiea;;;5
+09-10-2026;meteors;Màxim de les Dracònides;assets/icons/special/pluja_meteors.png;;9
+10-10-2026;lluna;Lluna nova;;;5
+12-10-2026;lluna;La Lluna 2° al sud de Mercuri i 3° al nord de Venus;;;5
+12-10-2026;planeta;Màxima elongació est de Mercuri (25,2°);;;6
+14-10-2026;lluna;La Lluna 0,4° al sud d’Antares (ocultació);;;5
+15-10-2026;planeta;Mercuri 4° al sud de Zuben el Genubi;;;6
+16-10-2026;lluna;Lluna en apogeu;;;5
+17-10-2026;lluna;La Lluna 0,0° al sud de Nunki (ocultació);;;5
+18-10-2026;lluna;Quart creixent;;;5
+18-10-2026;lluna;La Lluna 0,2° al sud de Flora (ocultació);;;5
+21-10-2026;lluna;La Lluna 3° al nord d’Astrea;;;5
+21-10-2026;meteors;Màxim de les Orió­nides;assets/icons/special/pluja_meteors.png;;9
+24-10-2026;lluna;La Lluna 5° al nord de Neptú i 7° al nord de Saturn;;;5
+24-10-2026;planeta;Mercuri estacionari en ascensió recta;;;6
+24-10-2026;planeta;Venus en conjunció inferior amb el Sol;;;6
+25-10-2026;Horari;Canvi Horari d’hivern;assets/icons/special/canvi_horari.png;2:00;9
+25-10-2026;planeta;Màxim acostament de Venus a la Terra;;;6
+26-10-2026;lluna;Lluna plena;;;5
+28-10-2026;lluna;La Lluna 0,9° al nord d’Alcióne (ocultació);;;5
+28-10-2026;lluna;La Lluna 5° al nord d’Urà;;;5
+28-10-2026;lluna;Lluna en perigeu;;;5
+29-10-2026;lluna;La Lluna 1,1° al sud d’Elnath (ocultació);;;5
+31-10-2026;lluna;La Lluna 0,3° al nord de Ceres (ocultació);;;5
+01-11-2026;lluna;Quart minvant;;;5
+02-11-2026;lluna;La Lluna 0,6° al sud de Júpiter (ocultació);;;5
+02-11-2026;lluna;La Lluna 1,2° al sud de Mart (ocultació);;;5
+03-11-2026;lluna;La Lluna 0,9° al sud de Règul (ocultació);;;5
+03-11-2026;lluna;La Lluna 1,3° al nord d’Higiea;;;5
+03-11-2026;planeta;Màxim acostament de Mercuri a la Terra;;;6
+03-11-2026;planeta;Venus 2° al sud d’Espiga;;;6
+04-11-2026;planeta;Mercuri en conjunció inferior amb el Sol;;;6
+07-11-2026;lluna;La Lluna 1,0° al sud de Venus (ocultació);;;5
+08-11-2026;lluna;La Lluna 1,4° al sud d’Iris;;;5
+09-11-2026;lluna;Lluna nova;;;5
+10-11-2026;planeta;Mercuri en periheli;;;6
+11-11-2026;lluna;La Lluna 0,2° al sud d’Antares (ocultació);;;5
+11-11-2026;planeta;Venus estacionari en ascensió recta;;;6
+13-11-2026;lluna;La Lluna 0,1° al nord de Nunki (ocultació);;;5
+13-11-2026;lluna;Lluna en apogeu;;;5
+13-11-2026;planeta;Mercuri estacionari en ascensió recta;;;6
+15-11-2026;planeta;Mart 1,2° al nord de Júpiter;;;6
+17-11-2026;lluna;Quart creixent;;;5
+17-11-2026;meteors;Màxim de les Leònides;assets/icons/special/pluja_meteors.png;;9
+19-11-2026;planeta;Venus 2° al nord d’Espiga;;;6
+21-11-2026;lluna;La Lluna 7° al nord de Saturn;;;5
+21-11-2026;planeta;Màxima elongació oest de Mercuri (19,8°);;;6
+24-11-2026;lluna;La Lluna 0,7° al nord d’Alcióne (ocultació);;;5
+24-11-2026;lluna;La Lluna 5° al nord d’Urà;;;5
+24-11-2026;lluna;Lluna plena;;;5
+24-11-2026;planeta;Mart 2° al nord de Règul;;;6
+25-11-2026;lluna;La Lluna 1,0° al sud d’Elnath (ocultació);;;5
+25-11-2026;lluna;Lluna en perigeu;;;5
+25-11-2026;planeta;Mercuri 2° al nord de Zuben el Genubi;;;6
+25-11-2026;planeta;Urà en oposició;;;6
+30-11-2026;lluna;La Lluna 1,2° al sud de Règul (ocultació);;;5
+30-11-2026;lluna;La Lluna 1,3° al sud de Júpiter (ocultació);;;5
+30-11-2026;lluna;La Lluna 3° al sud de Mart;;;5
+01-12-2026;lluna;Quart minvant;;;5
+01-12-2026;lluna;La Lluna 0,9° al nord d’Higiea (ocultació);;;5
+01-12-2026;asteroide;Vesta estacionari en ascensió recta;;;8
+05-12-2026;lluna;La Lluna 7° al sud de Venus;;;5
+06-12-2026;lluna;La Lluna 2° al sud d’Iris;;;5
+07-12-2026;lluna;La Lluna 6° al sud de Mercuri;;;5
+08-12-2026;planeta;Mercuri 0,4° al sud de Graffias;;;6
+09-12-2026;lluna;Lluna nova;;;5
+11-12-2026;lluna;La Lluna 0,3° al nord de Nunki (ocultació);;;5
+11-12-2026;lluna;Lluna en apogeu;;;5
+11-12-2026;planeta;Saturn estacionari en ascensió recta;;;6
+12-12-2026;planeta;Mercuri 5° al nord d’Antares;;;6
+13-12-2026;asteroide;Egeria en conjunció amb el Sol;;;8
+13-12-2026;planeta;Júpiter estacionari en ascensió recta;;;6
+13-12-2026;planeta;Neptú estacionari en ascensió recta;;;6
+14-12-2026;meteors;Màxim de les Gemínides;assets/icons/special/pluja_meteors.png;;9
+17-12-2026;lluna;Quart creixent;;;5
+18-12-2026;lluna;La Lluna 7° al nord de Saturn;;;5
+21-12-2026;estacio;Inici de l’hivern a l’hemisferi boreal;assets/icons/special/solstici_hivern.png;;3
+21-12-2026;lluna;La Lluna 1,0° al nord d’Alcióne (ocultació);;;5
+22-12-2026;lluna;La Lluna 5° al nord d’Urà;;;5
+22-12-2026;meteors;Màxim de les Úrsides;assets/icons/special/pluja_meteors.png;;9
+22-12-2026;planeta;Venus 3° al nord de Zuben el Genubi;;;6
+23-12-2026;lluna;La Lluna 1,3° al sud d’Elnath (ocultació);;;5
+24-12-2026;lluna;Lluna en perigeu;;;5
+24-12-2026;lluna;Lluna plena;;;5
+24-12-2026;planeta;Mercuri en afeli;;;6
+25-12-2026;planeta;Venus en periheli;;;6
+27-12-2026;lluna;La Lluna 2° al sud de Júpiter;;;5
+28-12-2026;lluna;La Lluna 1,2° al sud d’Hebe (ocultació);;;5
+28-12-2026;lluna;La Lluna 5° al sud de Mart;;;5
+29-12-2026;lluna;La Lluna 1,1° al nord d’Higiea (ocultació);;;5
+30-12-2026;lluna;Quart minvant;;;5
