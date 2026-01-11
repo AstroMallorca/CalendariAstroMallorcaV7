@@ -646,30 +646,29 @@ function buildEfemeridesEspecials(objs) {
     const iso = ddmmyyyyToISO(o.data);
     if (!iso) continue;
 
-    // normalitza ruta icona
+    // normalitza ruta icona (pot quedar buit)
     const codi = (() => {
       const raw = (o.codi || "").trim();
-      if (!raw) return "";                      // 👈 IMPORTANT
+      if (!raw) return ""; // ✅ permetem buit
       if (/^(https?:)?\/\//i.test(raw)) return raw;  // URL
       if (raw.includes("/")) return raw;             // ja és una ruta
-      return `assets/icons/${raw}`;                  // només nom fitxer
+      return `assets/icons/${raw}`;                  // només nom de fitxer
     })();
-
-    // ✅ si no hi ha icona, NO l'afegim (així no sortirà cap img trencat)
-    if (!codi) continue;
 
     out[iso] ??= [];
     out[iso].push({
-      codi,
+      codi,                                // ✅ pot ser ""
+      tipus: (o.tipus || o.tipo || "").trim(),
       clau: (o.clau || "").trim(),
       titol: (o.titol || "").trim(),
-      hora: (o.hora || o.Hora || "").trim(),          // per si al CSV és "Hora"
-      importancia: Number(o.importancia || 3),
+      hora: (o.hora || o.Hora || "").trim(),
+      importancia: Number(o.importancia || 3)
     });
   }
 
   return out;
 }
+
 
 function buildEfemeridesEspecialsFromJSON(j) {
   // Converteix un JSON local (formats diversos) a:
@@ -930,15 +929,19 @@ if (info?.lluna_foscor?.color && !(esDiumenge || esFestiu)) {
       <div class="num">${d}</div>
       ${moonHtml}
       ${act.length ? `<img class="am-mini am-act-center" src="assets/icons/astromallorca.png" alt="AstroMallorca">` : ""}
-      <div class="badges">
-        ${esp.filter(x => (x.codi || "").trim()).slice(0,6).map(x => `
-  <img class="esp-icon"
-       src="${x.codi}"
-       alt="${(x.titol || x.clau || "").replace(/"/g,"&quot;")}"
-       loading="lazy">
-`).join("")}
+    <div class="badges">
+  ${
+    esp
+      .filter(x => (x.codi || "").trim())   // ✅ només les que tenen icona
+      .slice(0,6)
+      .map(x => `<img class="esp-icon"
+                      src="${x.codi}"
+                      alt="${(x.titol || x.clau || "").replace(/"/g,"&quot;")}"
+                      loading="lazy">`)
+      .join("")
+  }
+</div>
 
-      </div>
     `;
 
     cel.onclick = () => obreDia(iso);
@@ -1012,14 +1015,20 @@ const histItems = renderHistoricItems(rawHist);
        </div>`
     : "";
 
-  const especialsHtml = teEspecials
-    ? `<div class="dia-card">
-         <div class="dia-card-title">Efemèrides especials</div>
-         <ul class="dia-list">
-           ${esp.map(e => `<li>${(e.titol || e.clau || "")}${e.hora ? ` — ${e.hora}` : ""}</li>`).join("")}
-         </ul>
-       </div>`
-    : "";
+const especialsHtml = teEspecials
+  ? `<div class="dia-card">
+       <div class="dia-card-title">Efemèrides especials</div>
+       <ul class="dia-list">
+         ${esp.map(e => `
+           <li>
+             ${e.codi ? `<img src="${e.codi}" class="esp-icon-inline" alt="" loading="lazy"> ` : ""}
+             ${(e.titol || e.clau || "").trim()}
+             ${e.hora ? ` — ${e.hora}` : ""}
+           </li>
+         `).join("")}
+       </ul>
+     </div>`
+  : "";
 
   const historicHtml = teHistoric
     ? `<div class="dia-card">
