@@ -1,3085 +1,5372 @@
 {
-  "dies": {},
-  "efemerides": [
-    {
-      "data": "01-01-2026",
-      "titol": "Lluna en perigeu",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "perigeu"
-    },
-    {
-      "data": "02-01-2026",
-      "titol": "Harmonia en oposició",
-      "codi": "",
-      "hora": "",
-      "importancia": 8,
-      "clau": "harmonia_en_oposicio"
-    },
-    {
-      "data": "02-01-2026",
-      "titol": "La Lluna 0,5° al sud d’Elnath (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "03-01-2026",
-      "titol": "La Lluna 4° al nord de Júpiter",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_4_al_nord_de_jupiter"
-    },
-    {
-      "data": "03-01-2026",
-      "titol": "Lluna plena",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "lluna_plena"
-    },
-    {
-      "data": "03-01-2026",
-      "titol": "Màxim de les Quadràntides",
-      "codi": "assets/icons/special/pluja_meteors.png",
-      "hora": "",
-      "importancia": 2,
-      "clau": "meteors"
-    },
-    {
-      "data": "03-01-2026",
-      "titol": "La Terra en el periheli",
-      "codi": "assets/icons/special/periheli.png",
-      "hora": "",
-      "importancia": 3,
-      "clau": "periheli"
-    },
-    {
-      "data": "06-01-2026",
-      "titol": "La Lluna 0,4° al nord de Règul (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "06-01-2026",
-      "titol": "Mercuri en afeli",
-      "codi": "",
-      "hora": "",
-      "importancia": 3,
-      "clau": "afeli"
-    },
-    {
-      "data": "06-01-2026",
-      "titol": "Venus en conjunció superior amb el Sol",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "conjuncio"
-    },
-    {
-      "data": "09-01-2026",
-      "titol": "Mart en conjunció amb el Sol",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "conjuncio"
-    },
-    {
-      "data": "10-01-2026",
-      "titol": "Quart minvant",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "quart_minvant"
-    },
-    {
-      "data": "10-01-2026",
-      "titol": "Júpiter en oposició",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "oposicio"
-    },
-    {
-      "data": "13-01-2026",
-      "titol": "Lluna en apogeu",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "apogeu"
-    },
-    {
-      "data": "14-01-2026",
-      "titol": "La Lluna 0,5° al sud d’Antares (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "17-01-2026",
-      "titol": "La Lluna 0,7° al sud de Nunki (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "17-01-2026",
-      "titol": "La Lluna 2° al sud de Metis",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_2_al_sud_de_metis"
-    },
-    {
-      "data": "18-01-2026",
-      "titol": "Astrea en conjunció amb el Sol",
-      "codi": "",
-      "hora": "",
-      "importancia": 8,
-      "clau": "astrea_en_conjuncio_amb_el_sol"
-    },
-    {
-      "data": "18-01-2026",
-      "titol": "Lluna nova",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "lluna_nova"
-    },
-    {
-      "data": "21-01-2026",
-      "titol": "Mercuri en conjunció superior amb el Sol",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "conjuncio"
-    },
-    {
-      "data": "22-01-2026",
-      "titol": "Venus en afeli",
-      "codi": "",
-      "hora": "",
-      "importancia": 3,
-      "clau": "afeli"
-    },
-    {
-      "data": "23-01-2026",
-      "titol": "La Lluna 4° al nord de Saturn",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_4_al_nord_de_saturn"
-    },
-    {
-      "data": "26-01-2026",
-      "titol": "Quart creixent",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "quart_creixent"
-    },
-    {
-      "data": "27-01-2026",
-      "titol": "La Lluna 1,0° al nord d’Alcióne (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "27-01-2026",
-      "titol": "La Lluna 5° al nord d’Urà",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_5_al_nord_d_ura"
-    },
-    {
-      "data": "27-01-2026",
-      "titol": "Laetitia en oposició",
-      "codi": "",
-      "hora": "",
-      "importancia": 8,
-      "clau": "laetitia_en_oposicio"
-    },
-    {
-      "data": "28-01-2026",
-      "titol": "Vesta en conjunció amb el Sol",
-      "codi": "",
-      "hora": "",
-      "importancia": 8,
-      "clau": "vesta_en_conjuncio_amb_el_sol"
-    },
-    {
-      "data": "29-01-2026",
-      "titol": "La Lluna 0,6° al sud d’Elnath (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "29-01-2026",
-      "titol": "Lluna en perigeu",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "perigeu"
-    },
-    {
-      "data": "31-01-2026",
-      "titol": "La Lluna 4° al nord de Júpiter",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_4_al_nord_de_jupiter"
-    },
-    {
-      "data": "01-02-2026",
-      "titol": "Lluna plena",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "lluna_plena"
-    },
-    {
-      "data": "03-02-2026",
-      "titol": "La Lluna 0,3° al nord de Règul (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "04-02-2026",
-      "titol": "Urà estacionari en ascensió recta",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "estacionari"
-    },
-    {
-      "data": "09-02-2026",
-      "titol": "Quart minvant",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "quart_minvant"
-    },
-    {
-      "data": "10-02-2026",
-      "titol": "Lluna en apogeu",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "apogeu"
-    },
-    {
-      "data": "11-02-2026",
-      "titol": "La Lluna 0,6° al sud d’Antares (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "13-02-2026",
-      "titol": "La Lluna 0,9° al sud de Nunki (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "15-02-2026",
-      "titol": "La Lluna 0,7° al sud de Metis (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "16-02-2026",
-      "titol": "La Lluna 0,7° al sud de Mart (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "16-02-2026",
-      "titol": "Saturn 0,9° al sud de Neptú",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "saturn_0_9_al_sud_de_neptu"
-    },
-    {
-      "data": "17-02-2026",
-      "titol": "Eclipsi anular de Sol",
-      "codi": "",
-      "hora": "",
-      "importancia": 1,
-      "clau": "eclipsi"
-    },
-    {
-      "data": "17-02-2026",
-      "titol": "Lluna nova",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "lluna_nova"
-    },
-    {
-      "data": "18-02-2026",
-      "titol": "La Lluna 0,1° al sud de Mercuri (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "18-02-2026",
-      "titol": "La Lluna 2° al nord de Venus",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_2_al_nord_de_venus"
-    },
-    {
-      "data": "19-02-2026",
-      "titol": "Mercuri en periheli",
-      "codi": "",
-      "hora": "",
-      "importancia": 3,
-      "clau": "periheli"
-    },
-    {
-      "data": "19-02-2026",
-      "titol": "Màxima elongació est de Mercuri (18,1°)",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "elongacio"
-    },
-    {
-      "data": "20-02-2026",
-      "titol": "La Lluna 4° al nord de Neptú",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_4_al_nord_de_neptu"
-    },
-    {
-      "data": "24-02-2026",
-      "titol": "Quart creixent",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "quart_creixent"
-    },
-    {
-      "data": "24-02-2026",
-      "titol": "La Lluna 1,1° al nord d’Alcióne (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "24-02-2026",
-      "titol": "La Lluna 5° al nord d’Urà",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_5_al_nord_d_ura"
-    },
-    {
-      "data": "24-02-2026",
-      "titol": "Lluna en perigeu",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "perigeu"
-    },
-    {
-      "data": "25-02-2026",
-      "titol": "La Lluna 0,4° al sud d’Elnath (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "25-02-2026",
-      "titol": "Mercuri estacionari en ascensió recta",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "estacionari"
-    },
-    {
-      "data": "26-02-2026",
-      "titol": "Mercuri 5° al nord de Venus",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "mercuri_5_al_nord_de_venus"
-    },
-    {
-      "data": "26-02-2026",
-      "titol": "Partènope en oposició",
-      "codi": "",
-      "hora": "",
-      "importancia": 8,
-      "clau": "partenope_en_oposicio"
-    },
-    {
-      "data": "27-02-2026",
-      "titol": "Iris en oposició",
-      "codi": "",
-      "hora": "",
-      "importancia": 8,
-      "clau": "iris_en_oposicio"
-    },
-    {
-      "data": "27-02-2026",
-      "titol": "La Lluna 4° al nord de Júpiter",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_4_al_nord_de_jupiter"
-    },
-    {
-      "data": "02-03-2026",
-      "titol": "La Lluna 0,3° al nord de Règul (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "02-03-2026",
-      "titol": "Pal·les en conjunció amb el Sol",
-      "codi": "",
-      "hora": "",
-      "importancia": 8,
-      "clau": "pal_les_en_conjuncio_amb_el_sol"
-    },
-    {
-      "data": "03-03-2026",
-      "titol": "Lluna plena",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "lluna_plena"
-    },
-    {
-      "data": "03-03-2026",
-      "titol": "Eclipsi total de Lluna",
-      "codi": "",
-      "hora": "",
-      "importancia": 1,
-      "clau": "eclipsi"
-    },
-    {
-      "data": "07-03-2026",
-      "titol": "Mercuri en conjunció inferior amb el Sol",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "conjuncio"
-    },
-    {
-      "data": "08-03-2026",
-      "titol": "Venus 1,0° al nord de Saturn",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "venus_1_0_al_nord_de_saturn"
-    },
-    {
-      "data": "10-03-2026",
-      "titol": "La Lluna 0,5° al sud d’Antares (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "10-03-2026",
-      "titol": "Lluna en apogeu",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "apogeu"
-    },
-    {
-      "data": "10-03-2026",
-      "titol": "Màxim acostament de Mercuri a la Terra",
-      "codi": "",
-      "hora": "",
-      "importancia": 3,
-      "clau": "terra"
-    },
-    {
-      "data": "11-03-2026",
-      "titol": "Quart minvant",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "quart_minvant"
-    },
-    {
-      "data": "11-03-2026",
-      "titol": "Júpiter estacionari en ascensió recta",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "estacionari"
-    },
-    {
-      "data": "13-03-2026",
-      "titol": "Fortuna en oposició",
-      "codi": "",
-      "hora": "",
-      "importancia": 8,
-      "clau": "fortuna_en_oposicio"
-    },
-    {
-      "data": "13-03-2026",
-      "titol": "La Lluna 0,8° al sud de Nunki (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "15-03-2026",
-      "titol": "La Lluna 0,9° al nord de Metis (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "17-03-2026",
-      "titol": "La Lluna 2° al sud de Mercuri",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_2_al_sud_de_mercuri"
-    },
-    {
-      "data": "19-03-2026",
-      "titol": "Lluna nova",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "lluna_nova"
-    },
-    {
-      "data": "19-03-2026",
-      "titol": "Mercuri estacionari en ascensió recta",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "estacionari"
-    },
-    {
-      "data": "20-03-2026",
-      "titol": "Inici de la primavera a l’hemisferi boreal",
-      "codi": "assets/icons/special/equinocci_primavera.png",
-      "hora": "",
-      "importancia": 3,
-      "clau": "inici_primavera"
-    },
-    {
-      "data": "20-03-2026",
-      "titol": "La Lluna 5° al nord de Venus",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_5_al_nord_de_venus"
-    },
-    {
-      "data": "21-03-2026",
-      "titol": "Masàlia en oposició",
-      "codi": "",
-      "hora": "",
-      "importancia": 8,
-      "clau": "masalia_en_oposicio"
-    },
-    {
-      "data": "22-03-2026",
-      "titol": "Lluna en perigeu",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "perigeu"
-    },
-    {
-      "data": "22-03-2026",
-      "titol": "Neptú en conjunció amb el Sol",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "conjuncio"
-    },
-    {
-      "data": "23-03-2026",
-      "titol": "La Lluna 0,9° al nord d’Alcióne (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "23-03-2026",
-      "titol": "La Lluna 5° al nord d’Urà",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_5_al_nord_d_ura"
-    },
-    {
-      "data": "24-03-2026",
-      "titol": "La Lluna 0,4° al sud d’Elnath (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "25-03-2026",
-      "titol": "Quart creixent",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "quart_creixent"
-    },
-    {
-      "data": "25-03-2026",
-      "titol": "Eunòmia en oposició",
-      "codi": "",
-      "hora": "",
-      "importancia": 8,
-      "clau": "eunomia_en_oposicio"
-    },
-    {
-      "data": "25-03-2026",
-      "titol": "Saturn en conjunció amb el Sol",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "conjuncio"
-    },
-    {
-      "data": "26-03-2026",
-      "titol": "Mart en periheli",
-      "codi": "",
-      "hora": "",
-      "importancia": 3,
-      "clau": "periheli"
-    },
-    {
-      "data": "26-03-2026",
-      "titol": "La Lluna 4° al nord de Júpiter",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_4_al_nord_de_jupiter"
-    },
-    {
-      "data": "29-03-2026",
-      "titol": "Canvi Horari",
-      "codi": "assets/icons/special/canvi_horari.png",
-      "hora": "2:00",
-      "importancia": 9,
-      "clau": "canvi_horari"
-    },
-    {
-      "data": "29-03-2026",
-      "titol": "La Lluna 0,3° al nord de Règul (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "02-04-2026",
-      "titol": "Lluna plena",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "lluna_plena"
-    },
-    {
-      "data": "03-04-2026",
-      "titol": "Màxima elongació oest de Mercuri (27,8°)",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "elongacio"
-    },
-    {
-      "data": "04-04-2026",
-      "titol": "Mercuri en afeli",
-      "codi": "",
-      "hora": "",
-      "importancia": 3,
-      "clau": "afeli"
-    },
-    {
-      "data": "06-04-2026",
-      "titol": "La Lluna 0,5° al sud d’Antares (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "07-04-2026",
-      "titol": "Lluna en apogeu",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "apogeu"
-    },
-    {
-      "data": "09-04-2026",
-      "titol": "La Lluna 0,6° al sud de Nunki (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "10-04-2026",
-      "titol": "Quart minvant",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "quart_minvant"
-    },
-    {
-      "data": "12-04-2026",
-      "titol": "La Lluna 3° al nord de Metis",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_3_al_nord_de_metis"
-    },
-    {
-      "data": "13-04-2026",
-      "titol": "La Lluna 2° al sud d’Astrea",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_2_al_sud_d_astrea"
-    },
-    {
-      "data": "13-04-2026",
-      "titol": "Mart 0,3° al nord de Neptú",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "mart_0_3_al_nord_de_neptu"
-    },
-    {
-      "data": "15-04-2026",
-      "titol": "La Lluna 2° al sud de Pal·les",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_2_al_sud_de_pal_les"
-    },
-    {
-      "data": "15-04-2026",
-      "titol": "Urà 4° al sud d’Alcióne",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "ura_4_al_sud_d_alcione"
-    },
-    {
-      "data": "16-04-2026",
-      "titol": "La Lluna 5° al nord de Saturn",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_5_al_nord_de_saturn"
-    },
-    {
-      "data": "16-04-2026",
-      "titol": "Mercuri 1,4° al sud de Neptú",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "mercuri_1_4_al_sud_de_neptu"
-    },
-    {
-      "data": "17-04-2026",
-      "titol": "Lluna nova",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "lluna_nova"
-    },
-    {
-      "data": "19-04-2026",
-      "titol": "Egèria en oposició",
-      "codi": "",
-      "hora": "",
-      "importancia": 8,
-      "clau": "egeria_en_oposicio"
-    },
-    {
-      "data": "19-04-2026",
-      "titol": "Euterpe en conjunció amb el Sol",
-      "codi": "",
-      "hora": "",
-      "importancia": 8,
-      "clau": "euterpe_en_conjuncio_amb_el_sol"
-    },
-    {
-      "data": "19-04-2026",
-      "titol": "La Lluna 0,8° al nord d’Alcióne (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "19-04-2026",
-      "titol": "La Lluna 5° al nord d’Urà",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_5_al_nord_d_ura"
-    },
-    {
-      "data": "19-04-2026",
-      "titol": "La Lluna 5° al nord de Venus",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_5_al_nord_de_venus"
-    },
-    {
-      "data": "19-04-2026",
-      "titol": "Lluna en perigeu",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "perigeu"
-    },
-    {
-      "data": "20-04-2026",
-      "titol": "Mart 1,3° al nord de Saturn",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "mart_1_3_al_nord_de_saturn"
-    },
-    {
-      "data": "20-04-2026",
-      "titol": "Mercuri 0,5° al sud de Saturn",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "mercuri_0_5_al_sud_de_saturn"
-    },
-    {
-      "data": "20-04-2026",
-      "titol": "Mercuri 2° al sud de Mart",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "mercuri_2_al_sud_de_mart"
-    },
-    {
-      "data": "21-04-2026",
-      "titol": "La Lluna 0,6° al sud d’Elnath (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "22-04-2026",
-      "titol": "La Lluna 3° al nord de Júpiter",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_3_al_nord_de_jupiter"
-    },
-    {
-      "data": "22-04-2026",
-      "titol": "Màxim de les Lírides",
-      "codi": "",
-      "hora": "",
-      "importancia": 2,
-      "clau": "meteors"
-    },
-    {
-      "data": "23-04-2026",
-      "titol": "Venus 4° al sud d’Alcióne",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "venus_4_al_sud_d_alcione"
-    },
-    {
-      "data": "24-04-2026",
-      "titol": "Quart creixent",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "quart_creixent"
-    },
-    {
-      "data": "24-04-2026",
-      "titol": "Venus 0,8° al nord d’Urà",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "venus_0_8_al_nord_d_ura"
-    },
-    {
-      "data": "26-04-2026",
-      "titol": "La Lluna 0,2° al nord de Règul (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "01-05-2026",
-      "titol": "Lluna plena",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "lluna_plena"
-    },
-    {
-      "data": "03-05-2026",
-      "titol": "Venus 7° al nord d’Aldebaran",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "venus_7_al_nord_d_aldebaran"
-    },
-    {
-      "data": "04-05-2026",
-      "titol": "La Lluna 0,4° al sud d’Antares (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "04-05-2026",
-      "titol": "Lluna en apogeu",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "apogeu"
-    },
-    {
-      "data": "06-05-2026",
-      "titol": "La Lluna 0,5° al sud de Nunki (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "06-05-2026",
-      "titol": "Màxim de les η-Aquàrids",
-      "codi": "",
-      "hora": "",
-      "importancia": 2,
-      "clau": "meteors"
-    },
-    {
-      "data": "09-05-2026",
-      "titol": "Quart minvant",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "quart_minvant"
-    },
-    {
-      "data": "11-05-2026",
-      "titol": "La Lluna 0,4° al sud d’Astrea (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "12-05-2026",
-      "titol": "Neptú 3° al sud de Pal·les",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "neptu_3_al_sud_de_pal_les"
-    },
-    {
-      "data": "12-05-2026",
-      "titol": "Venus 4° al sud d’Elnath",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "venus_4_al_sud_d_elnath"
-    },
-    {
-      "data": "14-05-2026",
-      "titol": "El Sol 0,2° al sud de Mercuri (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "14-05-2026",
-      "titol": "Mercuri en conjunció superior amb el Sol",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "conjuncio"
-    },
-    {
-      "data": "15-05-2026",
-      "titol": "Venus en periheli",
-      "codi": "",
-      "hora": "",
-      "importancia": 3,
-      "clau": "periheli"
-    },
-    {
-      "data": "15-05-2026",
-      "titol": "Ceres en conjunció amb el Sol",
-      "codi": "",
-      "hora": "",
-      "importancia": 8,
-      "clau": "ceres_en_conjuncio_amb_el_sol"
-    },
-    {
-      "data": "15-05-2026",
-      "titol": "La Lluna 5° al nord de Mart",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_5_al_nord_de_mart"
-    },
-    {
-      "data": "16-05-2026",
-      "titol": "Lluna nova",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "lluna_nova"
-    },
-    {
-      "data": "17-05-2026",
-      "titol": "Lluna en perigeu",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "perigeu"
-    },
-    {
-      "data": "18-05-2026",
-      "titol": "Mercuri en periheli",
-      "codi": "",
-      "hora": "",
-      "importancia": 3,
-      "clau": "periheli"
-    },
-    {
-      "data": "18-05-2026",
-      "titol": "La Lluna 0,9° al sud d’Elnath (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "19-05-2026",
-      "titol": "La Lluna 3° al nord de Venus",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_3_al_nord_de_venus"
-    },
-    {
-      "data": "20-05-2026",
-      "titol": "La Lluna 3° al nord de Júpiter",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_3_al_nord_de_jupiter"
-    },
-    {
-      "data": "22-05-2026",
-      "titol": "El Sol 0,2° al nord d’Urà (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "22-05-2026",
-      "titol": "Mercuri 7° al nord d’Aldebaran",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "mercuri_7_al_nord_d_aldebaran"
-    },
-    {
-      "data": "22-05-2026",
-      "titol": "Urà en conjunció amb el Sol",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "conjuncio"
-    },
-    {
-      "data": "23-05-2026",
-      "titol": "Quart creixent",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "quart_creixent"
-    },
-    {
-      "data": "23-05-2026",
-      "titol": "La Lluna 0,1° al sud de Règul (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "28-05-2026",
-      "titol": "Mercuri 3° al sud d’Elnath",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "mercuri_3_al_sud_d_elnath"
-    },
-    {
-      "data": "29-05-2026",
-      "titol": "Amfitrite en oposició",
-      "codi": "",
-      "hora": "",
-      "importancia": 8,
-      "clau": "amfitrite_en_oposicio"
-    },
-    {
-      "data": "31-05-2026",
-      "titol": "La Lluna 0,2° al sud d’Antares (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "31-05-2026",
-      "titol": "Lluna plena",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "lluna_plena"
-    },
-    {
-      "data": "31-05-2026",
-      "titol": "Venus 3° al nord d’Higiea",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "venus_3_al_nord_d_higiea"
-    },
-    {
-      "data": "01-06-2026",
-      "titol": "Lluna en apogeu",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "apogeu"
-    },
-    {
-      "data": "02-06-2026",
-      "titol": "Juno estacionari en ascensió recta",
-      "codi": "",
-      "hora": "",
-      "importancia": 8,
-      "clau": "juno_estacionari_en_ascensio_recta"
-    },
-    {
-      "data": "03-06-2026",
-      "titol": "La Lluna 0,4° al sud de Nunki (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "04-06-2026",
-      "titol": "Júpiter 6° al sud de Pòl·lux",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "jupiter_6_al_sud_de_pol_lux"
-    },
-    {
-      "data": "07-06-2026",
-      "titol": "La Lluna 0,8° al nord d’Astrea (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "08-06-2026",
-      "titol": "Quart minvant",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "quart_minvant"
-    },
-    {
-      "data": "08-06-2026",
-      "titol": "Venus 5° al sud de Pòl·lux",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "venus_5_al_sud_de_pol_lux"
-    },
-    {
-      "data": "09-06-2026",
-      "titol": "Venus 2° al nord de Júpiter",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "venus_2_al_nord_de_jupiter"
-    },
-    {
-      "data": "10-06-2026",
-      "titol": "La Lluna 6° al nord de Saturn",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_6_al_nord_de_saturn"
-    },
-    {
-      "data": "12-06-2026",
-      "titol": "La Lluna 6° al nord de Mart",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_6_al_nord_de_mart"
-    },
-    {
-      "data": "13-06-2026",
-      "titol": "La Lluna 0,8° al nord d’Alcióne (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "13-06-2026",
-      "titol": "La Lluna 5° al nord d’Urà",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_5_al_nord_d_ura"
-    },
-    {
-      "data": "13-06-2026",
-      "titol": "Saturn 0,7° al sud de Pal·les",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "saturn_0_7_al_sud_de_pal_les"
-    },
-    {
-      "data": "14-06-2026",
-      "titol": "Lluna en perigeu",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "perigeu"
-    },
-    {
-      "data": "15-06-2026",
-      "titol": "Irene en oposició",
-      "codi": "",
-      "hora": "",
-      "importancia": 8,
-      "clau": "irene_en_oposicio"
-    },
-    {
-      "data": "15-06-2026",
-      "titol": "Lluna nova",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "lluna_nova"
-    },
-    {
-      "data": "15-06-2026",
-      "titol": "Màxima elongació est de Mercuri (24,5°)",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "elongacio"
-    },
-    {
-      "data": "16-06-2026",
-      "titol": "La Lluna 2° al nord de Mercuri",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_2_al_nord_de_mercuri"
-    },
-    {
-      "data": "16-06-2026",
-      "titol": "Mercuri 2° al nord d’Higiea",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "mercuri_2_al_nord_d_higiea"
-    },
-    {
-      "data": "17-06-2026",
-      "titol": "Hebe en conjunció amb el Sol",
-      "codi": "",
-      "hora": "",
-      "importancia": 8,
-      "clau": "hebe_en_conjuncio_amb_el_sol"
-    },
-    {
-      "data": "17-06-2026",
-      "titol": "La Lluna 0,2° al nord de Venus (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "17-06-2026",
-      "titol": "La Lluna 2° al nord de Júpiter",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_2_al_nord_de_jupiter"
-    },
-    {
-      "data": "19-06-2026",
-      "titol": "La Lluna 0,4° al sud de Règul (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "21-06-2026",
-      "titol": "Quart creixent",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "quart_creixent"
-    },
-    {
-      "data": "21-06-2026",
-      "titol": "Inici de l’estiu a l’hemisferi boreal",
-      "codi": "assets/icons/special/solstici_estiu.png",
-      "hora": "",
-      "importancia": 3,
-      "clau": "inici_estiu"
-    },
-    {
-      "data": "23-06-2026",
-      "titol": "Mercuri 7° al sud de Pòl·lux",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "mercuri_7_al_sud_de_pol_lux"
-    },
-    {
-      "data": "27-06-2026",
-      "titol": "La Lluna 0,3° al sud d’Antares (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "27-06-2026",
-      "titol": "Mart 4° al sud d’Alcióne",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "mart_4_al_sud_d_alcione"
-    },
-    {
-      "data": "28-06-2026",
-      "titol": "Lluna en apogeu",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "apogeu"
-    },
-    {
-      "data": "28-06-2026",
-      "titol": "Victòria en conjunció amb el Sol",
-      "codi": "",
-      "hora": "",
-      "importancia": 8,
-      "clau": "victoria_en_conjuncio_amb_el_sol"
-    },
-    {
-      "data": "29-06-2026",
-      "titol": "Lluna plena (dia 30 hora oficial)",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "lluna_plena"
-    },
-    {
-      "data": "29-06-2026",
-      "titol": "Mercuri estacionari en ascensió recta",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "estacionari"
-    },
-    {
-      "data": "30-06-2026",
-      "titol": "La Lluna 0,2° al sud de Nunki (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "01-07-2026",
-      "titol": "Mercuri en afeli",
-      "codi": "",
-      "hora": "",
-      "importancia": 3,
-      "clau": "afeli"
-    },
-    {
-      "data": "02-07-2026",
-      "titol": "Mercuri 2° al sud d’Higiea",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "mercuri_2_al_sud_d_higiea"
-    },
-    {
-      "data": "04-07-2026",
-      "titol": "Mart 0,1° al sud d’Urà",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "mart_0_1_al_sud_d_ura"
-    },
-    {
-      "data": "05-07-2026",
-      "titol": "La Lluna 2° al nord d’Astrea",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_2_al_nord_d_astrea"
-    },
-    {
-      "data": "06-07-2026",
-      "titol": "La Terra en l’afeli",
-      "codi": "assets/icons/special/afeli.png",
-      "hora": "",
-      "importancia": 3,
-      "clau": "afeli"
-    },
-    {
-      "data": "07-07-2026",
-      "titol": "Quart minvant",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "quart_minvant"
-    },
-    {
-      "data": "07-07-2026",
-      "titol": "La Lluna 5° al nord de Neptú",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_5_al_nord_de_neptu"
-    },
-    {
-      "data": "07-07-2026",
-      "titol": "La Lluna 7° al nord de Saturn",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_7_al_nord_de_saturn"
-    },
-    {
-      "data": "08-07-2026",
-      "titol": "Neptú estacionari en ascensió recta",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "estacionari"
-    },
-    {
-      "data": "09-07-2026",
-      "titol": "Venus 1,1° al nord de Règul",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "venus_1_1_al_nord_de_regul"
-    },
-    {
-      "data": "10-07-2026",
-      "titol": "La Lluna 1,1° al nord d’Alcióne (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "10-07-2026",
-      "titol": "Màxim acostament de Mercuri a la Terra",
-      "codi": "",
-      "hora": "",
-      "importancia": 3,
-      "clau": "terra"
-    },
-    {
-      "data": "11-07-2026",
-      "titol": "La Lluna 5° al nord de Mart",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_5_al_nord_de_mart"
-    },
-    {
-      "data": "11-07-2026",
-      "titol": "La Lluna 5° al nord d’Urà",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_5_al_nord_d_ura"
-    },
-    {
-      "data": "12-07-2026",
-      "titol": "La Lluna 0,9° al sud d’Elnath (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "13-07-2026",
-      "titol": "Lluna en perigeu",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "perigeu"
-    },
-    {
-      "data": "13-07-2026",
-      "titol": "Mercuri en conjunció inferior amb el Sol",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "conjuncio"
-    },
-    {
-      "data": "14-07-2026",
-      "titol": "Lluna nova",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "lluna_nova"
-    },
-    {
-      "data": "14-07-2026",
-      "titol": "Mart 5° al nord d’Aldebaran",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "mart_5_al_nord_d_aldebaran"
-    },
-    {
-      "data": "15-07-2026",
-      "titol": "La Lluna 2° al nord de Júpiter",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_2_al_nord_de_jupiter"
-    },
-    {
-      "data": "17-07-2026",
-      "titol": "La Lluna 0,5° al sud de Règul (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "17-07-2026",
-      "titol": "La Lluna 2° al sud de Venus",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_2_al_sud_de_venus"
-    },
-    {
-      "data": "18-07-2026",
-      "titol": "La Lluna 3° al nord d’Iris",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_3_al_nord_d_iris"
-    },
-    {
-      "data": "21-07-2026",
-      "titol": "Quart creixent",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "quart_creixent"
-    },
-    {
-      "data": "23-07-2026",
-      "titol": "Mercuri estacionari en ascensió recta",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "estacionari"
-    },
-    {
-      "data": "24-07-2026",
-      "titol": "La Lluna 0,5° al sud d’Antares (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "24-07-2026",
-      "titol": "Mart en node ascendent",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "mart_en_node_ascendent"
-    },
-    {
-      "data": "25-07-2026",
-      "titol": "Lluna en apogeu",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "apogeu"
-    },
-    {
-      "data": "27-07-2026",
-      "titol": "La Lluna 0,2° al sud de Nunki (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "27-07-2026",
-      "titol": "Saturn estacionari en ascensió recta",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "estacionari"
-    },
-    {
-      "data": "29-07-2026",
-      "titol": "Júpiter en conjunció amb el Sol",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "conjuncio"
-    },
-    {
-      "data": "29-07-2026",
-      "titol": "Lluna plena",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "lluna_plena"
-    },
-    {
-      "data": "31-07-2026",
-      "titol": "Mart 5° al sud d’Elnath",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "mart_5_al_sud_d_elnath"
-    },
-    {
-      "data": "31-07-2026",
-      "titol": "Màxim de les δ-Aquàrids",
-      "codi": "assets/icons/special/pluja_meteors.png",
-      "hora": "",
-      "importancia": 2,
-      "clau": "meteors"
-    },
-    {
-      "data": "01-08-2026",
-      "titol": "La Lluna 3° al nord d’Astrea",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_3_al_nord_d_astrea"
-    },
-    {
-      "data": "02-08-2026",
-      "titol": "Màxima elongació oest de Mercuri (19,5°)",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "elongacio"
-    },
-    {
-      "data": "03-08-2026",
-      "titol": "La Lluna 5° al nord de Neptú",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_5_al_nord_de_neptu"
-    },
-    {
-      "data": "04-08-2026",
-      "titol": "La Lluna 7° al nord de Saturn",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_7_al_nord_de_saturn"
-    },
-    {
-      "data": "06-08-2026",
-      "titol": "Quart minvant",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "quart_minvant"
-    },
-    {
-      "data": "06-08-2026",
-      "titol": "Mercuri 8° al sud de Pòl·lux",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "mercuri_8_al_sud_de_pol_lux"
-    },
-    {
-      "data": "07-08-2026",
-      "titol": "La Lluna 1,1° al nord d’Alcióne (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "07-08-2026",
-      "titol": "La Lluna 5° al nord d’Urà",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_5_al_nord_d_ura"
-    },
-    {
-      "data": "08-08-2026",
-      "titol": "La Lluna 0,7° al sud d’Elnath (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "08-08-2026",
-      "titol": "Mart 1,4° al nord de Ceres",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "mart_1_4_al_nord_de_ceres"
-    },
-    {
-      "data": "09-08-2026",
-      "titol": "La Lluna 4° al nord de Mart",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_4_al_nord_de_mart"
-    },
-    {
-      "data": "10-08-2026",
-      "titol": "Lluna en perigeu",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "perigeu"
-    },
-    {
-      "data": "11-08-2026",
-      "titol": "La Lluna 2° al nord de Mercuri",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_2_al_nord_de_mercuri"
-    },
-    {
-      "data": "12-08-2026",
-      "titol": "Eclipsi total de Sol (visible a Espanya)",
-      "codi": "assets/icons/special/eclipsi.png",
-      "hora": "",
-      "importancia": 1,
-      "clau": "eclipsi"
-    },
-    {
-      "data": "12-08-2026",
-      "titol": "Lluna nova",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "lluna_nova"
-    },
-    {
-      "data": "13-08-2026",
-      "titol": "Màxim de les Perseïdes",
-      "codi": "assets/icons/special/pluja_meteors.png",
-      "hora": "",
-      "importancia": 2,
-      "clau": "meteors"
-    },
-    {
-      "data": "14-08-2026",
-      "titol": "Mercuri en periheli",
-      "codi": "",
-      "hora": "",
-      "importancia": 3,
-      "clau": "periheli"
-    },
-    {
-      "data": "15-08-2026",
-      "titol": "La Lluna 1,4° al nord d’Iris",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_1_4_al_nord_d_iris"
-    },
-    {
-      "data": "15-08-2026",
-      "titol": "Mercuri 0,6° al nord de Júpiter",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "mercuri_0_6_al_nord_de_jupiter"
-    },
-    {
-      "data": "15-08-2026",
-      "titol": "Mercuri 2° al nord d’Higiea",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "mercuri_2_al_nord_d_higiea"
-    },
-    {
-      "data": "15-08-2026",
-      "titol": "Màxima elongació est de Venus",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "elongacio"
-    },
-    {
-      "data": "16-08-2026",
-      "titol": "La Lluna 2° al sud de Venus",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_2_al_sud_de_venus"
-    },
-    {
-      "data": "20-08-2026",
-      "titol": "Quart creixent",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "quart_creixent"
-    },
-    {
-      "data": "21-08-2026",
-      "titol": "La Lluna 0,5° al sud d’Antares (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "22-08-2026",
-      "titol": "Lluna en apogeu",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "apogeu"
-    },
-    {
-      "data": "23-08-2026",
-      "titol": "La Lluna 0,4° al sud de Nunki (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "23-08-2026",
-      "titol": "La Lluna 2° al sud de Flora",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_2_al_sud_de_flora"
-    },
-    {
-      "data": "27-08-2026",
-      "titol": "Mercuri en conjunció superior amb el Sol",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "conjuncio"
-    },
-    {
-      "data": "28-08-2026",
-      "titol": "Astrea en oposició",
-      "codi": "",
-      "hora": "",
-      "importancia": 8,
-      "clau": "astrea_en_oposicio"
-    },
-    {
-      "data": "28-08-2026",
-      "titol": "La Lluna 3° al nord d’Astrea",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_3_al_nord_d_astrea"
-    },
-    {
-      "data": "28-08-2026",
-      "titol": "Lluna plena",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "lluna_plena"
-    },
-    {
-      "data": "28-08-2026",
-      "titol": "Eclipsi parcial de Lluna (visible a Espanya)",
-      "codi": "",
-      "hora": "",
-      "importancia": 1,
-      "clau": "eclipsi"
-    },
-    {
-      "data": "31-08-2026",
-      "titol": "La Lluna 7° al nord de Saturn",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_7_al_nord_de_saturn"
-    },
-    {
-      "data": "03-09-2026",
-      "titol": "La Lluna 1,0° al nord d’Alcióne (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "03-09-2026",
-      "titol": "La Lluna 5° al nord d’Urà",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_5_al_nord_d_ura"
-    },
-    {
-      "data": "03-09-2026",
-      "titol": "Venus 2° al sud d’Espiga",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "venus_2_al_sud_d_espiga"
-    },
-    {
-      "data": "04-09-2026",
-      "titol": "Venus en afeli",
-      "codi": "",
-      "hora": "",
-      "importancia": 3,
-      "clau": "afeli"
-    },
-    {
-      "data": "04-09-2026",
-      "titol": "Quart minvant",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "quart_minvant"
-    },
-    {
-      "data": "05-09-2026",
-      "titol": "La Lluna 0,6° al sud d’Elnath (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "06-09-2026",
-      "titol": "La Lluna 3° al nord de Mart",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_3_al_nord_de_mart"
-    },
-    {
-      "data": "06-09-2026",
-      "titol": "Lluna en perigeu",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "perigeu"
-    },
-    {
-      "data": "08-09-2026",
-      "titol": "La Lluna 0,7° al nord de Júpiter (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "09-09-2026",
-      "titol": "La Lluna 0,6° al sud de Règul (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "09-09-2026",
-      "titol": "La Lluna 3° al nord d’Higiea",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_3_al_nord_d_higiea"
-    },
-    {
-      "data": "10-09-2026",
-      "titol": "Urà estacionari en ascensió recta",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "estacionari"
-    },
-    {
-      "data": "11-09-2026",
-      "titol": "Laetitia en conjunció amb el Sol",
-      "codi": "",
-      "hora": "",
-      "importancia": 8,
-      "clau": "laetitia_en_conjuncio_amb_el_sol"
-    },
-    {
-      "data": "11-09-2026",
-      "titol": "Lluna nova",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "lluna_nova"
-    },
-    {
-      "data": "12-09-2026",
-      "titol": "La Lluna 0,2° al nord d’Iris (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "12-09-2026",
-      "titol": "La Lluna 4° al sud de Mercuri",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_4_al_sud_de_mercuri"
-    },
-    {
-      "data": "13-09-2026",
-      "titol": "Juno estacionari en ascensió recta",
-      "codi": "",
-      "hora": "",
-      "importancia": 8,
-      "clau": "juno_estacionari_en_ascensio_recta"
-    },
-    {
-      "data": "14-09-2026",
-      "titol": "Harmonia en conjunció amb el Sol",
-      "codi": "",
-      "hora": "",
-      "importancia": 8,
-      "clau": "harmonia_en_conjuncio_amb_el_sol"
-    },
-    {
-      "data": "14-09-2026",
-      "titol": "La Lluna 0,6° al nord de Venus (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "17-09-2026",
-      "titol": "La Lluna 0,4° al sud d’Antares (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "18-09-2026",
-      "titol": "Quart creixent",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "quart_creixent"
-    },
-    {
-      "data": "19-09-2026",
-      "titol": "Lluna en apogeu",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "apogeu"
-    },
-    {
-      "data": "19-09-2026",
-      "titol": "Mart 6° al sud de Pòl·lux",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "mart_6_al_sud_de_pol_lux"
-    },
-    {
-      "data": "20-09-2026",
-      "titol": "La Lluna 0,2° al sud de Nunki (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "20-09-2026",
-      "titol": "La Lluna 1,4° al sud de Flora",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_1_4_al_sud_de_flora"
-    },
-    {
-      "data": "23-09-2026",
-      "titol": "Inici de la tardor a l’hemisferi boreal",
-      "codi": "assets/icons/special/equinocci_tardor.png",
-      "hora": "",
-      "importancia": 3,
-      "clau": "inici_tardor"
-    },
-    {
-      "data": "24-09-2026",
-      "titol": "La Lluna 3° al nord d’Astrea",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_3_al_nord_d_astrea"
-    },
-    {
-      "data": "26-09-2026",
-      "titol": "Lluna plena",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "lluna_plena"
-    },
-    {
-      "data": "26-09-2026",
-      "titol": "Mercuri 1,0° al nord d’Espiga",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "mercuri_1_0_al_nord_d_espiga"
-    },
-    {
-      "data": "26-09-2026",
-      "titol": "Neptú en oposició",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "oposicio"
-    },
-    {
-      "data": "27-09-2026",
-      "titol": "Mercuri en afeli",
-      "codi": "",
-      "hora": "",
-      "importancia": 3,
-      "clau": "afeli"
-    },
-    {
-      "data": "27-09-2026",
-      "titol": "La Lluna 7° al nord de Saturn",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_7_al_nord_de_saturn"
-    },
-    {
-      "data": "30-09-2026",
-      "titol": "La Lluna 1,0° al nord d’Alcióne (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "01-10-2026",
-      "titol": "Lluna en perigeu i 5° al nord d’Urà",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "perigeu"
-    },
-    {
-      "data": "02-10-2026",
-      "titol": "La Lluna 0,9° al sud d’Elnath (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "02-10-2026",
-      "titol": "Venus estacionari en ascensió recta",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "estacionari"
-    },
-    {
-      "data": "03-10-2026",
-      "titol": "Quart minvant",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "quart_minvant"
-    },
-    {
-      "data": "03-10-2026",
-      "titol": "La Lluna 3° al nord de Ceres",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_3_al_nord_de_ceres"
-    },
-    {
-      "data": "04-10-2026",
-      "titol": "Saturn en oposició",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "oposicio"
-    },
-    {
-      "data": "05-10-2026",
-      "titol": "La Lluna 1,0° al nord de Mart (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "05-10-2026",
-      "titol": "Mercuri 5° al nord de Venus",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "mercuri_5_al_nord_de_venus"
-    },
-    {
-      "data": "06-10-2026",
-      "titol": "La Lluna 0,0° al nord de Júpiter (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "07-10-2026",
-      "titol": "La Lluna 0,7° al sud de Règul (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "07-10-2026",
-      "titol": "La Lluna 2° al nord d’Higiea",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_2_al_nord_d_higiea"
-    },
-    {
-      "data": "09-10-2026",
-      "titol": "Màxim de les Dracònides",
-      "codi": "assets/icons/special/pluja_meteors.png",
-      "hora": "",
-      "importancia": 2,
-      "clau": "meteors"
-    },
-    {
-      "data": "10-10-2026",
-      "titol": "Lluna nova",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "lluna_nova"
-    },
-    {
-      "data": "12-10-2026",
-      "titol": "La Lluna 2° al sud de Mercuri i 3° al nord de Venus",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_2_al_sud_de_mercuri_i_3_al_nord_de_venus"
-    },
-    {
-      "data": "12-10-2026",
-      "titol": "Màxima elongació est de Mercuri (25,2°)",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "elongacio"
-    },
-    {
-      "data": "14-10-2026",
-      "titol": "La Lluna 0,4° al sud d’Antares (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "15-10-2026",
-      "titol": "Mercuri 4° al sud de Zuben el Genubi",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "mercuri_4_al_sud_de_zuben_el_genubi"
-    },
-    {
-      "data": "16-10-2026",
-      "titol": "Lluna en apogeu",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "apogeu"
-    },
-    {
-      "data": "17-10-2026",
-      "titol": "La Lluna 0,0° al sud de Nunki (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "18-10-2026",
-      "titol": "Quart creixent",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "quart_creixent"
-    },
-    {
-      "data": "18-10-2026",
-      "titol": "La Lluna 0,2° al sud de Flora (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "21-10-2026",
-      "titol": "La Lluna 3° al nord d’Astrea",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_3_al_nord_d_astrea"
-    },
-    {
-      "data": "21-10-2026",
-      "titol": "Màxim de les Orió­nides",
-      "codi": "assets/icons/special/pluja_meteors.png",
-      "hora": "",
-      "importancia": 2,
-      "clau": "meteors"
-    },
-    {
-      "data": "24-10-2026",
-      "titol": "La Lluna 5° al nord de Neptú i 7° al nord de Saturn",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_5_al_nord_de_neptu_i_7_al_nord_de_saturn"
-    },
-    {
-      "data": "24-10-2026",
-      "titol": "Mercuri estacionari en ascensió recta",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "estacionari"
-    },
-    {
-      "data": "24-10-2026",
-      "titol": "Venus en conjunció inferior amb el Sol",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "conjuncio"
-    },
-    {
-      "data": "25-10-2026",
-      "titol": "Canvi Horari d’hivern",
-      "codi": "assets/icons/special/canvi_horari.png",
-      "hora": "2:00",
-      "importancia": 9,
-      "clau": "canvi_horari_d_hivern"
-    },
-    {
-      "data": "25-10-2026",
-      "titol": "Màxim acostament de Venus a la Terra",
-      "codi": "",
-      "hora": "",
-      "importancia": 3,
-      "clau": "terra"
-    },
-    {
-      "data": "26-10-2026",
-      "titol": "Lluna plena",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "lluna_plena"
-    },
-    {
-      "data": "28-10-2026",
-      "titol": "La Lluna 0,9° al nord d’Alcióne (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "28-10-2026",
-      "titol": "La Lluna 5° al nord d’Urà",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_5_al_nord_d_ura"
-    },
-    {
-      "data": "28-10-2026",
-      "titol": "Lluna en perigeu",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "perigeu"
-    },
-    {
-      "data": "29-10-2026",
-      "titol": "La Lluna 1,1° al sud d’Elnath (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "31-10-2026",
-      "titol": "La Lluna 0,3° al nord de Ceres (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "01-11-2026",
-      "titol": "Quart minvant",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "quart_minvant"
-    },
-    {
-      "data": "02-11-2026",
-      "titol": "La Lluna 0,6° al sud de Júpiter (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "02-11-2026",
-      "titol": "La Lluna 1,2° al sud de Mart (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "03-11-2026",
-      "titol": "La Lluna 0,9° al sud de Règul (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "03-11-2026",
-      "titol": "La Lluna 1,3° al nord d’Higiea",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_1_3_al_nord_d_higiea"
-    },
-    {
-      "data": "03-11-2026",
-      "titol": "Màxim acostament de Mercuri a la Terra",
-      "codi": "",
-      "hora": "",
-      "importancia": 3,
-      "clau": "terra"
-    },
-    {
-      "data": "03-11-2026",
-      "titol": "Venus 2° al sud d’Espiga",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "venus_2_al_sud_d_espiga"
-    },
-    {
-      "data": "04-11-2026",
-      "titol": "Mercuri en conjunció inferior amb el Sol",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "conjuncio"
-    },
-    {
-      "data": "07-11-2026",
-      "titol": "La Lluna 1,0° al sud de Venus (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "08-11-2026",
-      "titol": "La Lluna 1,4° al sud d’Iris",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_1_4_al_sud_d_iris"
-    },
-    {
-      "data": "09-11-2026",
-      "titol": "Lluna nova",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "lluna_nova"
-    },
-    {
-      "data": "10-11-2026",
-      "titol": "Mercuri en periheli",
-      "codi": "",
-      "hora": "",
-      "importancia": 3,
-      "clau": "periheli"
-    },
-    {
-      "data": "11-11-2026",
-      "titol": "La Lluna 0,2° al sud d’Antares (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "11-11-2026",
-      "titol": "Venus estacionari en ascensió recta",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "estacionari"
-    },
-    {
-      "data": "13-11-2026",
-      "titol": "La Lluna 0,1° al nord de Nunki (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "13-11-2026",
-      "titol": "Lluna en apogeu",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "apogeu"
-    },
-    {
-      "data": "13-11-2026",
-      "titol": "Mercuri estacionari en ascensió recta",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "estacionari"
-    },
-    {
-      "data": "15-11-2026",
-      "titol": "Mart 1,2° al nord de Júpiter",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "mart_1_2_al_nord_de_jupiter"
-    },
-    {
-      "data": "17-11-2026",
-      "titol": "Quart creixent",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "quart_creixent"
-    },
-    {
-      "data": "17-11-2026",
-      "titol": "Màxim de les Leònides",
-      "codi": "assets/icons/special/pluja_meteors.png",
-      "hora": "",
-      "importancia": 2,
-      "clau": "meteors"
-    },
-    {
-      "data": "19-11-2026",
-      "titol": "Venus 2° al nord d’Espiga",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "venus_2_al_nord_d_espiga"
-    },
-    {
-      "data": "21-11-2026",
-      "titol": "La Lluna 7° al nord de Saturn",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_7_al_nord_de_saturn"
-    },
-    {
-      "data": "21-11-2026",
-      "titol": "Màxima elongació oest de Mercuri (19,8°)",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "elongacio"
-    },
-    {
-      "data": "24-11-2026",
-      "titol": "La Lluna 0,7° al nord d’Alcióne (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "24-11-2026",
-      "titol": "La Lluna 5° al nord d’Urà",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_5_al_nord_d_ura"
-    },
-    {
-      "data": "24-11-2026",
-      "titol": "Lluna plena",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "lluna_plena"
-    },
-    {
-      "data": "24-11-2026",
-      "titol": "Mart 2° al nord de Règul",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "mart_2_al_nord_de_regul"
-    },
-    {
-      "data": "25-11-2026",
-      "titol": "La Lluna 1,0° al sud d’Elnath (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "25-11-2026",
-      "titol": "Lluna en perigeu",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "perigeu"
-    },
-    {
-      "data": "25-11-2026",
-      "titol": "Mercuri 2° al nord de Zuben el Genubi",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "mercuri_2_al_nord_de_zuben_el_genubi"
-    },
-    {
-      "data": "25-11-2026",
-      "titol": "Urà en oposició",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "oposicio"
-    },
-    {
-      "data": "30-11-2026",
-      "titol": "La Lluna 1,2° al sud de Règul (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "30-11-2026",
-      "titol": "La Lluna 1,3° al sud de Júpiter (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "30-11-2026",
-      "titol": "La Lluna 3° al sud de Mart",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_3_al_sud_de_mart"
-    },
-    {
-      "data": "01-12-2026",
-      "titol": "Quart minvant",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "quart_minvant"
-    },
-    {
-      "data": "01-12-2026",
-      "titol": "La Lluna 0,9° al nord d’Higiea (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "01-12-2026",
-      "titol": "Vesta estacionari en ascensió recta",
-      "codi": "",
-      "hora": "",
-      "importancia": 8,
-      "clau": "vesta_estacionari_en_ascensio_recta"
-    },
-    {
-      "data": "05-12-2026",
-      "titol": "La Lluna 7° al sud de Venus",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_7_al_sud_de_venus"
-    },
-    {
-      "data": "06-12-2026",
-      "titol": "La Lluna 2° al sud d’Iris",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_2_al_sud_d_iris"
-    },
-    {
-      "data": "07-12-2026",
-      "titol": "La Lluna 6° al sud de Mercuri",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_6_al_sud_de_mercuri"
-    },
-    {
-      "data": "08-12-2026",
-      "titol": "Mercuri 0,4° al sud de Graffias",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "mercuri_0_4_al_sud_de_graffias"
-    },
-    {
-      "data": "09-12-2026",
-      "titol": "Lluna nova",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "lluna_nova"
-    },
-    {
-      "data": "11-12-2026",
-      "titol": "La Lluna 0,3° al nord de Nunki (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "11-12-2026",
-      "titol": "Lluna en apogeu",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "apogeu"
-    },
-    {
-      "data": "11-12-2026",
-      "titol": "Saturn estacionari en ascensió recta",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "estacionari"
-    },
-    {
-      "data": "12-12-2026",
-      "titol": "Mercuri 5° al nord d’Antares",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "mercuri_5_al_nord_d_antares"
-    },
-    {
-      "data": "13-12-2026",
-      "titol": "Egeria en conjunció amb el Sol",
-      "codi": "",
-      "hora": "",
-      "importancia": 8,
-      "clau": "egeria_en_conjuncio_amb_el_sol"
-    },
-    {
-      "data": "13-12-2026",
-      "titol": "Júpiter estacionari en ascensió recta",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "estacionari"
-    },
-    {
-      "data": "13-12-2026",
-      "titol": "Neptú estacionari en ascensió recta",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "estacionari"
-    },
-    {
-      "data": "14-12-2026",
-      "titol": "Màxim de les Gemínides",
-      "codi": "assets/icons/special/pluja_meteors.png",
-      "hora": "",
-      "importancia": 2,
-      "clau": "meteors"
-    },
-    {
-      "data": "17-12-2026",
-      "titol": "Quart creixent",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "quart_creixent"
-    },
-    {
-      "data": "18-12-2026",
-      "titol": "La Lluna 7° al nord de Saturn",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_7_al_nord_de_saturn"
-    },
-    {
-      "data": "21-12-2026",
-      "titol": "Inici de l’hivern a l’hemisferi boreal",
-      "codi": "assets/icons/special/solstici_hivern.png",
-      "hora": "",
-      "importancia": 3,
-      "clau": "inici_hivern"
-    },
-    {
-      "data": "21-12-2026",
-      "titol": "La Lluna 1,0° al nord d’Alcióne (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "22-12-2026",
-      "titol": "La Lluna 5° al nord d’Urà",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_5_al_nord_d_ura"
-    },
-    {
-      "data": "22-12-2026",
-      "titol": "Màxim de les Úrsides",
-      "codi": "assets/icons/special/pluja_meteors.png",
-      "hora": "",
-      "importancia": 2,
-      "clau": "meteors"
-    },
-    {
-      "data": "22-12-2026",
-      "titol": "Venus 3° al nord de Zuben el Genubi",
-      "codi": "",
-      "hora": "",
-      "importancia": 6,
-      "clau": "venus_3_al_nord_de_zuben_el_genubi"
-    },
-    {
-      "data": "23-12-2026",
-      "titol": "La Lluna 1,3° al sud d’Elnath (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "24-12-2026",
-      "titol": "Lluna en perigeu",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "perigeu"
-    },
-    {
-      "data": "24-12-2026",
-      "titol": "Lluna plena",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "lluna_plena"
-    },
-    {
-      "data": "24-12-2026",
-      "titol": "Mercuri en afeli",
-      "codi": "",
-      "hora": "",
-      "importancia": 3,
-      "clau": "afeli"
-    },
-    {
-      "data": "25-12-2026",
-      "titol": "Venus en periheli",
-      "codi": "",
-      "hora": "",
-      "importancia": 3,
-      "clau": "periheli"
-    },
-    {
-      "data": "27-12-2026",
-      "titol": "La Lluna 2° al sud de Júpiter",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_2_al_sud_de_jupiter"
-    },
-    {
-      "data": "28-12-2026",
-      "titol": "La Lluna 1,2° al sud d’Hebe (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "28-12-2026",
-      "titol": "La Lluna 5° al sud de Mart",
-      "codi": "",
-      "hora": "",
-      "importancia": 5,
-      "clau": "la_lluna_5_al_sud_de_mart"
-    },
-    {
-      "data": "29-12-2026",
-      "titol": "La Lluna 1,1° al nord d’Higiea (ocultació)",
-      "codi": "",
-      "hora": "",
-      "importancia": 7,
-      "clau": "ocultacio"
-    },
-    {
-      "data": "30-12-2026",
-      "titol": "Quart minvant",
-      "codi": "",
-      "hora": "",
-      "importancia": 4,
-      "clau": "quart_minvant"
+  "any": 2026,
+  "zona_horaria": "Europe/Madrid",
+  "referencia": {
+    "lat": 39.5696,
+    "lon": 2.6502,
+    "altitud_m": 10
+  },
+  "dies": {
+    "2026-01-01": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "perigeu",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "lluna",
+          "titol": "Lluna en perigeu",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-01-02": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          },
+          {
+            "codi": "harmonia_en_oposicio",
+            "importancia": 1
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 0,5° al sud d’Elnath (ocultació)",
+          "importancia": 2
+        },
+        {
+          "categoria": "altres",
+          "titol": "Harmonia en oposició",
+          "importancia": 1
+        }
+      ]
+    },
+    "2026-01-03": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "periheli",
+            "importancia": 4
+          },
+          {
+            "codi": "pluja_meteors",
+            "importancia": 4
+          },
+          {
+            "codi": "la_lluna_4_al_nord_de_jupiter",
+            "importancia": 3
+          },
+          {
+            "codi": "lluna_plena",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "pluja_meteors",
+          "titol": "Màxim de les Quadràntides",
+          "importancia": 4
+        },
+        {
+          "categoria": "terra",
+          "titol": "La Terra en el periheli",
+          "importancia": 4
+        },
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 4° al nord de Júpiter",
+          "importancia": 3
+        },
+        {
+          "categoria": "lluna",
+          "titol": "Lluna plena",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-01-06": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "afeli",
+            "importancia": 4
+          },
+          {
+            "codi": "conjuncio",
+            "importancia": 2
+          },
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "terra",
+          "titol": "Mercuri en afeli",
+          "importancia": 4
+        },
+        {
+          "categoria": "altres",
+          "titol": "Venus en conjunció superior amb el Sol",
+          "importancia": 2
+        },
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 0,4° al nord de Règul (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-01-09": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "conjuncio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "Mart en conjunció amb el Sol",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-01-10": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "quart_minvant",
+            "importancia": 3
+          },
+          {
+            "codi": "oposicio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "lluna",
+          "titol": "Quart minvant",
+          "importancia": 3
+        },
+        {
+          "categoria": "altres",
+          "titol": "Júpiter en oposició",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-01-13": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "apogeu",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "lluna",
+          "titol": "Lluna en apogeu",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-01-14": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 0,5° al sud d’Antares (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-01-17": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "la_lluna_2_al_sud_de_metis",
+            "importancia": 3
+          },
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 2° al sud de Metis",
+          "importancia": 3
+        },
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 0,7° al sud de Nunki (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-01-18": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "lluna_nova",
+            "importancia": 3
+          },
+          {
+            "codi": "astrea_en_conjuncio_amb_el_sol",
+            "importancia": 1
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "lluna",
+          "titol": "Lluna nova",
+          "importancia": 3
+        },
+        {
+          "categoria": "altres",
+          "titol": "Astrea en conjunció amb el Sol",
+          "importancia": 1
+        }
+      ]
+    },
+    "2026-01-21": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "conjuncio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "Mercuri en conjunció superior amb el Sol",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-01-22": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "afeli",
+            "importancia": 4
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "terra",
+          "titol": "Venus en afeli",
+          "importancia": 4
+        }
+      ]
+    },
+    "2026-01-23": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "la_lluna_4_al_nord_de_saturn",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 4° al nord de Saturn",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-01-26": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "quart_creixent",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "lluna",
+          "titol": "Quart creixent",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-01-27": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "la_lluna_5_al_nord_d_ura",
+            "importancia": 3
+          },
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          },
+          {
+            "codi": "laetitia_en_oposicio",
+            "importancia": 1
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 5° al nord d’Urà",
+          "importancia": 3
+        },
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 1,0° al nord d’Alcióne (ocultació)",
+          "importancia": 2
+        },
+        {
+          "categoria": "altres",
+          "titol": "Laetitia en oposició",
+          "importancia": 1
+        }
+      ]
+    },
+    "2026-01-28": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "vesta_en_conjuncio_amb_el_sol",
+            "importancia": 1
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "Vesta en conjunció amb el Sol",
+          "importancia": 1
+        }
+      ]
+    },
+    "2026-01-29": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "perigeu",
+            "importancia": 3
+          },
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "lluna",
+          "titol": "Lluna en perigeu",
+          "importancia": 3
+        },
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 0,6° al sud d’Elnath (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-01-31": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "la_lluna_4_al_nord_de_jupiter",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 4° al nord de Júpiter",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-02-01": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "lluna_plena",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "lluna",
+          "titol": "Lluna plena",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-02-03": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 0,3° al nord de Règul (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-02-04": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "estacionari",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "Urà estacionari en ascensió recta",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-02-09": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "quart_minvant",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "lluna",
+          "titol": "Quart minvant",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-02-10": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "apogeu",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "lluna",
+          "titol": "Lluna en apogeu",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-02-11": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 0,6° al sud d’Antares (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-02-13": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 0,9° al sud de Nunki (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-02-15": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 0,7° al sud de Metis (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-02-16": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          },
+          {
+            "codi": "saturn_0_9_al_sud_de_neptu",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "Saturn 0,9° al sud de Neptú",
+          "importancia": 2
+        },
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 0,7° al sud de Mart (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-02-17": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "eclipsi",
+            "importancia": 5
+          },
+          {
+            "codi": "lluna_nova",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "eclipsi",
+          "titol": "Eclipsi anular de Sol",
+          "importancia": 5
+        },
+        {
+          "categoria": "lluna",
+          "titol": "Lluna nova",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-02-18": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "la_lluna_2_al_nord_de_venus",
+            "importancia": 3
+          },
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 2° al nord de Venus",
+          "importancia": 3
+        },
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 0,1° al sud de Mercuri (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-02-19": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "periheli",
+            "importancia": 4
+          },
+          {
+            "codi": "elongacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "terra",
+          "titol": "Mercuri en periheli",
+          "importancia": 4
+        },
+        {
+          "categoria": "altres",
+          "titol": "Màxima elongació est de Mercuri (18,1°)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-02-20": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "la_lluna_4_al_nord_de_neptu",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 4° al nord de Neptú",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-02-24": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "la_lluna_5_al_nord_d_ura",
+            "importancia": 3
+          },
+          {
+            "codi": "perigeu",
+            "importancia": 3
+          },
+          {
+            "codi": "quart_creixent",
+            "importancia": 3
+          },
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 5° al nord d’Urà",
+          "importancia": 3
+        },
+        {
+          "categoria": "lluna",
+          "titol": "Lluna en perigeu",
+          "importancia": 3
+        },
+        {
+          "categoria": "lluna",
+          "titol": "Quart creixent",
+          "importancia": 3
+        },
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 1,1° al nord d’Alcióne (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-02-25": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "estacionari",
+            "importancia": 2
+          },
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "Mercuri estacionari en ascensió recta",
+          "importancia": 2
+        },
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 0,4° al sud d’Elnath (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-02-26": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "mercuri_5_al_nord_de_venus",
+            "importancia": 2
+          },
+          {
+            "codi": "partenope_en_oposicio",
+            "importancia": 1
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "Mercuri 5° al nord de Venus",
+          "importancia": 2
+        },
+        {
+          "categoria": "altres",
+          "titol": "Partènope en oposició",
+          "importancia": 1
+        }
+      ]
+    },
+    "2026-02-27": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "la_lluna_4_al_nord_de_jupiter",
+            "importancia": 3
+          },
+          {
+            "codi": "iris_en_oposicio",
+            "importancia": 1
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 4° al nord de Júpiter",
+          "importancia": 3
+        },
+        {
+          "categoria": "altres",
+          "titol": "Iris en oposició",
+          "importancia": 1
+        }
+      ]
+    },
+    "2026-03-02": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          },
+          {
+            "codi": "pal_les_en_conjuncio_amb_el_sol",
+            "importancia": 1
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 0,3° al nord de Règul (ocultació)",
+          "importancia": 2
+        },
+        {
+          "categoria": "altres",
+          "titol": "Pal·les en conjunció amb el Sol",
+          "importancia": 1
+        }
+      ]
+    },
+    "2026-03-03": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "eclipsi",
+            "importancia": 5
+          },
+          {
+            "codi": "lluna_plena",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "eclipsi",
+          "titol": "Eclipsi total de Lluna",
+          "importancia": 5
+        },
+        {
+          "categoria": "lluna",
+          "titol": "Lluna plena",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-03-07": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "conjuncio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "Mercuri en conjunció inferior amb el Sol",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-03-08": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "venus_1_0_al_nord_de_saturn",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "Venus 1,0° al nord de Saturn",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-03-10": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "terra",
+            "importancia": 4
+          },
+          {
+            "codi": "apogeu",
+            "importancia": 3
+          },
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "Màxim acostament de Mercuri a la Terra",
+          "importancia": 4
+        },
+        {
+          "categoria": "lluna",
+          "titol": "Lluna en apogeu",
+          "importancia": 3
+        },
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 0,5° al sud d’Antares (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-03-11": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "quart_minvant",
+            "importancia": 3
+          },
+          {
+            "codi": "estacionari",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "lluna",
+          "titol": "Quart minvant",
+          "importancia": 3
+        },
+        {
+          "categoria": "altres",
+          "titol": "Júpiter estacionari en ascensió recta",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-03-13": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          },
+          {
+            "codi": "fortuna_en_oposicio",
+            "importancia": 1
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 0,8° al sud de Nunki (ocultació)",
+          "importancia": 2
+        },
+        {
+          "categoria": "altres",
+          "titol": "Fortuna en oposició",
+          "importancia": 1
+        }
+      ]
+    },
+    "2026-03-15": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 0,9° al nord de Metis (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-03-17": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "la_lluna_2_al_sud_de_mercuri",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 2° al sud de Mercuri",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-03-19": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "lluna_nova",
+            "importancia": 3
+          },
+          {
+            "codi": "estacionari",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "lluna",
+          "titol": "Lluna nova",
+          "importancia": 3
+        },
+        {
+          "categoria": "altres",
+          "titol": "Mercuri estacionari en ascensió recta",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-03-20": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "equinocci_primavera",
+            "importancia": 4
+          },
+          {
+            "codi": "la_lluna_5_al_nord_de_venus",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "terra",
+          "titol": "Inici de la primavera a l’hemisferi boreal",
+          "importancia": 4
+        },
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 5° al nord de Venus",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-03-21": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "masalia_en_oposicio",
+            "importancia": 1
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "Masàlia en oposició",
+          "importancia": 1
+        }
+      ]
+    },
+    "2026-03-22": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "perigeu",
+            "importancia": 3
+          },
+          {
+            "codi": "conjuncio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "lluna",
+          "titol": "Lluna en perigeu",
+          "importancia": 3
+        },
+        {
+          "categoria": "altres",
+          "titol": "Neptú en conjunció amb el Sol",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-03-23": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "la_lluna_5_al_nord_d_ura",
+            "importancia": 3
+          },
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 5° al nord d’Urà",
+          "importancia": 3
+        },
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 0,9° al nord d’Alcióne (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-03-24": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 0,4° al sud d’Elnath (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-03-25": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "quart_creixent",
+            "importancia": 3
+          },
+          {
+            "codi": "conjuncio",
+            "importancia": 2
+          },
+          {
+            "codi": "eunomia_en_oposicio",
+            "importancia": 1
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "lluna",
+          "titol": "Quart creixent",
+          "importancia": 3
+        },
+        {
+          "categoria": "altres",
+          "titol": "Saturn en conjunció amb el Sol",
+          "importancia": 2
+        },
+        {
+          "categoria": "altres",
+          "titol": "Eunòmia en oposició",
+          "importancia": 1
+        }
+      ]
+    },
+    "2026-03-26": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "periheli",
+            "importancia": 4
+          },
+          {
+            "codi": "la_lluna_4_al_nord_de_jupiter",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "terra",
+          "titol": "Mart en periheli",
+          "importancia": 4
+        },
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 4° al nord de Júpiter",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-03-29": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          },
+          {
+            "codi": "canvi_horari",
+            "importancia": 1
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 0,3° al nord de Règul (ocultació)",
+          "importancia": 2
+        },
+        {
+          "categoria": "altres",
+          "titol": "Canvi Horari",
+          "importancia": 1
+        }
+      ]
+    },
+    "2026-04-02": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "lluna_plena",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "lluna",
+          "titol": "Lluna plena",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-04-03": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "elongacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "Màxima elongació oest de Mercuri (27,8°)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-04-04": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "afeli",
+            "importancia": 4
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "terra",
+          "titol": "Mercuri en afeli",
+          "importancia": 4
+        }
+      ]
+    },
+    "2026-04-06": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 0,5° al sud d’Antares (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-04-07": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "apogeu",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "lluna",
+          "titol": "Lluna en apogeu",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-04-09": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 0,6° al sud de Nunki (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-04-10": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "quart_minvant",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "lluna",
+          "titol": "Quart minvant",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-04-12": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "la_lluna_3_al_nord_de_metis",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 3° al nord de Metis",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-04-13": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "la_lluna_2_al_sud_d_astrea",
+            "importancia": 3
+          },
+          {
+            "codi": "mart_0_3_al_nord_de_neptu",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 2° al sud d’Astrea",
+          "importancia": 3
+        },
+        {
+          "categoria": "altres",
+          "titol": "Mart 0,3° al nord de Neptú",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-04-15": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "la_lluna_2_al_sud_de_pal_les",
+            "importancia": 3
+          },
+          {
+            "codi": "ura_4_al_sud_d_alcione",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 2° al sud de Pal·les",
+          "importancia": 3
+        },
+        {
+          "categoria": "altres",
+          "titol": "Urà 4° al sud d’Alcióne",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-04-16": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "la_lluna_5_al_nord_de_saturn",
+            "importancia": 3
+          },
+          {
+            "codi": "mercuri_1_4_al_sud_de_neptu",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 5° al nord de Saturn",
+          "importancia": 3
+        },
+        {
+          "categoria": "altres",
+          "titol": "Mercuri 1,4° al sud de Neptú",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-04-17": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "lluna_nova",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "lluna",
+          "titol": "Lluna nova",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-04-19": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "la_lluna_5_al_nord_d_ura",
+            "importancia": 3
+          },
+          {
+            "codi": "la_lluna_5_al_nord_de_venus",
+            "importancia": 3
+          },
+          {
+            "codi": "perigeu",
+            "importancia": 3
+          },
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          },
+          {
+            "codi": "egeria_en_oposicio",
+            "importancia": 1
+          },
+          {
+            "codi": "euterpe_en_conjuncio_amb_el_sol",
+            "importancia": 1
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 5° al nord de Venus",
+          "importancia": 3
+        },
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 5° al nord d’Urà",
+          "importancia": 3
+        },
+        {
+          "categoria": "lluna",
+          "titol": "Lluna en perigeu",
+          "importancia": 3
+        },
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 0,8° al nord d’Alcióne (ocultació)",
+          "importancia": 2
+        },
+        {
+          "categoria": "altres",
+          "titol": "Egèria en oposició",
+          "importancia": 1
+        },
+        {
+          "categoria": "altres",
+          "titol": "Euterpe en conjunció amb el Sol",
+          "importancia": 1
+        }
+      ]
+    },
+    "2026-04-20": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "mart_1_3_al_nord_de_saturn",
+            "importancia": 2
+          },
+          {
+            "codi": "mercuri_0_5_al_sud_de_saturn",
+            "importancia": 2
+          },
+          {
+            "codi": "mercuri_2_al_sud_de_mart",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "Mart 1,3° al nord de Saturn",
+          "importancia": 2
+        },
+        {
+          "categoria": "altres",
+          "titol": "Mercuri 0,5° al sud de Saturn",
+          "importancia": 2
+        },
+        {
+          "categoria": "altres",
+          "titol": "Mercuri 2° al sud de Mart",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-04-21": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 0,6° al sud d’Elnath (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-04-22": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "meteors",
+            "importancia": 4
+          },
+          {
+            "codi": "la_lluna_3_al_nord_de_jupiter",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "pluja_meteors",
+          "titol": "Màxim de les Lírides",
+          "importancia": 4
+        },
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 3° al nord de Júpiter",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-04-23": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "venus_4_al_sud_d_alcione",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "Venus 4° al sud d’Alcióne",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-04-24": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "quart_creixent",
+            "importancia": 3
+          },
+          {
+            "codi": "venus_0_8_al_nord_d_ura",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "lluna",
+          "titol": "Quart creixent",
+          "importancia": 3
+        },
+        {
+          "categoria": "altres",
+          "titol": "Venus 0,8° al nord d’Urà",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-04-26": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 0,2° al nord de Règul (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-05-01": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "lluna_plena",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "lluna",
+          "titol": "Lluna plena",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-05-03": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "venus_7_al_nord_d_aldebaran",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "Venus 7° al nord d’Aldebaran",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-05-04": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "apogeu",
+            "importancia": 3
+          },
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "lluna",
+          "titol": "Lluna en apogeu",
+          "importancia": 3
+        },
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 0,4° al sud d’Antares (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-05-06": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "meteors",
+            "importancia": 4
+          },
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "pluja_meteors",
+          "titol": "Màxim de les η-Aquàrids",
+          "importancia": 4
+        },
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 0,5° al sud de Nunki (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-05-09": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "quart_minvant",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "lluna",
+          "titol": "Quart minvant",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-05-11": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 0,4° al sud d’Astrea (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-05-12": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "neptu_3_al_sud_de_pal_les",
+            "importancia": 2
+          },
+          {
+            "codi": "venus_4_al_sud_d_elnath",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "Neptú 3° al sud de Pal·les",
+          "importancia": 2
+        },
+        {
+          "categoria": "altres",
+          "titol": "Venus 4° al sud d’Elnath",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-05-14": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "conjuncio",
+            "importancia": 2
+          },
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "Mercuri en conjunció superior amb el Sol",
+          "importancia": 2
+        },
+        {
+          "categoria": "ocultacio",
+          "titol": "El Sol 0,2° al sud de Mercuri (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-05-15": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "periheli",
+            "importancia": 4
+          },
+          {
+            "codi": "la_lluna_5_al_nord_de_mart",
+            "importancia": 3
+          },
+          {
+            "codi": "ceres_en_conjuncio_amb_el_sol",
+            "importancia": 1
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "terra",
+          "titol": "Venus en periheli",
+          "importancia": 4
+        },
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 5° al nord de Mart",
+          "importancia": 3
+        },
+        {
+          "categoria": "altres",
+          "titol": "Ceres en conjunció amb el Sol",
+          "importancia": 1
+        }
+      ]
+    },
+    "2026-05-16": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "lluna_nova",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "lluna",
+          "titol": "Lluna nova",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-05-17": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "perigeu",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "lluna",
+          "titol": "Lluna en perigeu",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-05-18": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "periheli",
+            "importancia": 4
+          },
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "terra",
+          "titol": "Mercuri en periheli",
+          "importancia": 4
+        },
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 0,9° al sud d’Elnath (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-05-19": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "la_lluna_3_al_nord_de_venus",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 3° al nord de Venus",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-05-20": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "la_lluna_3_al_nord_de_jupiter",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 3° al nord de Júpiter",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-05-22": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "conjuncio",
+            "importancia": 2
+          },
+          {
+            "codi": "mercuri_7_al_nord_d_aldebaran",
+            "importancia": 2
+          },
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "Mercuri 7° al nord d’Aldebaran",
+          "importancia": 2
+        },
+        {
+          "categoria": "altres",
+          "titol": "Urà en conjunció amb el Sol",
+          "importancia": 2
+        },
+        {
+          "categoria": "ocultacio",
+          "titol": "El Sol 0,2° al nord d’Urà (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-05-23": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "quart_creixent",
+            "importancia": 3
+          },
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "lluna",
+          "titol": "Quart creixent",
+          "importancia": 3
+        },
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 0,1° al sud de Règul (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-05-28": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "mercuri_3_al_sud_d_elnath",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "Mercuri 3° al sud d’Elnath",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-05-29": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "amfitrite_en_oposicio",
+            "importancia": 1
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "Amfitrite en oposició",
+          "importancia": 1
+        }
+      ]
+    },
+    "2026-05-31": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "lluna_plena",
+            "importancia": 3
+          },
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          },
+          {
+            "codi": "venus_3_al_nord_d_higiea",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "lluna",
+          "titol": "Lluna plena",
+          "importancia": 3
+        },
+        {
+          "categoria": "altres",
+          "titol": "Venus 3° al nord d’Higiea",
+          "importancia": 2
+        },
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 0,2° al sud d’Antares (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-06-01": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "apogeu",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "lluna",
+          "titol": "Lluna en apogeu",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-06-02": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "juno_estacionari_en_ascensio_recta",
+            "importancia": 1
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "Juno estacionari en ascensió recta",
+          "importancia": 1
+        }
+      ]
+    },
+    "2026-06-03": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 0,4° al sud de Nunki (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-06-04": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "jupiter_6_al_sud_de_pol_lux",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "Júpiter 6° al sud de Pòl·lux",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-06-07": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 0,8° al nord d’Astrea (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-06-08": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "quart_minvant",
+            "importancia": 3
+          },
+          {
+            "codi": "venus_5_al_sud_de_pol_lux",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "lluna",
+          "titol": "Quart minvant",
+          "importancia": 3
+        },
+        {
+          "categoria": "altres",
+          "titol": "Venus 5° al sud de Pòl·lux",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-06-09": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "venus_2_al_nord_de_jupiter",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "Venus 2° al nord de Júpiter",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-06-10": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "la_lluna_6_al_nord_de_saturn",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 6° al nord de Saturn",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-06-12": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "la_lluna_6_al_nord_de_mart",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 6° al nord de Mart",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-06-13": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "la_lluna_5_al_nord_d_ura",
+            "importancia": 3
+          },
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          },
+          {
+            "codi": "saturn_0_7_al_sud_de_pal_les",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 5° al nord d’Urà",
+          "importancia": 3
+        },
+        {
+          "categoria": "altres",
+          "titol": "Saturn 0,7° al sud de Pal·les",
+          "importancia": 2
+        },
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 0,8° al nord d’Alcióne (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-06-14": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "perigeu",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "lluna",
+          "titol": "Lluna en perigeu",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-06-15": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "lluna_nova",
+            "importancia": 3
+          },
+          {
+            "codi": "elongacio",
+            "importancia": 2
+          },
+          {
+            "codi": "irene_en_oposicio",
+            "importancia": 1
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "lluna",
+          "titol": "Lluna nova",
+          "importancia": 3
+        },
+        {
+          "categoria": "altres",
+          "titol": "Màxima elongació est de Mercuri (24,5°)",
+          "importancia": 2
+        },
+        {
+          "categoria": "altres",
+          "titol": "Irene en oposició",
+          "importancia": 1
+        }
+      ]
+    },
+    "2026-06-16": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "la_lluna_2_al_nord_de_mercuri",
+            "importancia": 3
+          },
+          {
+            "codi": "mercuri_2_al_nord_d_higiea",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 2° al nord de Mercuri",
+          "importancia": 3
+        },
+        {
+          "categoria": "altres",
+          "titol": "Mercuri 2° al nord d’Higiea",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-06-17": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "la_lluna_2_al_nord_de_jupiter",
+            "importancia": 3
+          },
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          },
+          {
+            "codi": "hebe_en_conjuncio_amb_el_sol",
+            "importancia": 1
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 2° al nord de Júpiter",
+          "importancia": 3
+        },
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 0,2° al nord de Venus (ocultació)",
+          "importancia": 2
+        },
+        {
+          "categoria": "altres",
+          "titol": "Hebe en conjunció amb el Sol",
+          "importancia": 1
+        }
+      ]
+    },
+    "2026-06-19": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 0,4° al sud de Règul (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-06-21": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "solstici_estiu",
+            "importancia": 4
+          },
+          {
+            "codi": "quart_creixent",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "terra",
+          "titol": "Inici de l’estiu a l’hemisferi boreal",
+          "importancia": 4
+        },
+        {
+          "categoria": "lluna",
+          "titol": "Quart creixent",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-06-23": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "mercuri_7_al_sud_de_pol_lux",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "Mercuri 7° al sud de Pòl·lux",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-06-27": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "mart_4_al_sud_d_alcione",
+            "importancia": 2
+          },
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "Mart 4° al sud d’Alcióne",
+          "importancia": 2
+        },
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 0,3° al sud d’Antares (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-06-28": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "apogeu",
+            "importancia": 3
+          },
+          {
+            "codi": "victoria_en_conjuncio_amb_el_sol",
+            "importancia": 1
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "lluna",
+          "titol": "Lluna en apogeu",
+          "importancia": 3
+        },
+        {
+          "categoria": "altres",
+          "titol": "Victòria en conjunció amb el Sol",
+          "importancia": 1
+        }
+      ]
+    },
+    "2026-06-29": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "lluna_plena",
+            "importancia": 3
+          },
+          {
+            "codi": "estacionari",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "lluna",
+          "titol": "Lluna plena (dia 30 hora oficial)",
+          "importancia": 3
+        },
+        {
+          "categoria": "altres",
+          "titol": "Mercuri estacionari en ascensió recta",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-06-30": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 0,2° al sud de Nunki (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-07-01": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "afeli",
+            "importancia": 4
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "terra",
+          "titol": "Mercuri en afeli",
+          "importancia": 4
+        }
+      ]
+    },
+    "2026-07-02": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "mercuri_2_al_sud_d_higiea",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "Mercuri 2° al sud d’Higiea",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-07-04": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "mart_0_1_al_sud_d_ura",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "Mart 0,1° al sud d’Urà",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-07-05": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "la_lluna_2_al_nord_d_astrea",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 2° al nord d’Astrea",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-07-06": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "afeli",
+            "importancia": 4
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "terra",
+          "titol": "La Terra en l’afeli",
+          "importancia": 4
+        }
+      ]
+    },
+    "2026-07-07": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "la_lluna_5_al_nord_de_neptu",
+            "importancia": 3
+          },
+          {
+            "codi": "la_lluna_7_al_nord_de_saturn",
+            "importancia": 3
+          },
+          {
+            "codi": "quart_minvant",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 5° al nord de Neptú",
+          "importancia": 3
+        },
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 7° al nord de Saturn",
+          "importancia": 3
+        },
+        {
+          "categoria": "lluna",
+          "titol": "Quart minvant",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-07-08": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "estacionari",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "Neptú estacionari en ascensió recta",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-07-09": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "venus_1_1_al_nord_de_regul",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "Venus 1,1° al nord de Règul",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-07-10": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "terra",
+            "importancia": 4
+          },
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "Màxim acostament de Mercuri a la Terra",
+          "importancia": 4
+        },
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 1,1° al nord d’Alcióne (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-07-11": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "la_lluna_5_al_nord_d_ura",
+            "importancia": 3
+          },
+          {
+            "codi": "la_lluna_5_al_nord_de_mart",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 5° al nord de Mart",
+          "importancia": 3
+        },
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 5° al nord d’Urà",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-07-12": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 0,9° al sud d’Elnath (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-07-13": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "perigeu",
+            "importancia": 3
+          },
+          {
+            "codi": "conjuncio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "lluna",
+          "titol": "Lluna en perigeu",
+          "importancia": 3
+        },
+        {
+          "categoria": "altres",
+          "titol": "Mercuri en conjunció inferior amb el Sol",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-07-14": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "lluna_nova",
+            "importancia": 3
+          },
+          {
+            "codi": "mart_5_al_nord_d_aldebaran",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "lluna",
+          "titol": "Lluna nova",
+          "importancia": 3
+        },
+        {
+          "categoria": "altres",
+          "titol": "Mart 5° al nord d’Aldebaran",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-07-15": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "la_lluna_2_al_nord_de_jupiter",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 2° al nord de Júpiter",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-07-17": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "la_lluna_2_al_sud_de_venus",
+            "importancia": 3
+          },
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 2° al sud de Venus",
+          "importancia": 3
+        },
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 0,5° al sud de Règul (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-07-18": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "la_lluna_3_al_nord_d_iris",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 3° al nord d’Iris",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-07-21": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "quart_creixent",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "lluna",
+          "titol": "Quart creixent",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-07-23": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "estacionari",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "Mercuri estacionari en ascensió recta",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-07-24": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "mart_en_node_ascendent",
+            "importancia": 2
+          },
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "Mart en node ascendent",
+          "importancia": 2
+        },
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 0,5° al sud d’Antares (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-07-25": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "apogeu",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "lluna",
+          "titol": "Lluna en apogeu",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-07-27": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "estacionari",
+            "importancia": 2
+          },
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "Saturn estacionari en ascensió recta",
+          "importancia": 2
+        },
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 0,2° al sud de Nunki (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-07-29": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "lluna_plena",
+            "importancia": 3
+          },
+          {
+            "codi": "conjuncio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "lluna",
+          "titol": "Lluna plena",
+          "importancia": 3
+        },
+        {
+          "categoria": "altres",
+          "titol": "Júpiter en conjunció amb el Sol",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-07-31": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "pluja_meteors",
+            "importancia": 4
+          },
+          {
+            "codi": "mart_5_al_sud_d_elnath",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "pluja_meteors",
+          "titol": "Màxim de les δ-Aquàrids",
+          "importancia": 4
+        },
+        {
+          "categoria": "altres",
+          "titol": "Mart 5° al sud d’Elnath",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-08-01": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "la_lluna_3_al_nord_d_astrea",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 3° al nord d’Astrea",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-08-02": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "elongacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "Màxima elongació oest de Mercuri (19,5°)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-08-03": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "la_lluna_5_al_nord_de_neptu",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 5° al nord de Neptú",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-08-04": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "la_lluna_7_al_nord_de_saturn",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 7° al nord de Saturn",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-08-06": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "quart_minvant",
+            "importancia": 3
+          },
+          {
+            "codi": "mercuri_8_al_sud_de_pol_lux",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "lluna",
+          "titol": "Quart minvant",
+          "importancia": 3
+        },
+        {
+          "categoria": "altres",
+          "titol": "Mercuri 8° al sud de Pòl·lux",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-08-07": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "la_lluna_5_al_nord_d_ura",
+            "importancia": 3
+          },
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 5° al nord d’Urà",
+          "importancia": 3
+        },
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 1,1° al nord d’Alcióne (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-08-08": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "mart_1_4_al_nord_de_ceres",
+            "importancia": 2
+          },
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "Mart 1,4° al nord de Ceres",
+          "importancia": 2
+        },
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 0,7° al sud d’Elnath (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-08-09": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "la_lluna_4_al_nord_de_mart",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 4° al nord de Mart",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-08-10": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "perigeu",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "lluna",
+          "titol": "Lluna en perigeu",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-08-11": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "la_lluna_2_al_nord_de_mercuri",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 2° al nord de Mercuri",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-08-12": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "eclipsi",
+            "importancia": 5
+          },
+          {
+            "codi": "lluna_nova",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "eclipsi",
+          "titol": "Eclipsi total de Sol (visible a Espanya)",
+          "importancia": 5
+        },
+        {
+          "categoria": "lluna",
+          "titol": "Lluna nova",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-08-13": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "pluja_meteors",
+            "importancia": 4
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "pluja_meteors",
+          "titol": "Màxim de les Perseïdes",
+          "importancia": 4
+        }
+      ]
+    },
+    "2026-08-14": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "periheli",
+            "importancia": 4
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "terra",
+          "titol": "Mercuri en periheli",
+          "importancia": 4
+        }
+      ]
+    },
+    "2026-08-15": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "la_lluna_1_4_al_nord_d_iris",
+            "importancia": 3
+          },
+          {
+            "codi": "elongacio",
+            "importancia": 2
+          },
+          {
+            "codi": "mercuri_0_6_al_nord_de_jupiter",
+            "importancia": 2
+          },
+          {
+            "codi": "mercuri_2_al_nord_d_higiea",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 1,4° al nord d’Iris",
+          "importancia": 3
+        },
+        {
+          "categoria": "altres",
+          "titol": "Mercuri 0,6° al nord de Júpiter",
+          "importancia": 2
+        },
+        {
+          "categoria": "altres",
+          "titol": "Mercuri 2° al nord d’Higiea",
+          "importancia": 2
+        },
+        {
+          "categoria": "altres",
+          "titol": "Màxima elongació est de Venus",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-08-16": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "la_lluna_2_al_sud_de_venus",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 2° al sud de Venus",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-08-20": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "quart_creixent",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "lluna",
+          "titol": "Quart creixent",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-08-21": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 0,5° al sud d’Antares (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-08-22": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "apogeu",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "lluna",
+          "titol": "Lluna en apogeu",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-08-23": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "la_lluna_2_al_sud_de_flora",
+            "importancia": 3
+          },
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 2° al sud de Flora",
+          "importancia": 3
+        },
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 0,4° al sud de Nunki (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-08-27": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "conjuncio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "Mercuri en conjunció superior amb el Sol",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-08-28": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "eclipsi",
+            "importancia": 5
+          },
+          {
+            "codi": "la_lluna_3_al_nord_d_astrea",
+            "importancia": 3
+          },
+          {
+            "codi": "lluna_plena",
+            "importancia": 3
+          },
+          {
+            "codi": "astrea_en_oposicio",
+            "importancia": 1
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "eclipsi",
+          "titol": "Eclipsi parcial de Lluna (visible a Espanya)",
+          "importancia": 5
+        },
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 3° al nord d’Astrea",
+          "importancia": 3
+        },
+        {
+          "categoria": "lluna",
+          "titol": "Lluna plena",
+          "importancia": 3
+        },
+        {
+          "categoria": "altres",
+          "titol": "Astrea en oposició",
+          "importancia": 1
+        }
+      ]
+    },
+    "2026-08-31": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "la_lluna_7_al_nord_de_saturn",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 7° al nord de Saturn",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-09-03": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "la_lluna_5_al_nord_d_ura",
+            "importancia": 3
+          },
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          },
+          {
+            "codi": "venus_2_al_sud_d_espiga",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 5° al nord d’Urà",
+          "importancia": 3
+        },
+        {
+          "categoria": "altres",
+          "titol": "Venus 2° al sud d’Espiga",
+          "importancia": 2
+        },
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 1,0° al nord d’Alcióne (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-09-04": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "afeli",
+            "importancia": 4
+          },
+          {
+            "codi": "quart_minvant",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "terra",
+          "titol": "Venus en afeli",
+          "importancia": 4
+        },
+        {
+          "categoria": "lluna",
+          "titol": "Quart minvant",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-09-05": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 0,6° al sud d’Elnath (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-09-06": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "la_lluna_3_al_nord_de_mart",
+            "importancia": 3
+          },
+          {
+            "codi": "perigeu",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 3° al nord de Mart",
+          "importancia": 3
+        },
+        {
+          "categoria": "lluna",
+          "titol": "Lluna en perigeu",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-09-08": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 0,7° al nord de Júpiter (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-09-09": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "la_lluna_3_al_nord_d_higiea",
+            "importancia": 3
+          },
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 3° al nord d’Higiea",
+          "importancia": 3
+        },
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 0,6° al sud de Règul (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-09-10": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "estacionari",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "Urà estacionari en ascensió recta",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-09-11": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "lluna_nova",
+            "importancia": 3
+          },
+          {
+            "codi": "laetitia_en_conjuncio_amb_el_sol",
+            "importancia": 1
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "lluna",
+          "titol": "Lluna nova",
+          "importancia": 3
+        },
+        {
+          "categoria": "altres",
+          "titol": "Laetitia en conjunció amb el Sol",
+          "importancia": 1
+        }
+      ]
+    },
+    "2026-09-12": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "la_lluna_4_al_sud_de_mercuri",
+            "importancia": 3
+          },
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 4° al sud de Mercuri",
+          "importancia": 3
+        },
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 0,2° al nord d’Iris (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-09-13": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "juno_estacionari_en_ascensio_recta",
+            "importancia": 1
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "Juno estacionari en ascensió recta",
+          "importancia": 1
+        }
+      ]
+    },
+    "2026-09-14": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          },
+          {
+            "codi": "harmonia_en_conjuncio_amb_el_sol",
+            "importancia": 1
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 0,6° al nord de Venus (ocultació)",
+          "importancia": 2
+        },
+        {
+          "categoria": "altres",
+          "titol": "Harmonia en conjunció amb el Sol",
+          "importancia": 1
+        }
+      ]
+    },
+    "2026-09-17": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 0,4° al sud d’Antares (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-09-18": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "quart_creixent",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "lluna",
+          "titol": "Quart creixent",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-09-19": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "apogeu",
+            "importancia": 3
+          },
+          {
+            "codi": "mart_6_al_sud_de_pol_lux",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "lluna",
+          "titol": "Lluna en apogeu",
+          "importancia": 3
+        },
+        {
+          "categoria": "altres",
+          "titol": "Mart 6° al sud de Pòl·lux",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-09-20": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "la_lluna_1_4_al_sud_de_flora",
+            "importancia": 3
+          },
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 1,4° al sud de Flora",
+          "importancia": 3
+        },
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 0,2° al sud de Nunki (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-09-23": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "equinocci_tardor",
+            "importancia": 4
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "terra",
+          "titol": "Inici de la tardor a l’hemisferi boreal",
+          "importancia": 4
+        }
+      ]
+    },
+    "2026-09-24": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "la_lluna_3_al_nord_d_astrea",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 3° al nord d’Astrea",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-09-26": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "lluna_plena",
+            "importancia": 3
+          },
+          {
+            "codi": "mercuri_1_0_al_nord_d_espiga",
+            "importancia": 2
+          },
+          {
+            "codi": "oposicio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "lluna",
+          "titol": "Lluna plena",
+          "importancia": 3
+        },
+        {
+          "categoria": "altres",
+          "titol": "Mercuri 1,0° al nord d’Espiga",
+          "importancia": 2
+        },
+        {
+          "categoria": "altres",
+          "titol": "Neptú en oposició",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-09-27": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "afeli",
+            "importancia": 4
+          },
+          {
+            "codi": "la_lluna_7_al_nord_de_saturn",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "terra",
+          "titol": "Mercuri en afeli",
+          "importancia": 4
+        },
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 7° al nord de Saturn",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-09-30": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 1,0° al nord d’Alcióne (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-10-01": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "perigeu",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "lluna",
+          "titol": "Lluna en perigeu i 5° al nord d’Urà",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-10-02": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "estacionari",
+            "importancia": 2
+          },
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "Venus estacionari en ascensió recta",
+          "importancia": 2
+        },
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 0,9° al sud d’Elnath (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-10-03": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "la_lluna_3_al_nord_de_ceres",
+            "importancia": 3
+          },
+          {
+            "codi": "quart_minvant",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 3° al nord de Ceres",
+          "importancia": 3
+        },
+        {
+          "categoria": "lluna",
+          "titol": "Quart minvant",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-10-04": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "oposicio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "Saturn en oposició",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-10-05": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "mercuri_5_al_nord_de_venus",
+            "importancia": 2
+          },
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "Mercuri 5° al nord de Venus",
+          "importancia": 2
+        },
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 1,0° al nord de Mart (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-10-06": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 0,0° al nord de Júpiter (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-10-07": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "la_lluna_2_al_nord_d_higiea",
+            "importancia": 3
+          },
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 2° al nord d’Higiea",
+          "importancia": 3
+        },
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 0,7° al sud de Règul (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-10-09": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "pluja_meteors",
+            "importancia": 4
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "pluja_meteors",
+          "titol": "Màxim de les Dracònides",
+          "importancia": 4
+        }
+      ]
+    },
+    "2026-10-10": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "lluna_nova",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "lluna",
+          "titol": "Lluna nova",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-10-12": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "la_lluna_2_al_sud_de_mercuri_i_3_al_nord_de_venus",
+            "importancia": 3
+          },
+          {
+            "codi": "elongacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 2° al sud de Mercuri i 3° al nord de Venus",
+          "importancia": 3
+        },
+        {
+          "categoria": "altres",
+          "titol": "Màxima elongació est de Mercuri (25,2°)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-10-14": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 0,4° al sud d’Antares (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-10-15": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "mercuri_4_al_sud_de_zuben_el_genubi",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "Mercuri 4° al sud de Zuben el Genubi",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-10-16": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "apogeu",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "lluna",
+          "titol": "Lluna en apogeu",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-10-17": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 0,0° al sud de Nunki (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-10-18": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "quart_creixent",
+            "importancia": 3
+          },
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "lluna",
+          "titol": "Quart creixent",
+          "importancia": 3
+        },
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 0,2° al sud de Flora (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-10-21": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "pluja_meteors",
+            "importancia": 4
+          },
+          {
+            "codi": "la_lluna_3_al_nord_d_astrea",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "pluja_meteors",
+          "titol": "Màxim de les Orió­nides",
+          "importancia": 4
+        },
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 3° al nord d’Astrea",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-10-24": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "la_lluna_5_al_nord_de_neptu_i_7_al_nord_de_saturn",
+            "importancia": 3
+          },
+          {
+            "codi": "conjuncio",
+            "importancia": 2
+          },
+          {
+            "codi": "estacionari",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 5° al nord de Neptú i 7° al nord de Saturn",
+          "importancia": 3
+        },
+        {
+          "categoria": "altres",
+          "titol": "Mercuri estacionari en ascensió recta",
+          "importancia": 2
+        },
+        {
+          "categoria": "altres",
+          "titol": "Venus en conjunció inferior amb el Sol",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-10-25": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "terra",
+            "importancia": 4
+          },
+          {
+            "codi": "canvi_horari",
+            "importancia": 1
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "Màxim acostament de Venus a la Terra",
+          "importancia": 4
+        },
+        {
+          "categoria": "altres",
+          "titol": "Canvi Horari d’hivern",
+          "importancia": 1
+        }
+      ]
+    },
+    "2026-10-26": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "lluna_plena",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "lluna",
+          "titol": "Lluna plena",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-10-28": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "la_lluna_5_al_nord_d_ura",
+            "importancia": 3
+          },
+          {
+            "codi": "perigeu",
+            "importancia": 3
+          },
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 5° al nord d’Urà",
+          "importancia": 3
+        },
+        {
+          "categoria": "lluna",
+          "titol": "Lluna en perigeu",
+          "importancia": 3
+        },
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 0,9° al nord d’Alcióne (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-10-29": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 1,1° al sud d’Elnath (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-10-31": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 0,3° al nord de Ceres (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-11-01": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "quart_minvant",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "lluna",
+          "titol": "Quart minvant",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-11-02": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          },
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 0,6° al sud de Júpiter (ocultació)",
+          "importancia": 2
+        },
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 1,2° al sud de Mart (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-11-03": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "terra",
+            "importancia": 4
+          },
+          {
+            "codi": "la_lluna_1_3_al_nord_d_higiea",
+            "importancia": 3
+          },
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          },
+          {
+            "codi": "venus_2_al_sud_d_espiga",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "Màxim acostament de Mercuri a la Terra",
+          "importancia": 4
+        },
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 1,3° al nord d’Higiea",
+          "importancia": 3
+        },
+        {
+          "categoria": "altres",
+          "titol": "Venus 2° al sud d’Espiga",
+          "importancia": 2
+        },
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 0,9° al sud de Règul (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-11-04": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "conjuncio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "Mercuri en conjunció inferior amb el Sol",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-11-07": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 1,0° al sud de Venus (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-11-08": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "la_lluna_1_4_al_sud_d_iris",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 1,4° al sud d’Iris",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-11-09": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "lluna_nova",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "lluna",
+          "titol": "Lluna nova",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-11-10": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "periheli",
+            "importancia": 4
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "terra",
+          "titol": "Mercuri en periheli",
+          "importancia": 4
+        }
+      ]
+    },
+    "2026-11-11": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "estacionari",
+            "importancia": 2
+          },
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "Venus estacionari en ascensió recta",
+          "importancia": 2
+        },
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 0,2° al sud d’Antares (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-11-13": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "apogeu",
+            "importancia": 3
+          },
+          {
+            "codi": "estacionari",
+            "importancia": 2
+          },
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "lluna",
+          "titol": "Lluna en apogeu",
+          "importancia": 3
+        },
+        {
+          "categoria": "altres",
+          "titol": "Mercuri estacionari en ascensió recta",
+          "importancia": 2
+        },
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 0,1° al nord de Nunki (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-11-15": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "mart_1_2_al_nord_de_jupiter",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "Mart 1,2° al nord de Júpiter",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-11-17": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "pluja_meteors",
+            "importancia": 4
+          },
+          {
+            "codi": "quart_creixent",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "pluja_meteors",
+          "titol": "Màxim de les Leònides",
+          "importancia": 4
+        },
+        {
+          "categoria": "lluna",
+          "titol": "Quart creixent",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-11-19": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "venus_2_al_nord_d_espiga",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "Venus 2° al nord d’Espiga",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-11-21": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "la_lluna_7_al_nord_de_saturn",
+            "importancia": 3
+          },
+          {
+            "codi": "elongacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 7° al nord de Saturn",
+          "importancia": 3
+        },
+        {
+          "categoria": "altres",
+          "titol": "Màxima elongació oest de Mercuri (19,8°)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-11-24": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "la_lluna_5_al_nord_d_ura",
+            "importancia": 3
+          },
+          {
+            "codi": "lluna_plena",
+            "importancia": 3
+          },
+          {
+            "codi": "mart_2_al_nord_de_regul",
+            "importancia": 2
+          },
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 5° al nord d’Urà",
+          "importancia": 3
+        },
+        {
+          "categoria": "lluna",
+          "titol": "Lluna plena",
+          "importancia": 3
+        },
+        {
+          "categoria": "altres",
+          "titol": "Mart 2° al nord de Règul",
+          "importancia": 2
+        },
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 0,7° al nord d’Alcióne (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-11-25": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "perigeu",
+            "importancia": 3
+          },
+          {
+            "codi": "mercuri_2_al_nord_de_zuben_el_genubi",
+            "importancia": 2
+          },
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          },
+          {
+            "codi": "oposicio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "lluna",
+          "titol": "Lluna en perigeu",
+          "importancia": 3
+        },
+        {
+          "categoria": "altres",
+          "titol": "Mercuri 2° al nord de Zuben el Genubi",
+          "importancia": 2
+        },
+        {
+          "categoria": "altres",
+          "titol": "Urà en oposició",
+          "importancia": 2
+        },
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 1,0° al sud d’Elnath (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-11-30": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "la_lluna_3_al_sud_de_mart",
+            "importancia": 3
+          },
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          },
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 3° al sud de Mart",
+          "importancia": 3
+        },
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 1,2° al sud de Règul (ocultació)",
+          "importancia": 2
+        },
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 1,3° al sud de Júpiter (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-12-01": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "quart_minvant",
+            "importancia": 3
+          },
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          },
+          {
+            "codi": "vesta_estacionari_en_ascensio_recta",
+            "importancia": 1
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "lluna",
+          "titol": "Quart minvant",
+          "importancia": 3
+        },
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 0,9° al nord d’Higiea (ocultació)",
+          "importancia": 2
+        },
+        {
+          "categoria": "altres",
+          "titol": "Vesta estacionari en ascensió recta",
+          "importancia": 1
+        }
+      ]
+    },
+    "2026-12-05": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "la_lluna_7_al_sud_de_venus",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 7° al sud de Venus",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-12-06": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "la_lluna_2_al_sud_d_iris",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 2° al sud d’Iris",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-12-07": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "la_lluna_6_al_sud_de_mercuri",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 6° al sud de Mercuri",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-12-08": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "mercuri_0_4_al_sud_de_graffias",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "Mercuri 0,4° al sud de Graffias",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-12-09": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "lluna_nova",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "lluna",
+          "titol": "Lluna nova",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-12-11": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "apogeu",
+            "importancia": 3
+          },
+          {
+            "codi": "estacionari",
+            "importancia": 2
+          },
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "lluna",
+          "titol": "Lluna en apogeu",
+          "importancia": 3
+        },
+        {
+          "categoria": "altres",
+          "titol": "Saturn estacionari en ascensió recta",
+          "importancia": 2
+        },
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 0,3° al nord de Nunki (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-12-12": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "mercuri_5_al_nord_d_antares",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "Mercuri 5° al nord d’Antares",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-12-13": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "estacionari",
+            "importancia": 2
+          },
+          {
+            "codi": "estacionari",
+            "importancia": 2
+          },
+          {
+            "codi": "egeria_en_conjuncio_amb_el_sol",
+            "importancia": 1
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "Júpiter estacionari en ascensió recta",
+          "importancia": 2
+        },
+        {
+          "categoria": "altres",
+          "titol": "Neptú estacionari en ascensió recta",
+          "importancia": 2
+        },
+        {
+          "categoria": "altres",
+          "titol": "Egeria en conjunció amb el Sol",
+          "importancia": 1
+        }
+      ]
+    },
+    "2026-12-14": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "pluja_meteors",
+            "importancia": 4
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "pluja_meteors",
+          "titol": "Màxim de les Gemínides",
+          "importancia": 4
+        }
+      ]
+    },
+    "2026-12-17": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "quart_creixent",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "lluna",
+          "titol": "Quart creixent",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-12-18": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "la_lluna_7_al_nord_de_saturn",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 7° al nord de Saturn",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-12-21": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "solstici_hivern",
+            "importancia": 4
+          },
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "terra",
+          "titol": "Inici de l’hivern a l’hemisferi boreal",
+          "importancia": 4
+        },
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 1,0° al nord d’Alcióne (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-12-22": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "pluja_meteors",
+            "importancia": 4
+          },
+          {
+            "codi": "la_lluna_5_al_nord_d_ura",
+            "importancia": 3
+          },
+          {
+            "codi": "venus_3_al_nord_de_zuben_el_genubi",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "pluja_meteors",
+          "titol": "Màxim de les Úrsides",
+          "importancia": 4
+        },
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 5° al nord d’Urà",
+          "importancia": 3
+        },
+        {
+          "categoria": "altres",
+          "titol": "Venus 3° al nord de Zuben el Genubi",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-12-23": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 1,3° al sud d’Elnath (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-12-24": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "afeli",
+            "importancia": 4
+          },
+          {
+            "codi": "lluna_plena",
+            "importancia": 3
+          },
+          {
+            "codi": "perigeu",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "terra",
+          "titol": "Mercuri en afeli",
+          "importancia": 4
+        },
+        {
+          "categoria": "lluna",
+          "titol": "Lluna en perigeu",
+          "importancia": 3
+        },
+        {
+          "categoria": "lluna",
+          "titol": "Lluna plena",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-12-25": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "periheli",
+            "importancia": 4
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "terra",
+          "titol": "Venus en periheli",
+          "importancia": 4
+        }
+      ]
+    },
+    "2026-12-27": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "la_lluna_2_al_sud_de_jupiter",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 2° al sud de Júpiter",
+          "importancia": 3
+        }
+      ]
+    },
+    "2026-12-28": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "la_lluna_5_al_sud_de_mart",
+            "importancia": 3
+          },
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "altres",
+          "titol": "La Lluna 5° al sud de Mart",
+          "importancia": 3
+        },
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 1,2° al sud d’Hebe (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-12-29": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "ocultacio",
+            "importancia": 2
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "ocultacio",
+          "titol": "La Lluna 1,1° al nord d’Higiea (ocultació)",
+          "importancia": 2
+        }
+      ]
+    },
+    "2026-12-30": {
+      "marcadors": {
+        "icones": [
+          {
+            "codi": "quart_minvant",
+            "importancia": 3
+          }
+        ]
+      },
+      "destacats": [
+        {
+          "categoria": "lluna",
+          "titol": "Quart minvant",
+          "importancia": 3
+        }
+      ]
     }
-  ]
+  }
 }
