@@ -189,7 +189,7 @@ function renderMes(isoYM){
 function wait(ms){ return new Promise(r => setTimeout(r, ms)); }
 
 // === ESTAT DADES ===
-let efemerides = {};           // local data/efemerides_2026.json (per dia ISO)
+let efemerides = {};           // local data/efemerides2026.json (per dia ISO)
 let efemeridesEspecials = {};  // del sheet per dia ISO -> array
 let activitats = {};           // del calendari ICS per dia ISO -> array
 // === EFEMÈRIDES HISTÒRIQUES (locals per mes) ===
@@ -637,6 +637,78 @@ function buildEfemeridesEspecials(objs) {
   }
   return out;
 }
+function buildEfemeridesEspecialsFromJSON(j) {
+  // Converteix un JSON local (formats diversos) a:
+  // { "YYYY-MM-DD": [ {codi, titol, clau, hora, importancia} ] }
+  const out = {};
+
+  const add = (iso, e) => {
+    if (!iso) return;
+
+    // accepta diferents noms de camp per la icona
+    const codi =
+      (e?.codi ?? e?.icone ?? e?.icona ?? e?.icon ?? e?.img ?? e?.imatge ?? "")
+        .toString()
+        .trim();
+
+    // ✅ Només volem mostrar efemèrides amb enllaç d'icona
+    if (!codi) return;
+
+    out[iso] ??= [];
+    out[iso].push({
+      codi,
+      clau: (e?.clau ?? e?.key ?? "").toString(),
+      titol: (e?.titol ?? e?.títol ?? e?.title ?? "").toString(),
+      hora: (e?.hora ?? e?.time ?? "").toString(),
+      importancia: Number(e?.importancia ?? e?.importance ?? 3)
+    });
+  };
+
+  // 1) Si és un array pla d'objectes
+  if (Array.isArray(j)) {
+    for (const e of j) {
+      let iso =
+        (e?.iso ?? e?.data_iso ?? e?.date ?? e?.dataISO ?? "").toString().trim();
+
+      if (!iso) iso = ddmmyyyyToISO(e?.data); // DD-MM-YYYY o DD/MM/YYYY
+      add(iso, e);
+    }
+    return out;
+  }
+
+  // 2) Si ve com { dies: { "YYYY-MM-DD": [...] } } o similar
+  if (j && typeof j === "object") {
+    const dies = j.dies || j.days || j.per_dia || null;
+
+    if (dies && typeof dies === "object") {
+      for (const [iso, val] of Object.entries(dies)) {
+        if (Array.isArray(val)) {
+          for (const e of val) add(iso, e);
+        } else if (val && typeof val === "object") {
+          // pot venir com { efemerides: [...] }
+          const arr = val.efemerides || val.events || val.items || null;
+          if (Array.isArray(arr)) for (const e of arr) add(iso, e);
+          else add(iso, val);
+        }
+      }
+      return out;
+    }
+
+    // 3) Si ve com { efemerides: [...] }
+    const arr = j.efemerides || j.events || j.items || null;
+    if (Array.isArray(arr)) {
+      for (const e of arr) {
+        let iso = (e?.iso ?? e?.data_iso ?? e?.date ?? "").toString().trim();
+        if (!iso) iso = ddmmyyyyToISO(e?.data);
+        add(iso, e);
+      }
+      return out;
+    }
+  }
+
+  return out;
+}
+
 function buildFotosMes(objs) {
   const out = {};
   for (const o of objs) {
@@ -1133,18 +1205,21 @@ async function inicia() {
   initObserverFromDevice();
   try {
     // local
-    const e = await loadJSON("data/efemerides_2026.json");
-    efemerides = e.dies || {};
+    const e = await loadJSON("data/efemerides2026.json");
+efemerides = e.dies || {};
+
+// ✅ Efemèrides (icones) des del mateix JSON local
+efemeridesEspecials = buildEfemeridesEspecialsFromJSON(e);
+
 
     // sheets (fotos + efemèrides + festius)
-    const [fotos, esp, fest] = await Promise.all([
-      loadCSV(SHEET_FOTOS_MES),
-      loadCSV(SHEET_EFEMERIDES),
-      loadCSV(SHEET_FESTIUS)
-    ]);
+  const [fotos, fest] = await Promise.all([
+  loadCSV(SHEET_FOTOS_MES),
+  loadCSV(SHEET_FESTIUS)
+]);
 
-    fotosMes = buildFotosMes(fotos);
-    efemeridesEspecials = buildEfemeridesEspecials(esp);
+fotosMes = buildFotosMes(fotos);
+
 
     // Festius: A=data, B=nom
     festius = new Map();
@@ -1170,11 +1245,7 @@ async function inicia() {
     if (navigator.onLine) {
       setTimeout(async () => {
         try {
-          const [esp2, fest2] = await Promise.all([
-            loadCSV(SHEET_EFEMERIDES),
-            loadCSV(SHEET_FESTIUS)
-          ]);
-          efemeridesEspecials = buildEfemeridesEspecials(esp2);
+        const fest2 = await loadCSV(SHEET_FESTIUS);
 
           festius = new Map();
           fest2.forEach(r => {
