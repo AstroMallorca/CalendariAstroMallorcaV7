@@ -283,6 +283,7 @@ data;tipus;titol;codi;Hora;importancia
 26-09-2026;planeta;Neptú en oposició;;;6
 27-09-2026;planeta;Mercuri en afeli;;;6
 27-09-2026;lluna;La Lluna 7° al nord de Saturn;;;5
+19-09-2026;Dia internacional de l'observació lunar;assets/icons/special/inmo.png;;9
 30-09-2026;lluna;La Lluna 1,0° al nord d’Alcióne (ocultació);;;5
 01-10-2026;lluna;Lluna en perigeu i 5° al nord d’Urà;;;5
 02-10-2026;lluna;La Lluna 0,9° al sud d’Elnath (ocultació);;;5
@@ -384,4 +385,5 @@ data;tipus;titol;codi;Hora;importancia
 28-12-2026;lluna;La Lluna 1,2° al sud d’Hebe (ocultació);;;5
 28-12-2026;lluna;La Lluna 5° al sud de Mart;;;5
 29-12-2026;lluna;La Lluna 1,1° al nord d’Higiea (ocultació);;;5
+
 30-12-2026;lluna;Quart minvant;;;5
