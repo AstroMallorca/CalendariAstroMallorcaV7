@@ -675,4 +675,13 @@ body.nocturn .dia.astrofoto-3{ box-shadow: inset 0 0 0 2px rgba(255,68,68,0.22);
 body.nocturn .dia.astrofoto-2{ box-shadow: inset 0 0 0 2px rgba(255,68,68,0.34); }
 body.nocturn .dia.astrofoto-1{ box-shadow: inset 0 0 0 2px rgba(255,68,68,0.50); }
 body.nocturn .dia.astrofoto-0{ box-shadow: inset 0 0 0 2px rgba(255,68,68,0.70); }
+.dia-time{
+  font-weight: 600;
+}
+
+.dia-note{
+  margin-top: 6px;
+  color: var(--muted);
+  line-height: 1.25;
+}
 
