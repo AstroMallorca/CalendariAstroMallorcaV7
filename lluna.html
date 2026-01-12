@@ -833,7 +833,7 @@ function isWithin3DaysNearNewMoon(dayLocalNoon){
   const t0 = Astronomy.MakeTime(dayLocalNoon);
 
   // propera Lluna nova (cap endavant) i l'anterior (cap enrere)
-  cconst nmNextTime = Astronomy.SearchMoonPhase(0, t0, +10);
+  const nmNextTime = Astronomy.SearchMoonPhase(0, t0, +10);
   const nmPrevTime = Astronomy.SearchMoonPhase(0, t0, -10);
 
 
