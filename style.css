@@ -684,4 +684,16 @@ body.nocturn .dia.astrofoto-0{ box-shadow: inset 0 0 0 2px rgba(255,68,68,0.70);
   color: var(--muted);
   line-height: 1.25;
 }
+/* Efemèrides dins el modal del dia */
+.esp-llista{
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+.esp-row{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 0;
+}
 
