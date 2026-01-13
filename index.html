@@ -19,6 +19,14 @@
     }
   }catch(e){}
 </script>
+    // Si venim amb ?date=YYYY-MM-DD, amagam el calendari fins obrir el modal
+  try{
+    const p = new URLSearchParams(location.search);
+    const q = (p.get("date") || "").trim();
+    if (/^\d{4}-\d{2}-\d{2}$/.test(q)) {
+      document.documentElement.classList.add("deeplink-opening");
+    }
+  }catch(e){}
 
 <header class="topbar">
   <div class="topbar-left">
