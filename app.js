@@ -1467,6 +1467,8 @@ fotosMes = buildFotosMes(fotos);
 if (DEEPLINK_ISO) {
   await obreDia(DEEPLINK_ISO);
 }
+// Ja està obert el modal: podem mostrar el calendari sense "flash"
+try{ document.documentElement.classList.remove("deeplink-opening"); }catch(e){}
 
     // ✅ refresc suau (sense trencar festius)
     if (navigator.onLine) {
