@@ -1200,17 +1200,20 @@ const activitatHtml = teActivitat
   const llocRaw = (a.lloc || "").trim();
   const infoRaw = (a.comentaris || a.descripcio || "").trim(); // comentaris ve del DESCRIPTION
 
-  return `
-    <li>
-      <b>${titol}</b>
-      ${hora ? ` — <span class="dia-time">${escapeHTML(hora)}</span>` : ""}
+return `
+  <li>
+    <b>${titol}</b>
 
-      ${llocRaw ? `<div class="dia-note"><b>Lloc:</b> ${linkifyText(llocRaw)}</div>` : ""}
-      ${infoRaw ? `<div class="dia-note"><b>Info:</b> ${linkifyText(infoRaw)}</div>` : ""}
+    ${hora ? `<div class="dia-note"><b>Horari:</b> ${escapeHTML(hora)}</div>` : ""}
+    ${llocRaw ? `<div class="dia-note"><b>Lloc:</b> ${linkifyText(llocRaw)}</div>` : ""}
+    ${infoRaw ? `<div class="dia-note"><b>Info:</b> ${linkifyText(infoRaw)}</div>` : ""}
 
-      ${(a.url || "").trim() ? `<div class="dia-note"><a href="${a.url.trim()}" target="_blank" rel="noopener">Enllaç</a></div>` : ""}
-    </li>
-  `;
+    ${(a.url || "").trim()
+      ? `<div class="dia-note"><a href="${a.url.trim()}" target="_blank" rel="noopener">Enllaç</a></div>`
+      : ""
+    }
+  </li>
+`;
 }).join("")}
 
        </ul>
