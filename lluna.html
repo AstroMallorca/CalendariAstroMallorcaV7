@@ -304,6 +304,109 @@ nextA.href = buildUrlForDate(nextISO);
 // Click = navegar (recarrega la pàgina amb el nou dia)
 prevA.addEventListener("click", (e) => { e.preventDefault(); location.href = prevA.href; });
 nextA.addEventListener("click", (e) => { e.preventDefault(); location.href = nextA.href; });
+// ======= Hold-to-skip dies (mantenir premut) =======
+(function enableHoldToSkip(){
+  let holdTimer = null;
+  let repeatTimer = null;
+  let isHolding = false;
+  let delta = 0; // -1 prev, +1 next
+  let curISO = currentISOFromQueryOrToday();
+
+  function isoToDateLocalMid(iso){
+    const [y,m,d] = iso.split("-").map(Number);
+    return new Date(y, m-1, d, 12, 0, 0, 0); // migdia local per evitar problemes DST
+  }
+
+  function addDaysISO(iso, days){
+    const dt = isoToDateLocalMid(iso);
+    dt.setDate(dt.getDate() + days);
+    return isoFromLocalDate(dt);
+  }
+
+  function stepOnce(){
+    curISO = addDaysISO(curISO, delta);
+    // actualitza l’URL i recarrega
+    location.href = buildUrlForDate(curISO);
+  }
+
+  function startHold(dir){
+    // dir: -1 o +1
+    delta = dir;
+    isHolding = false;
+
+    // Per evitar menu contextual / selecció
+    // (especialment a iOS)
+    try { navigator.vibrate && navigator.vibrate(5); } catch(e){}
+
+    // Espera curta abans d'entrar en mode "repetició"
+    holdTimer = setTimeout(() => {
+      isHolding = true;
+
+      // primer pas immediat
+      stepOnce();
+
+      // i després repetim (aquí pots ajustar velocitat)
+      // (com que recarregam pàgina, normalment amb 1 pas ja basta.
+      // Però si a vegades no detecta, mantenim interval curt.)
+      let interval = 220;
+
+      repeatTimer = setInterval(() => {
+        // cada vegada que recarrega, aquest interval “mor”,
+        // però queda bé si ho proves en navegació sense recàrrega futura.
+        stepOnce();
+        interval = Math.max(80, interval - 20);
+      }, interval);
+
+    }, 350); // 350ms = llindar de "mantingut premut"
+  }
+
+  function stopHold(){
+    if (holdTimer){ clearTimeout(holdTimer); holdTimer = null; }
+    if (repeatTimer){ clearInterval(repeatTimer); repeatTimer = null; }
+  }
+
+  // Important: si l’usuari ha mantingut, anul·lam el click “normal”
+  function cancelClickIfHolding(e){
+    if (isHolding){
+      e.preventDefault();
+      e.stopPropagation();
+      return false;
+    }
+  }
+
+  // Helpers per mouse i touch (sense duplicats)
+  function bindHold(el, dir){
+    // Evita doble firing (touch + click)
+    el.style.webkitTouchCallout = "none";
+    el.style.userSelect = "none";
+
+    // Mouse
+    el.addEventListener("mousedown", (e) => {
+      if (e.button !== 0) return;
+      e.preventDefault();
+      curISO = currentISOFromQueryOrToday();
+      startHold(dir);
+    });
+    window.addEventListener("mouseup", () => stopHold());
+    el.addEventListener("mouseleave", () => stopHold());
+
+    // Touch (mobile)
+    el.addEventListener("touchstart", (e) => {
+      e.preventDefault();
+      curISO = currentISOFromQueryOrToday();
+      startHold(dir);
+    }, { passive:false });
+
+    el.addEventListener("touchend", () => stopHold());
+    el.addEventListener("touchcancel", () => stopHold());
+
+    // Cancel click si estàvem repetint
+    el.addEventListener("click", cancelClickIfHolding, true);
+  }
+
+  bindHold(prevA, -1);
+  bindHold(nextA, +1);
+})();
 
 // Si no hi havia dateStr, actualitza el text "Data:" amb el dia real
 if (!dateStr){
