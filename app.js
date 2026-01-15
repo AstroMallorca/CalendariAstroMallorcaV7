@@ -1011,7 +1011,14 @@ function obreModalDetallFoto(f) {
     back.addEventListener("click", (e) => {
       e.preventDefault();
       // com que és un modal, aquí “tornam” tancant el modal:
-      modal.classList.add("ocult");
+      try{
+  if (history.state && history.state.__amModal === true){
+    history.back(); // tanca modal via popstate (coherent amb Android Back)
+    return;
+  }
+}catch(e){}
+modal.classList.add("ocult");
+
     });
   }
 // ✅ Android: cream estat modal sense dependre d'una variable inexistent
