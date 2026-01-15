@@ -609,24 +609,61 @@ function parseICS(icsText) {
     dtend: e.DTEND || ""
   }));
 }
-function icsDateToISODate(dt) {
+// --- ICS datetime helpers (UTC "Z" -> hora local del dispositiu) ---
+function icsToDateLocal(dt){
+  // Retorna un Date en temps local del dispositiu, interpretant correctament "Z" (UTC)
+  // Suporta:
+  //  - YYYYMMDD                (all-day)
+  //  - YYYYMMDDTHHMMSSZ / ...Z  (UTC)
+  //  - YYYYMMDDTHHMMSS          ("floating", el tractam com a hora local)
   if (!dt) return null;
-  const d = dt.replace("Z", "");
-  const y = d.slice(0, 4);
-  const m = d.slice(4, 6);
-  const day = d.slice(6, 8);
-  if (!y || !m || !day) return null;
+  const s = String(dt).trim();
+  if (!s) return null;
+
+  // All-day: YYYYMMDD
+  if (/^\d{8}$/.test(s)){
+    const Y = Number(s.slice(0,4));
+    const M = Number(s.slice(4,6));
+    const D = Number(s.slice(6,8));
+    return new Date(Y, M-1, D, 0, 0, 0);
+  }
+
+  // Datetime
+  const m = s.match(/^(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})?(Z)?$/);
+  if (!m) return null;
+
+  const Y = Number(m[1]);
+  const Mo = Number(m[2]);
+  const D = Number(m[3]);
+  const h = Number(m[4]);
+  const mi = Number(m[5]);
+  const se = Number(m[6] || "0");
+  const isUTC = !!m[7];
+
+  if (isUTC){
+    // Important: Date() amb UTC i després el Date ja es mostra en local quan fas getHours()
+    return new Date(Date.UTC(Y, Mo-1, D, h, mi, se));
+  } else {
+    // "floating" -> consideram que ja és hora local
+    return new Date(Y, Mo-1, D, h, mi, se);
+  }
+}
+
+function icsDateToISODate(dt){
+  const d = icsToDateLocal(dt);
+  if (!d) return null;
+  const y = d.getFullYear();
+  const m = String(d.getMonth()+1).padStart(2,"0");
+  const day = String(d.getDate()).padStart(2,"0");
   return `${y}-${m}-${day}`;
 }
+
 function icsDateToHM(dt){
-  if (!dt) return "";
-  const d = dt.replace("Z", "");
-  const tPos = d.indexOf("T");
-  if (tPos === -1) return "";          // esdeveniment "tot el dia"
-  const hh = d.slice(tPos + 1, tPos + 3);
-  const mm = d.slice(tPos + 3, tPos + 5);
-  if (!hh || !mm) return "";
-  return `${hh}:${mm}`;
+  const d = icsToDateLocal(dt);
+  if (!d) return "";
+  // all-day: retornam buit (com feies abans)
+  if (/^\d{8}$/.test(String(dt).trim())) return "";
+  return `${String(d.getHours()).padStart(2,"0")}:${String(d.getMinutes()).padStart(2,"0")}`;
 }
 
 function icsTimeRange(dtstart, dtend){
