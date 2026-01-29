@@ -1146,9 +1146,10 @@ if (info?.lluna_foscor?.color && !(esDiumenge || esFestiu)) {
       .filter(x => (x.codi || "").trim())   // ✅ només les que tenen icona
       .slice(0,6)
       .map(x => `<img class="esp-icon"
-                      src="${x.codi}"
-                      alt="${(x.titol || x.clau || "").replace(/"/g,"&quot;")}"
-                      loading="lazy">`)
+     src="${x.codi}"
+     alt="${(x.titol || x.clau || "").replace(/"/g,"&quot;")}"
+     loading="eager"
+     decoding="async">`)
       .join("")
   }
 </div>
@@ -1208,7 +1209,7 @@ async function obreDia(iso) {
         const icon  = (e.codi || "").trim();
 
         const iconHtml = icon
-          ? `<img class="esp-icon" src="${icon}" alt="${label.replace(/"/g,"&quot;")}" loading="lazy">`
+          ? ` src="${icon}" alt="${label.replace(/"/g,"&quot;")}" loading="lazy">`
           : "";
 
        return `<li class="esp-row"><span class="esp-bullet" aria-hidden="true">•</span>${iconHtml}<span>${label}${e.hora ? " — " + e.hora : ""}</span></li>`;
@@ -1577,37 +1578,53 @@ efemerides = e.dies || {};
 // ✅ Efemèrides especials (icones) des de CSV LOCAL
 const espRows = await loadCSVLocal("data/efemerides_2026_data_unica_importancia.csv");
 efemeridesEspecials = buildEfemeridesEspecials(espRows);
+    // ✅ Pintam ràpid amb dades locals (ja es veuen números + fases + efemèrides especials)
+renderMes(mesActual);
     console.log("03-01-2026:", efemeridesEspecials["2026-01-03"]);
 
 
     // sheets (fotos + efemèrides + festius)
-  const [fotos, fest] = await Promise.all([
-  loadCSV(SHEET_FOTOS_MES),
-  loadCSV(SHEET_FESTIUS)
-]);
+// ✅ Carregues en paral·lel (no bloquegen el primer pintat)
+const fotosP = loadCSV(SHEET_FOTOS_MES).catch(() => []);
+const festP  = loadCSV(SHEET_FESTIUS).catch(() => []);
+const icsP   = loadICS(CALENDAR_ICS)
+  .then(t => buildActivitatsFromICS(parseICS(t)))
+  .catch(err => {
+    console.warn("No he pogut carregar el calendari ICS:", err);
+    return {};
+  });
 
+// Fotos
+const fotos = await fotosP;
 fotosMes = buildFotosMes(fotos);
 
+// Festius
+const fest = await festP;
+festius = new Map();
+fest.forEach(r => {
+  const iso = ddmmyyyyToISO(r.data);
+  if (!iso) return;
+  festius.set(iso, (r.nom || "Festiu"));
+});
 
-    // Festius: A=data, B=nom
-    festius = new Map();
-    fest.forEach(r => {
-      const iso = ddmmyyyyToISO(r.data);
-      if (!iso) return;
-      festius.set(iso, (r.nom || "Festiu"));
+// Activitats
+activitats = await icsP;
+
+// ✅ Repintam quan ja tenim tot (apareixen icones i marcadors al moment)
+renderMes(mesActual);
+(function preloadIconsForCurrentMonth(){
+  const prefix = mesActual + "-"; // "2026-01-"
+  const urls = new Set();
+  Object.keys(efemeridesEspecials).forEach(iso => {
+    if (!iso.startsWith(prefix)) return;
+    (efemeridesEspecials[iso] || []).forEach(e => {
+      const u = (e.codi || "").trim();
+      if (u) urls.add(u);
     });
+  });
+  urls.forEach(u => { const img = new Image(); img.src = u; });
+})();
 
-    // calendari
-    try {
-      const icsText = await loadICS(CALENDAR_ICS);
-      activitats = buildActivitatsFromICS(parseICS(icsText));
-    } catch (err) {
-      console.warn("No he pogut carregar el calendari ICS:", err);
-      activitats = {};
-    }
-
-    // ✅ mes inicial ja calculat (mesActual) i avui groc ja aplicat a dibuixaMes
-    renderMes(mesActual);
     // ✅ Si hi ha deep-link, obrim el modal del dia
 if (DEEPLINK_ISO) {
   // ✅ Important a Android: cream una "base" sense ?date perquè hi hagi enrere intern
