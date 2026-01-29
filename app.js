@@ -158,6 +158,7 @@ let mesActual = getMesInicial2026();
 // === Deep-link: si venim d'una pàgina (Lluna/Sol/Planetes) amb ?date=YYYY-MM-DD,
 // volem obrir directament el modal d'EFEMÈRIDES d'aquell dia.
 let DEEPLINK_ISO = null;
+let DEEPLINK_OPENED = false;
 try{
   const p = new URLSearchParams(location.search);
   const q = (p.get("date") || "").trim();
@@ -707,7 +708,6 @@ async function loadCSVLocal(path) {
   const text = await r.text();
   return rowsToObjects(parseCSV(text));
 }
-async function loadICS(url) {
 async function loadICS(url) {
   // IMPORTANT: Google Calendar ICS no envia capçalera CORS.
   // Per això usam proxys amb fallback.
@@ -1616,6 +1616,13 @@ if (DEEPLINK_ISO) {
   // No esperam ICS/fotos/festius: així no hi ha “salt” 10s després
   obreDia(DEEPLINK_ISO);
 }
+    // ✅ Si hi ha deep-link, obrim el modal ARA (amb dades locals) i només 1 vegada
+if (DEEPLINK_ISO && !DEEPLINK_OPENED) {
+  DEEPLINK_OPENED = true;
+  try { history.replaceState({ __amBase: true }, "", location.pathname); } catch(e){}
+  obreDia(DEEPLINK_ISO);
+}
+
     console.log("03-01-2026:", efemeridesEspecials["2026-01-03"]);
 
 
