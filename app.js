@@ -13,8 +13,7 @@ const LOCAL_EFEMERIDES_CSV = "data/efemerides_2026_data_unica_importancia.csv";
 const SHEET_FESTIUS = "data/FESTIUS_BALEARS.csv";
 
 // ICS públic
-const CALENDAR_ICS = "data/astromallorca.ics"; // ✅ local, actualitzat automàticament
-
+const CALENDAR_ICS = `data/astromallorca.ics?v=${Date.now()}`;
 
 
 // === Fetch robust (evita errors CORS/500 puntuals) ===
@@ -713,42 +712,24 @@ async function loadCSVLocal(path) {
   return rowsToObjects(parseCSV(text));
 }
 async function loadICS(url) {
-  const urls = icsFallbacks(url);
-  let lastErr = null;
+  const r = await fetch(url, { cache: "no-store" });
+  if (!r.ok) throw new Error(`No he pogut carregar ICS (${r.status})`);
 
-  for (const u of urls){
-    try{
-      const r = await fetch(u, { cache: "no-store" });
-      if (!r.ok) throw new Error(`${r.status} ${r.statusText}`);
+  let t = await r.text();
 
-      let t = "";
+  // Retalla a VCALENDAR (per si mai ve brut)
+  const idx = t.indexOf("BEGIN:VCALENDAR");
+  if (idx !== -1) t = t.slice(idx);
 
-      // ✅ AllOrigins /get retorna JSON: { contents: "...." }
-      if (u.includes("api.allorigins.win/get?url=")) {
-        const j = await r.json();
-        t = (j && j.contents) ? String(j.contents) : "";
-      } else {
-        t = await r.text();
-      }
+  t = normalizeICS(t);
 
-      // Amb r.jina.ai a vegades ve text extra; retallam al calendari real
-      const idx = t.indexOf("BEGIN:VCALENDAR");
-      if (idx !== -1) t = t.slice(idx);
-
-      t = normalizeICS(t);
-
-      if (!t.includes("BEGIN:VCALENDAR") || !t.includes("BEGIN:VEVENT")) {
-        throw new Error("ICS invalid (no VCALENDAR/VEVENT)");
-      }
-
-      return t;
-    }catch(e){
-      lastErr = e;
-      console.warn("[ICS] falla:", u, e);
-    }
+  if (!t.includes("BEGIN:VCALENDAR") || !t.includes("BEGIN:VEVENT")) {
+    // Pot ser un calendari sense events -> això és OK, tornam text igualment
+    if (t.includes("BEGIN:VCALENDAR")) return t;
+    throw new Error("ICS invalid (no VCALENDAR)");
   }
 
-  throw lastErr || new Error("No he pogut carregar ICS");
+  return t;
 }
 
 // === Transformacions ===
