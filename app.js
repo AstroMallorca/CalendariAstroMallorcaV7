@@ -1639,11 +1639,14 @@ const icsP   = loadICS(CALENDAR_ICS)
     return {};
   });
 
-// Fotos
+// Fotos → quan arriben, ja actualitzam portada i títol
 const fotos = await fotosP;
 fotosMes = buildFotosMes(fotos);
+setFotoMes(mesActual);          // ✅ posa títol i foto immediat
+// o si vols repintar tot el mes:
+renderMes(mesActual);
 
-// Festius
+// Festius → quan arriben, repintam (per verds)
 const fest = await festP;
 festius = new Map();
 fest.forEach(r => {
@@ -1651,12 +1654,13 @@ fest.forEach(r => {
   if (!iso) return;
   festius.set(iso, (r.nom || "Festiu"));
 });
-
-// Activitats
-activitats = await icsP;
-
-// ✅ Repintam quan ja tenim tot (apareixen icones i marcadors al moment)
 renderMes(mesActual);
+
+// ICS → NO bloquegis: quan arribi, actualitza i repinta
+icsP.then((acts) => {
+  activitats = acts || {};
+  renderMes(mesActual);
+});
 (function preloadIconsForCurrentMonth(){
   const prefix = mesActual + "-"; // "2026-01-"
   const urls = new Set();
