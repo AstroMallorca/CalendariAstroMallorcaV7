@@ -47,11 +47,13 @@ function csvFallbacks(url){
 function icsFallbacks(url){
   const enc = encodeURIComponent(url);
   return [
-    // prefer proxys que respectin salts de línia
-    `https://corsproxy.io/?${enc}`,
+    // 1) sol funcionar millor i no sol donar 403
     `https://api.allorigins.win/raw?url=${enc}`,
+
+    // 2) prova directa (si algun navegador/entorn ho permet)
     url,
-    // últim recurs (pot aplanar; si passa, ho reparam més avall)
+
+    // 3) últim recurs
     `https://r.jina.ai/http://${url.replace(/^https?:\/\//,"")}`
   ];
 }
