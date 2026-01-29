@@ -1630,8 +1630,8 @@ if (DEEPLINK_ISO && !DEEPLINK_OPENED) {
 
     // sheets (fotos + efemèrides + festius)
 // ✅ Carregues en paral·lel (no bloquegen el primer pintat)
-const fotosP = loadCSV(SHEET_FOTOS_MES).catch(() => []);
-const festP  = loadCSV(SHEET_FESTIUS).catch(() => []);
+const fotosP = loadCSVLocal(SHEET_FOTOS_MES).catch(() => []);
+const festP  = loadCSVlocal(SHEET_FESTIUS).catch(() => []);
 const icsP   = loadICS(CALENDAR_ICS)
   .then(t => buildActivitatsFromICS(parseICS(t)))
   .catch(err => {
