@@ -858,8 +858,8 @@ function buildFotosMes(objs) {
     if (!key) continue;
     out[key] = o;
   }
- } 
   return out;
+   } 
 function buildActivitatsFromICS(events) {
   const out = {};
   for (const ev of events) {
