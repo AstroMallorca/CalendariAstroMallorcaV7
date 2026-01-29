@@ -716,7 +716,7 @@ async function loadICS(url) {
   // Amb r.jina.ai a vegades ve text extra; retallam al calendari real
   const idx = t.indexOf("BEGIN:VCALENDAR");
   if (idx !== -1) t = t.slice(idx);
-
+t = normalizeICS(t);
   return t;
 }
 
@@ -1570,6 +1570,12 @@ swipeArea.addEventListener("touchend", (e) => {
 // === Inici ===
 async function inicia() {
   initObserverFromDevice();
+    // ✅ Anti-pantalla en blanc: si qualque càrrega (ICS/històric) va lenta,
+  // mostram igualment la UI en 1.2s
+  setTimeout(() => {
+    try { document.documentElement.classList.remove("deeplink-opening"); } catch(e){}
+  }, 1200);
+
   try {
     // local
     const e = await loadJSON("data/efemerides2026.json");
@@ -1656,6 +1662,7 @@ try{ document.documentElement.classList.remove("deeplink-opening"); }catch(e){}
     }
 
   } catch (err) {
+        try { document.documentElement.classList.remove("deeplink-opening"); } catch(e){}
     graella.innerHTML = `<p style="padding:10px">Error carregant dades: ${err.message}</p>`;
     console.error(err);
   }
