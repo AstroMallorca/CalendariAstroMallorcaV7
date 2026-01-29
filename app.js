@@ -859,7 +859,6 @@ function buildFotosMes(objs) {
     out[key] = o;
   }
   return out;
-}
 function buildActivitatsFromICS(events) {
   const out = {};
   for (const ev of events) {
@@ -868,16 +867,15 @@ function buildActivitatsFromICS(events) {
 
     out[iso] ??= [];
 
-    const hora = icsTimeRange(ev.dtstart, ev.dtend);
-    const comentaris = (ev.descripcio || "").trim();
-
     out[iso].push({
       titol: ev.titol,
       lloc: ev.lloc,
-      hora,                 // ✅ nou
-      comentaris,           // ✅ nou
-      descripcio: ev.descripcio, // ho deixam per compatibilitat (no ho llevis)
-      url: ev.url
+      descripcio: ev.descripcio || "",
+      url: ev.url || "",
+      dtstart: ev.dtstart || "",
+      dtend: ev.dtend || "",
+      hora: icsTimeRange(ev.dtstart, ev.dtend),        // ✅ calculada
+      comentaris: (ev.descripcio || "").trim()         // ✅ reutilitzam DESCRIPTION
     });
   }
   return out;
@@ -1244,24 +1242,24 @@ async function obreDia(iso) {
   : `<h3>Efemèrides</h3><p>Cap destacat.</p>`;
 
 
-const actHtml = act.length
-  ? `<h3>Activitats AstroMallorca</h3><ul class="dia-llista">${
-      act.map(a => {
-        const titol = escapeHTML(a.titol || "Activitat");
-        const hora  = icsTimeRange(a.dtstart, a.dtend);
-        const lloc  = (a.lloc || "").trim();
-        const info  = (a.descripcio || "").trim();
-        const url   = (a.url || "").trim();
+//const actHtml = act.length
+  //? `<h3>Activitats AstroMallorca</h3><ul class="dia-llista">${
+    //  act.map(a => {
+    //  const titol = escapeHTML(a.titol || "Activitat");
+    //    const hora  = icsTimeRange(a.dtstart, a.dtend);
+    //    const lloc  = (a.lloc || "").trim();
+    //    const info  = (a.descripcio || "").trim();
+    //    const url   = (a.url || "").trim();
 
-        return `<li>
-          <b>${titol}</b>${hora ? ` — <span class="dia-time">${hora}</span>` : ""}
-          ${lloc ? `<div class="dia-note"><b>Lloc:</b> ${linkifyText(lloc)}</div>` : ""}
-          ${info ? `<div class="dia-note"><b>Info:</b> ${linkifyText(info)}</div>` : ""}
-          ${url ? `<div class="dia-note"><a href="${url}" target="_blank" rel="noopener">Enllaç</a></div>` : ""}
-        </li>`;
-      }).join("")
-    }</ul>`
-  : `<h3>Activitats AstroMallorca</h3><p>Cap activitat.</p>`;
+      //  return `<li>
+      //    <b>${titol}</b>${hora ? ` — <span class="dia-time">${hora}</span>` : ""}
+      //    ${lloc ? `<div class="dia-note"><b>Lloc:</b> ${linkifyText(lloc)}</div>` : ""}
+      //    ${info ? `<div class="dia-note"><b>Info:</b> ${linkifyText(info)}</div>` : ""}
+       //   ${url ? `<div class="dia-note"><a href="${url}" target="_blank" rel="noopener">Enllaç</a></div>` : ""}
+     //   </li>`;
+    //  }).join("")
+  //  }</ul>`//
+//  : `<h3>Activitats AstroMallorca</h3><p>Cap activitat.</p>`;
 
   
 // === Efemèrides històriques (del teu JSON/CSV anual) ===
@@ -1654,6 +1652,7 @@ renderMes(mesActual);
 // ICS → NO bloquegis: quan arribi, actualitza i repinta
 icsP.then((acts) => {
   activitats = acts || {};
+    console.log("ICS dies:", Object.keys(activitats).length, "ex:", Object.keys(activitats).slice(0,5));
   renderMes(mesActual);
 });
 (function preloadIconsForCurrentMonth(){
