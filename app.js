@@ -43,17 +43,19 @@ function csvFallbacks(url){
     `https://r.jina.ai/http://${url.replace(/^https?:\/\//,"")}`
   ];
 }
-
 function icsFallbacks(url){
   const enc = encodeURIComponent(url);
   return [
-    // 1) sol funcionar millor i no sol donar 403
-    `https://api.allorigins.win/raw?url=${enc}`,
+    // ✅ millor: endpoint JSON amb CORS
+    `https://api.allorigins.win/get?url=${enc}`,
 
-    // 2) prova directa (si algun navegador/entorn ho permet)
+    // ✅ segon: corsproxy (ja el tens pels CSV, aquí també va bé)
+    `https://corsproxy.io/?${enc}`,
+
+    // 3) prova directa (normalment fallarà per CORS)
     url,
 
-    // 3) últim recurs
+    // 4) últim recurs
     `https://r.jina.ai/http://${url.replace(/^https?:\/\//,"")}`
   ];
 }
@@ -711,10 +713,7 @@ async function loadCSVLocal(path) {
   return rowsToObjects(parseCSV(text));
 }
 async function loadICS(url) {
-  // IMPORTANT: Google Calendar ICS no envia capçalera CORS.
-  // Per això usam proxys amb fallback.
   const urls = icsFallbacks(url);
-
   let lastErr = null;
 
   for (const u of urls){
@@ -722,7 +721,15 @@ async function loadICS(url) {
       const r = await fetch(u, { cache: "no-store" });
       if (!r.ok) throw new Error(`${r.status} ${r.statusText}`);
 
-      let t = await r.text();
+      let t = "";
+
+      // ✅ AllOrigins /get retorna JSON: { contents: "...." }
+      if (u.includes("api.allorigins.win/get?url=")) {
+        const j = await r.json();
+        t = (j && j.contents) ? String(j.contents) : "";
+      } else {
+        t = await r.text();
+      }
 
       // Amb r.jina.ai a vegades ve text extra; retallam al calendari real
       const idx = t.indexOf("BEGIN:VCALENDAR");
@@ -730,7 +737,6 @@ async function loadICS(url) {
 
       t = normalizeICS(t);
 
-      // ✅ Validació CLAVE: si no hi ha calendari, és una resposta “falsa” (HTML/403/etc)
       if (!t.includes("BEGIN:VCALENDAR") || !t.includes("BEGIN:VEVENT")) {
         throw new Error("ICS invalid (no VCALENDAR/VEVENT)");
       }
@@ -744,8 +750,6 @@ async function loadICS(url) {
 
   throw lastErr || new Error("No he pogut carregar ICS");
 }
-
-
 
 // === Transformacions ===
 function buildEfemeridesEspecials(objs) {
@@ -859,7 +863,7 @@ function buildFotosMes(objs) {
     out[key] = o;
   }
   return out;
-   } 
+} 
 function buildActivitatsFromICS(events) {
   const out = {};
   for (const ev of events) {
