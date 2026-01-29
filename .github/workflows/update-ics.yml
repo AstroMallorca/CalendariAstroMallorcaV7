@@ -1,0 +1,35 @@
+name: Update public ICS
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"   # cada 5 minuts
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download ICS
+        run: |
+          mkdir -p data
+          curl -L --fail --retry 5 --retry-delay 2 \
+            "https://calendar.google.com/calendar/ical/astromca%40gmail.com/public/basic.ics" \
+            -o data/astromallorca.ics
+
+      - name: Commit if changed
+        run: |
+          if git diff --quiet; then
+            echo "No changes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/astromallorca.ics
+          git commit -m "chore: update calendar ICS"
+          git push
