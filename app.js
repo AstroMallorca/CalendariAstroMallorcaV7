@@ -705,7 +705,7 @@ async function loadCSV(url) {
   return rowsToObjects(parseCSV(text));
 }
 async function loadCSVLocal(path) {
-  const r = await fetch(path, { cache: "no-store" });
+  const r = await fetch(path); // 👈 deixa el cache per defecte
   if (!r.ok) throw new Error(`No puc carregar ${path} (${r.status})`);
   const text = await r.text();
   return rowsToObjects(parseCSV(text));
@@ -1612,12 +1612,7 @@ const espRows = await loadCSVLocal("data/efemerides_2026_data_unica_importancia.
 efemeridesEspecials = buildEfemeridesEspecials(espRows);
     // ✅ Pintam ràpid amb dades locals (ja es veuen números + fases + efemèrides especials)
 renderMes(mesActual);
-    // ✅ Si hi ha deep-link, obrim el modal ARA (amb dades locals), no després de les càrregues lentes
-if (DEEPLINK_ISO) {
-  try { history.replaceState({ __amBase: true }, "", location.pathname); } catch(e){}
-  // No esperam ICS/fotos/festius: així no hi ha “salt” 10s després
-  obreDia(DEEPLINK_ISO);
-}
+
     // ✅ Si hi ha deep-link, obrim el modal ARA (amb dades locals) i només 1 vegada
 if (DEEPLINK_ISO && !DEEPLINK_OPENED) {
   DEEPLINK_OPENED = true;
@@ -1629,22 +1624,22 @@ if (DEEPLINK_ISO && !DEEPLINK_OPENED) {
 
 
     // sheets (fotos + efemèrides + festius)
-// ✅ Carregues en paral·lel (no bloquegen el primer pintat)
+// ✅ Carregues en paral·lel
 const fotosP = loadCSVLocal(SHEET_FOTOS_MES).catch(() => []);
 const festP  = loadCSVLocal(SHEET_FESTIUS).catch(() => []);
 const icsP   = loadICS(CALENDAR_ICS)
   .then(t => buildActivitatsFromICS(parseICS(t)))
-  .catch(err => {
-    console.warn("No he pogut carregar el calendari ICS:", err);
-    return {};
-  });
+  .catch(() => ({}));
 
-// Fotos → quan arriben, ja actualitzam portada i títol
-const fotos = await fotosP;
-fotosMes = buildFotosMes(fotos);
-setFotoMes(mesActual);          // ✅ posa títol i foto immediat
-// o si vols repintar tot el mes:
+// ✅ Pinta ja (ràpid)
 renderMes(mesActual);
+
+// ✅ Fotos: quan arribin, actualitza només portada + (si vols) repinta
+fotosP.then((fotos) => {
+  fotosMes = buildFotosMes(fotos);
+  setFotoMes(mesActual);     // posa títol i foto
+  // renderMes(mesActual);   // opcional (jo NO el faria aquí si no cal)
+});
 
 // Festius → quan arriben, repintam (per verds)
 const fest = await festP;
