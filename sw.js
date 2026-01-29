@@ -1,7 +1,7 @@
 // sw.js
 // Offline + actualització automàtica (Sheets CSV + Calendar ICS)
 // IMPORTANT: cada vegada que facis canvis importants, puja la versió (v7 -> v8, etc.)
-const CACHE_NAME = "calendariastromallorca-v9";
+const CACHE_NAME = "calendariastromallorca-v10";
 
 // Fitxers mínims per arrencar OFFLINE (mateix origen)
 const CORE_ASSETS = [
@@ -99,6 +99,9 @@ function isDynamicData(url) {
   // JSON locals que poden canviar sovint
   if (url.origin === self.location.origin && url.pathname.startsWith("/CalendariAstroMallorca/data/")) return true;
   if (url.origin === self.location.origin && url.pathname.includes("/data/") && url.pathname.endsWith(".json")) return true;
+  // Proxys (ICS via allorigins/jina): també és dades dinàmiques
+  if (url.origin === "https://api.allorigins.win") return true;
+  if (url.origin === "https://r.jina.ai") return true;
 
   return false;
 }
