@@ -708,17 +708,41 @@ async function loadCSVLocal(path) {
   return rowsToObjects(parseCSV(text));
 }
 async function loadICS(url) {
+async function loadICS(url) {
   // IMPORTANT: Google Calendar ICS no envia capçalera CORS.
-  // Per això usam proxys amb fallback (i deixam l'URL directa com a últim intent).
-  const { text } = await fetchTextWithFallback(icsFallbacks(url));
-  let t = text;
+  // Per això usam proxys amb fallback.
+  const urls = icsFallbacks(url);
 
-  // Amb r.jina.ai a vegades ve text extra; retallam al calendari real
-  const idx = t.indexOf("BEGIN:VCALENDAR");
-  if (idx !== -1) t = t.slice(idx);
-t = normalizeICS(t);
-  return t;
+  let lastErr = null;
+
+  for (const u of urls){
+    try{
+      const r = await fetch(u, { cache: "no-store" });
+      if (!r.ok) throw new Error(`${r.status} ${r.statusText}`);
+
+      let t = await r.text();
+
+      // Amb r.jina.ai a vegades ve text extra; retallam al calendari real
+      const idx = t.indexOf("BEGIN:VCALENDAR");
+      if (idx !== -1) t = t.slice(idx);
+
+      t = normalizeICS(t);
+
+      // ✅ Validació CLAVE: si no hi ha calendari, és una resposta “falsa” (HTML/403/etc)
+      if (!t.includes("BEGIN:VCALENDAR") || !t.includes("BEGIN:VEVENT")) {
+        throw new Error("ICS invalid (no VCALENDAR/VEVENT)");
+      }
+
+      return t;
+    }catch(e){
+      lastErr = e;
+      console.warn("[ICS] falla:", u, e);
+    }
+  }
+
+  throw lastErr || new Error("No he pogut carregar ICS");
 }
+
 
 
 // === Transformacions ===
@@ -1586,6 +1610,12 @@ const espRows = await loadCSVLocal("data/efemerides_2026_data_unica_importancia.
 efemeridesEspecials = buildEfemeridesEspecials(espRows);
     // ✅ Pintam ràpid amb dades locals (ja es veuen números + fases + efemèrides especials)
 renderMes(mesActual);
+    // ✅ Si hi ha deep-link, obrim el modal ARA (amb dades locals), no després de les càrregues lentes
+if (DEEPLINK_ISO) {
+  try { history.replaceState({ __amBase: true }, "", location.pathname); } catch(e){}
+  // No esperam ICS/fotos/festius: així no hi ha “salt” 10s després
+  obreDia(DEEPLINK_ISO);
+}
     console.log("03-01-2026:", efemeridesEspecials["2026-01-03"]);
 
 
@@ -1630,15 +1660,6 @@ renderMes(mesActual);
   });
   urls.forEach(u => { const img = new Image(); img.src = u; });
 })();
-
-    // ✅ Si hi ha deep-link, obrim el modal del dia
-if (DEEPLINK_ISO) {
-  // ✅ Important a Android: cream una "base" sense ?date perquè hi hagi enrere intern
-  try{
-    history.replaceState({ __amBase: true }, "", location.pathname);
-  }catch(e){}
-  await obreDia(DEEPLINK_ISO);
-}
 
 // Ja està obert el modal: podem mostrar el calendari sense "flash"
 try{ document.documentElement.classList.remove("deeplink-opening"); }catch(e){}
