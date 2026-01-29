@@ -21,11 +21,11 @@ const CORE_ASSETS = [
 
   "assets/icons/astromallorca.png",
   "assets/icons/nocturn.png",
-
   // Dades locals
-  "data/efemerides_2026.json",
+  "data/efemerides2026.json",
+  "data/efemerides_2026_data_unica_importancia.csv",
   "data/FOTOS_MES.csv",
-  "data/FESTIUS_BALEARS.csv"
+  "data/FESTIUS_BALEARS.csv",
 ];
 
 
