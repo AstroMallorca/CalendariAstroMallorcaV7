@@ -1,7 +1,7 @@
 // sw.js
 // Offline + actualització automàtica (Sheets CSV + Calendar ICS)
 // IMPORTANT: cada vegada que facis canvis importants, puja la versió (v7 -> v8, etc.)
-const CACHE_NAME = "calendariastromallorca";
+const CACHE_NAME = "calendariastromallorca-v9";
 
 // Fitxers mínims per arrencar OFFLINE (mateix origen)
 const CORE_ASSETS = [
@@ -57,6 +57,10 @@ self.addEventListener("fetch", (event) => {
   "https://docs.google.com",
   "https://calendar.google.com",
   "https://cdn.jsdelivr.net"
+  "https://corsproxy.io",
+  "https://api.allorigins.win",
+  "https://r.jina.ai"
+
   
 ]);
 
