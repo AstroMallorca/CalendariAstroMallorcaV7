@@ -56,7 +56,7 @@ self.addEventListener("fetch", (event) => {
   self.location.origin,
   "https://docs.google.com",
   "https://calendar.google.com",
-  "https://cdn.jsdelivr.net"
+  "https://cdn.jsdelivr.net",
   "https://corsproxy.io",
   "https://api.allorigins.win",
   "https://r.jina.ai"
