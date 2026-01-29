@@ -16,23 +16,18 @@ const CORE_ASSETS = [
   "planetes.html",
   "messiers.html",
 
-
-  // Icones PWA (segons la teva estructura)
   "assets/icons/icon-192.png",
   "assets/icons/icon-512.png",
 
-  // Logos UI
   "assets/icons/astromallorca.png",
   "assets/icons/nocturn.png",
 
-  // Dades locals (si existeixen)
-  "data/efemerides_2026.json"
-   "data/FOTOS_MES.csv",
+  // Dades locals
+  "data/efemerides_2026.json",
+  "data/FOTOS_MES.csv",
   "data/FESTIUS_BALEARS.csv"
-  // Pots afegir aquí altres json locals si els fas servir sempre:
-  // "data/cataleg_icones.json",
-  // "data/eclipses.json",
 ];
+
 
 // Instal·lació: cache del core
 self.addEventListener("install", (event) => {
@@ -62,9 +57,15 @@ self.addEventListener("fetch", (event) => {
   "https://docs.google.com",
   "https://calendar.google.com",
   "https://cdn.jsdelivr.net"
+  
 ]);
 
   if (!allowedOrigins.has(url.origin)) return;
+    // Calendar ICS: millor network-first (evita quedar enganxat a una resposta vella/buida)
+  if (url.pathname.endsWith(".ics")) {
+    event.respondWith(networkFirst(req));
+    return;
+  }
 
   // HTML: network-first (per actualitzar la UI quan hi ha internet)
   if (req.mode === "navigate" || (req.headers.get("accept") || "").includes("text/html")) {
