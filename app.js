@@ -13,8 +13,8 @@ const LOCAL_EFEMERIDES_CSV = "data/efemerides_2026_data_unica_importancia.csv";
 const SHEET_FESTIUS = "data/FESTIUS_BALEARS.csv";
 
 // ICS públic
-const CALENDAR_ICS =
-  "https://calendar.google.com/calendar/ical/astromca%40gmail.com/public/basic.ics";
+const CALENDAR_ICS = "data/astromallorca.ics"; // ✅ local, actualitzat automàticament
+
 
 
 // === Fetch robust (evita errors CORS/500 puntuals) ===
