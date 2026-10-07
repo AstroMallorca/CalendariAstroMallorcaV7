@@ -418,7 +418,7 @@ function getRiseSet(bodyName, iso, observer){
 
 // === Compte enrere eclipsi (Europe/Madrid, DST inclòs) ===
 const ECLIPSI_TZ = "Europe/Madrid";
-const ECLIPSI_LOCAL = { year: 2026, month: 8, day: 12, hour: 20, minute: 31 };
+const ECLIPSI_LOCAL = { year: 2027, month: 8, day: 2, hour: 10, minute: 58 };
 
 function getTimeZoneOffsetMinutes(date, timeZone) {
   // Retorna offset (minuts) de timeZone respecte UTC en aquell instant
